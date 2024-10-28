@@ -1,16 +1,17 @@
 package forms;
 
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 public class AuthForm extends JFrame {
 
     public AuthForm() {
         // Настройка основного окна
         setTitle("Authentication Form");
-        setSize(400, 400);
+        setSize(400, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -36,39 +37,35 @@ public class AuthForm extends JFrame {
         panel.setBackground(new Color(44, 62, 80));
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
+        // Логотип
+        JLabel logoLabel = new JLabel();
+        logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        // Замените путь к изображению своим, если оно есть
+        logoLabel.setIcon(new ImageIcon("logo.png"));
+
         // Заголовок
         JLabel titleLabel = new JLabel("Login");
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Поле ввода имени пользователя
+        // Поле ввода имени пользователя с placeholder
         JTextField usernameField = new JTextField(15);
+        addPlaceholder(usernameField, "Username");
         styleTextField(usernameField);
 
-        // Поле ввода пароля
+        // Поле ввода пароля с placeholder
         JPasswordField passwordField = new JPasswordField(15);
+        addPlaceholder(passwordField, "Password");
         stylePasswordField(passwordField);
 
         // Кнопка входа
         JButton loginButton = new JButton("Login");
         styleButton(loginButton);
 
-        // Обработчик нажатия кнопки входа
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String username = usernameField.getText();
-                String password = new String(passwordField.getPassword());
-                if (username.equals("admin") && password.equals("password")) {
-                    JOptionPane.showMessageDialog(null, "Login successful!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Invalid username or password", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
-
         // Добавляем элементы на панель
+        panel.add(logoLabel); // Логотип
+        panel.add(Box.createRigidArea(new Dimension(0, 20)));
         panel.add(titleLabel);
         panel.add(Box.createRigidArea(new Dimension(0, 20)));
         panel.add(usernameField);
@@ -87,44 +84,40 @@ public class AuthForm extends JFrame {
         panel.setBackground(new Color(44, 62, 80));
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
+        // Логотип
+        JLabel logoLabel = new JLabel();
+        logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        // Замените путь к изображению своим, если оно есть
+        logoLabel.setIcon(new ImageIcon("logo.png"));
+
         // Заголовок
         JLabel titleLabel = new JLabel("Register");
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Поле ввода имени пользователя
+        // Поле ввода имени пользователя с placeholder
         JTextField usernameField = new JTextField(15);
+        addPlaceholder(usernameField, "Username");
         styleTextField(usernameField);
 
-        // Поле ввода email
+        // Поле ввода email с placeholder
         JTextField emailField = new JTextField(15);
+        addPlaceholder(emailField, "Email");
         styleTextField(emailField);
 
-        // Поле ввода пароля
+        // Поле ввода пароля с placeholder
         JPasswordField passwordField = new JPasswordField(15);
+        addPlaceholder(passwordField, "Password");
         stylePasswordField(passwordField);
 
         // Кнопка регистрации
         JButton registerButton = new JButton("Register");
         styleButton(registerButton);
 
-        // Обработчик нажатия кнопки регистрации
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String username = usernameField.getText();
-                String email = emailField.getText();
-                String password = new String(passwordField.getPassword());
-                if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Registration successful!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Please fill in all fields", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
-
         // Добавляем элементы на панель
+        panel.add(logoLabel); // Логотип
+        panel.add(Box.createRigidArea(new Dimension(0, 20)));
         panel.add(titleLabel);
         panel.add(Box.createRigidArea(new Dimension(0, 20)));
         panel.add(usernameField);
@@ -136,6 +129,30 @@ public class AuthForm extends JFrame {
         panel.add(registerButton);
 
         return panel;
+    }
+
+    // Метод для добавления placeholder в текстовое поле
+    private void addPlaceholder(JTextComponent field, String placeholder) {
+        field.setText(placeholder);
+        field.setForeground(Color.GRAY);
+
+        field.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (field.getText().equals(placeholder)) {
+                    field.setText("");
+                    field.setForeground(Color.WHITE);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (field.getText().isEmpty()) {
+                    field.setForeground(Color.GRAY);
+                    field.setText(placeholder);
+                }
+            }
+        });
     }
 
     // Метод для стилизации текстовых полей
@@ -168,10 +185,6 @@ public class AuthForm extends JFrame {
 
     public static void main(String[] args) {
         // Создание и отображение формы
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new AuthForm().setVisible(true);
-            }
-        });
+        SwingUtilities.invokeLater(() -> new AuthForm().setVisible(true));
     }
 }
