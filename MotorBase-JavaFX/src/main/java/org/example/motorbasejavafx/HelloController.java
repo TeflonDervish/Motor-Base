@@ -1,5 +1,6 @@
 package org.example.motorbasejavafx;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -10,5 +11,9 @@ public class HelloController {
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
+    }
+
+    public void showObyavilation(ActionEvent actionEvent) {
+        System.out.println("Сабина обосралась");
     }
 }
