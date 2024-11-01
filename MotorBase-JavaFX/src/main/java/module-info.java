@@ -10,7 +10,11 @@ module org.example.motorbasejavafx {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.net.http;
+    requires static lombok;
 
     opens org.example.motorbasejavafx to javafx.fxml;
     exports org.example.motorbasejavafx;
+    exports org.example.motorbasejavafx.controller;
+    opens org.example.motorbasejavafx.controller to javafx.fxml;
 }
