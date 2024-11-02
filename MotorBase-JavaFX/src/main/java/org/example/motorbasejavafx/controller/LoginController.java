@@ -5,4 +5,5 @@ import javafx.event.ActionEvent;
 public class LoginController {
     public void onClickLogin(ActionEvent actionEvent) {
     }
+    
 }
