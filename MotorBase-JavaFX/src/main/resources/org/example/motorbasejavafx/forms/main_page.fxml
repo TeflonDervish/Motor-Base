@@ -56,7 +56,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <ScrollPane layoutX="87.0" layoutY="226.0" prefHeight="470.0" prefWidth="390.0">
+            <ScrollPane layoutX="87.0" layoutY="226.0" prefHeight="472.0" prefWidth="390.0">
                <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1012.0" prefWidth="368.0">
                      <children>
@@ -83,7 +83,6 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="yearsCar" layoutX="13.0" layoutY="257.0" prefHeight="34.0" prefWidth="319.0" promptText="Выберите год выпуска" />
                         <Label layoutX="14.0" layoutY="297.0" text="Цвет корпуса">
                            <font>
                               <Font size="20.0" />
@@ -126,7 +125,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="toPowers" layoutX="13.0" layoutY="624.0" prefHeight="34.0" prefWidth="154.0" promptText="От" />
+                        <TextField fx:id="fromPowers" layoutX="13.0" layoutY="624.0" prefHeight="34.0" prefWidth="154.0" promptText="От" />
                         <Label layoutX="14.0" layoutY="666.0" text="Объем двигателя">
                            <font>
                               <Font size="20.0" />
@@ -152,23 +151,24 @@
                               <Font size="15.0" />
                            </font>
                         </CheckBox>
-                        <TextField fx:id="fromPowers" layoutX="175.0" layoutY="624.0" prefHeight="34.0" prefWidth="154.0" promptText="До" />
-                        <TextField fx:id="toVolume" layoutX="14.0" layoutY="696.0" prefHeight="34.0" prefWidth="154.0" promptText="От" />
-                        <TextField fx:id="fromVolume" layoutX="176.0" layoutY="696.0" prefHeight="34.0" prefWidth="154.0" promptText="До" />
+                        <TextField fx:id="toPowers" layoutX="175.0" layoutY="624.0" prefHeight="34.0" prefWidth="154.0" promptText="До" />
+                        <TextField fx:id="fromVolume" layoutX="14.0" layoutY="696.0" prefHeight="34.0" prefWidth="154.0" promptText="От" />
+                        <TextField fx:id="toVolume" layoutX="176.0" layoutY="696.0" prefHeight="34.0" prefWidth="154.0" promptText="До" />
                         <Label layoutX="15.0" layoutY="860.0" text="Пробег">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="toRun" layoutX="15.0" layoutY="890.0" prefHeight="34.0" prefWidth="154.0" promptText="От" />
-                        <TextField fx:id="fromRun" layoutX="177.0" layoutY="890.0" prefHeight="34.0" prefWidth="154.0" promptText="До" />
+                        <TextField fx:id="fromRun" layoutX="15.0" layoutY="890.0" prefHeight="34.0" prefWidth="154.0" promptText="От" />
+                        <TextField fx:id="toRun" layoutX="177.0" layoutY="890.0" prefHeight="34.0" prefWidth="154.0" promptText="До" />
                         <Label layoutX="15.0" layoutY="933.0" text="Цена">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="toPrice" layoutX="15.0" layoutY="963.0" prefHeight="34.0" prefWidth="154.0" promptText="От" />
-                        <TextField fx:id="fromPrice" layoutX="177.0" layoutY="963.0" prefHeight="34.0" prefWidth="154.0" promptText="До" />
+                        <TextField fx:id="fromPrice" layoutX="15.0" layoutY="963.0" prefHeight="34.0" prefWidth="154.0" promptText="От" />
+                        <TextField fx:id="toPrice" layoutX="177.0" layoutY="963.0" prefHeight="34.0" prefWidth="154.0" promptText="До" />
+                        <TextField fx:id="yearsCar" layoutX="11.0" layoutY="256.0" prefHeight="36.0" prefWidth="322.0" promptText="Год" />
                      </children>
                   </AnchorPane>
                </content>
