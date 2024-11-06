@@ -12,6 +12,7 @@ module org.example.motorbasejavafx {
     requires com.almasb.fxgl.all;
     requires java.net.http;
     requires static lombok;
+    requires java.desktop;
 
     opens org.example.motorbasejavafx to javafx.fxml;
     exports org.example.motorbasejavafx;
