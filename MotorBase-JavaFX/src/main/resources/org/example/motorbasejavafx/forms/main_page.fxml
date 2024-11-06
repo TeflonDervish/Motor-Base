@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="751.0" prefWidth="1812.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.motorbasejavafx.controller.MainPageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="1812.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.motorbasejavafx.controller.MainPageController">
    <center>
-      <AnchorPane prefHeight="851.0" prefWidth="1812.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="900.0" prefWidth="1800.0" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="searchField" layoutX="85.0" layoutY="115.0" prefHeight="43.0" prefWidth="1344.0" promptText="Поиск">
                <font>
@@ -34,7 +34,7 @@
             </Label>
             <AnchorPane prefHeight="60.0" prefWidth="1800.0">
                <children>
-                  <ImageView fx:id="logoImage" fitHeight="33.0" fitWidth="141.0" layoutX="46.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="logoImage" fitHeight="33.0" fitWidth="174.0" layoutX="46.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/logo.png" />
                      </image>
@@ -56,7 +56,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <ScrollPane layoutX="87.0" layoutY="226.0" prefHeight="472.0" prefWidth="390.0">
+            <ScrollPane layoutX="87.0" layoutY="226.0" prefHeight="471.0" prefWidth="390.0">
                <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1012.0" prefWidth="368.0">
                      <children>
