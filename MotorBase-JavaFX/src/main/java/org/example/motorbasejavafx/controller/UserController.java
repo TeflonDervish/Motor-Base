@@ -56,12 +56,38 @@ public class UserController implements Initializable {
     }
 
     public void showPostObyavlation(ActionEvent actionEvent) {
+        try {
+            // Загружаем первое окно
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("forms/obyavlation.fxml"));
+            //Scene scene = new Scene(fxmlLoader.load());
+            Parent firstWindow = loader.load();
+
+            // Получаем текущий Stage
+            Stage currentStage = (Stage) name.getScene().getWindow();
+            // Устанавливаем новую сцену
+            currentStage.setScene(new Scene(firstWindow));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void search(ActionEvent actionEvent) {
     }
 
     public void logout(ActionEvent actionEvent) {
+        try {
+            // Загружаем первое окно
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("forms/login.fxml"));
+            //Scene scene = new Scene(fxmlLoader.load());
+            Parent firstWindow = loader.load();
+
+            // Получаем текущий Stage
+            Stage currentStage = (Stage) name.getScene().getWindow();
+            // Устанавливаем новую сцену
+            currentStage.setScene(new Scene(firstWindow));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void save(ActionEvent actionEvent) {
@@ -69,7 +95,5 @@ public class UserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        name.setText("Мухамед");
-        nameLogo.setText("Мухамед");
     }
 }

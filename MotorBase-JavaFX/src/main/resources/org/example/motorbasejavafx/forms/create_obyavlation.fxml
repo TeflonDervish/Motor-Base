@@ -128,8 +128,8 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="yearsCar1" layoutX="567.0" layoutY="1086.0" prefHeight="45.0" prefWidth="162.0" promptText="Лошадиные силы" />
-                        <TextField fx:id="yearsCar11" layoutX="566.0" layoutY="1155.0" prefHeight="45.0" prefWidth="162.0" promptText="Объем" />
+                        <TextField fx:id="power" layoutX="567.0" layoutY="1086.0" prefHeight="45.0" prefWidth="162.0" promptText="Лошадиные силы" />
+                        <TextField fx:id="volume" layoutX="566.0" layoutY="1155.0" prefHeight="45.0" prefWidth="162.0" promptText="Объем" />
                         <Label layoutX="214.0" layoutY="1217.0" text="Привод">
                            <font>
                               <Font size="30.0" />
@@ -160,8 +160,8 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="yearsCar12" layoutX="568.0" layoutY="1284.0" prefHeight="45.0" prefWidth="162.0" promptText="км" />
-                        <TextField fx:id="yearsCar121" layoutX="569.0" layoutY="1351.0" prefHeight="45.0" prefWidth="162.0" promptText="руб" />
+                        <TextField fx:id="run" layoutX="568.0" layoutY="1284.0" prefHeight="45.0" prefWidth="162.0" promptText="км" />
+                        <TextField fx:id="price" layoutX="569.0" layoutY="1351.0" prefHeight="45.0" prefWidth="162.0" promptText="руб" />
                      </children></AnchorPane>
               </content>
             </ScrollPane>
