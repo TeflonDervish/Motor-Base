@@ -18,4 +18,6 @@ module org.example.motorbasejavafx {
     exports org.example.motorbasejavafx;
     exports org.example.motorbasejavafx.controller;
     opens org.example.motorbasejavafx.controller to javafx.fxml;
+    exports org.example.motorbasejavafx.enums;
+    opens org.example.motorbasejavafx.enums to javafx.fxml;
 }
