@@ -18,4 +18,19 @@ public class  Car{
     private String engine_powers;
     private String engine_volume;
     private String all_driver;
+
+    public Car(Integer ID, String mark, String model) {
+        this.ID = ID;
+        this.mark = mark;
+        this.model = model;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "mark='" + mark + '\'' +
+                ", model='" + model + '\'' +
+                '}';
+    }
 }

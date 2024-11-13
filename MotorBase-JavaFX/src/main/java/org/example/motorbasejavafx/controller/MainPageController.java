@@ -1,22 +1,32 @@
 package org.example.motorbasejavafx.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import org.example.motorbasejavafx.HelloApplication;
+import org.example.motorbasejavafx.model.Car;
+import org.example.motorbasejavafx.service.CarService;
 
-public class MainPageController {
+import java.net.URL;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
+public class MainPageController implements Initializable {
     @FXML
     private TextField searchField;
     @FXML
-    private ListView checkTop;
+    private ListView<String> checkTop;
     @FXML
     private ComboBox typeCar;
     @FXML
@@ -59,6 +69,8 @@ public class MainPageController {
     private TextField toPrice;
     @FXML
     private TextField yearsCar;
+
+    private CarService carService;
 
     public void onClickFind(ActionEvent actionEvent) {
     }
@@ -109,5 +121,17 @@ public class MainPageController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        carService = new CarService();
+
+        ObservableList<String> observableList = FXCollections.observableList(
+                carService.getAllCars().stream().map(Car::toString).collect(Collectors.toList())
+
+        );
+        checkTop.setItems(observableList);
+
     }
 }

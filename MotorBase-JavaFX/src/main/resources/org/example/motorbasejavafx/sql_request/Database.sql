@@ -3,7 +3,8 @@ create table UsersLogin(
 	ID int primary key,
 	password varchar(45),
 	phone_number varchar(45),
-	email varchar(45)
+	email varchar(45),
+	role varchar(45)
 );
 
 create table UserInformation(

@@ -1,5 +1,7 @@
 package org.example.motorbasejavafx.service;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.example.motorbasejavafx.model.Car;
 
 import java.util.ArrayList;
@@ -11,10 +13,11 @@ public class CarService {
 
 
     public CarService () {
-        carList = new ArrayList<>() {{
-            add( new Car() );
-            add( new Car() );
-            add( new Car() );
+
+        carList = new ArrayList<>(){{
+                add(new Car(1, "Chevrolet", "Cruze"));
+                add(new Car(2, "Pego", "207"));
+                add(new Car(3, "Lada", "Granta"));
         }};
     }
 
