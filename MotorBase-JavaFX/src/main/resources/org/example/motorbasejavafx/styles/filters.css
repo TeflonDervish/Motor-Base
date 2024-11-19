@@ -1,0 +1,34 @@
+.scroll-pane {
+    -fx-background-color: #ffffff; 
+    -fx-background-radius: 10; 
+    -fx-border-color: #f2f1f0;
+    -fx-border-width: 1; 
+    -fx-border-radius: 10; 
+    -fx-padding: 5; 
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #ffffff; 
+    -fx-background-radius: 10; 
+}
+.text-field {
+    -fx-background-color: #f2f1f0; 
+    -fx-background-radius: 10;  
+    -fx-font-size: 12px; 
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #000000; 
+    -fx-padding: 7; 
+}
+
+.combo-box {
+    -fx-background-color: #f2f1f0; 
+    -fx-background-radius: 10; 
+    -fx-font-size: 12px; 
+    -fx-text-fill: #333333; 
+    -fx-prompt-text-fill: #000000; 
+}
+
+.scroll-pane .scroll-bar:vertical .track,
+.scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: #ffffff; 
+}

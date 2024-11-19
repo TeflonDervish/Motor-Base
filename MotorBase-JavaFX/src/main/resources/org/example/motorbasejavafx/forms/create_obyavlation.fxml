@@ -6,162 +6,171 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.motorbasejavafx.controller.CreateItemController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0" style="-fx-background-color: #ffffff;" stylesheets="@../styles/button.css" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.motorbasejavafx.controller.CreateItemController">
    <center>
-      <AnchorPane prefHeight="1444.0" prefWidth="1800.0" BorderPane.alignment="CENTER">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1444.0" prefWidth="1600.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane layoutY="6.0" prefHeight="60.0" prefWidth="1800.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="1600.0">
                <children>
-                  <ImageView fx:id="logoImage" fitHeight="33.0" fitWidth="200.0" layoutX="102.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="chekObyvlation" layoutX="1329.0" layoutY="6.0" mnemonicParsing="false" onAction="#showObyavilation" prefHeight="44.0" prefWidth="290.0" text="Смотреть объявления">
+                  <ImageView fx:id="logoImage" fitHeight="40.0" fitWidth="300.0" layoutX="45.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="10.0">
+                     <image>
+                        <Image url="@../images/logo.png" />
+                     </image></ImageView>
+                  <Button fx:id="chekObyvlation" layoutX="275.0" layoutY="15.0" mnemonicParsing="false" onAction="#showObyavilation" prefHeight="35.0" prefWidth="290.0" text="Смотреть объявления" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="10.0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="logout" layoutX="1641.0" layoutY="11.0" mnemonicParsing="false" onAction="#logout" prefHeight="36.0" prefWidth="150.0" text="Выход">
+                  <Button fx:id="logout" layoutX="1299.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" prefHeight="35.0" prefWidth="150.0" text="Выход" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="10.0">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1295.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="5.0">
+                     <image>
+                        <Image url="@../images/profile.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
-            <ScrollPane layoutY="70.0" prefHeight="655.0" prefWidth="1800.0">
+            <ScrollPane layoutY="60.0" prefHeight="670.0" prefWidth="1600.0" stylesheets="@../styles/filters.css">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1414.0" prefWidth="1782.0">
+                <AnchorPane layoutY="60.0" minHeight="0.0" minWidth="0.0" prefHeight="1414.0" prefWidth="1566.0">
                      <children>
-                        <Label layoutX="214.0" prefHeight="74.0" prefWidth="520.0" text="Новое объявление">
+                        <Label layoutX="214.0" prefHeight="74.0" prefWidth="520.0" text="Новое объявление" AnchorPane.leftAnchor="85.0">
                            <font>
-                              <Font size="50.0" />
+                              <Font name="System Bold" size="50.0" />
                            </font>
                         </Label>
-                        <Label layoutX="220.0" layoutY="69.0" prefHeight="58.0" prefWidth="320.0" text="Название объявления">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="name" layoutX="573.0" layoutY="76.0" prefHeight="43.0" prefWidth="736.0" />
-                        <Label layoutX="220.0" layoutY="153.0" prefHeight="58.0" prefWidth="184.0" text="Фотографии">
+                        <Label layoutX="220.0" layoutY="69.0" prefHeight="58.0" prefWidth="320.0" text="Название объявления" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <ImageView fx:id="image" fitHeight="150.0" fitWidth="150.0" layoutX="573.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label layoutX="220.0" layoutY="326.0" prefHeight="58.0" prefWidth="316.0" text="Описание">
+                        <TextField fx:id="name" layoutX="573.0" layoutY="76.0" prefHeight="43.0" prefWidth="736.0" promptText="Название" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="220.0" layoutY="153.0" prefHeight="58.0" prefWidth="184.0" text="Фотографии" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="description" layoutX="573.0" layoutY="333.0" prefHeight="235.0" prefWidth="736.0" />
-                        <Label layoutX="220.0" layoutY="600.0" text="Тип автомобиля">
+                        <ImageView fx:id="image" fitHeight="150.0" fitWidth="150.0" layoutX="573.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="220.0" layoutY="326.0" prefHeight="58.0" prefWidth="316.0" text="Описание" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="typeCar" layoutX="570.0" layoutY="600.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите тип" />
-                        <Label layoutX="220.0" layoutY="665.0" text="Марка">
+                        <TextField fx:id="description" layoutX="573.0" layoutY="333.0" prefHeight="235.0" prefWidth="736.0" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="220.0" layoutY="600.0" text="Тип автомобиля" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="markCar" layoutX="571.0" layoutY="665.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите марку" />
-                        <Label layoutX="220.0" layoutY="729.0" text="Модель">
+                        <ComboBox fx:id="typeCar" layoutX="570.0" layoutY="600.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите тип" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="220.0" layoutY="665.0" text="Марка" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="modelCar" layoutX="571.0" layoutY="728.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите модель" />
-                        <Label layoutX="220.0" layoutY="791.0" text="Год выпуска">
+                        <ComboBox fx:id="markCar" layoutX="571.0" layoutY="665.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите марку" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="220.0" layoutY="729.0" text="Модель" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="yearsCar" layoutX="570.0" layoutY="791.0" prefHeight="45.0" prefWidth="162.0" promptText="Год" />
-                        <Label layoutX="219.0" layoutY="853.0" text="Цвет корпуса">
+                        <ComboBox fx:id="modelCar" layoutX="571.0" layoutY="728.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите модель" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="220.0" layoutY="791.0" text="Год выпуска" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="colorCar" layoutX="569.0" layoutY="853.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите цвет корпуса" />
-                        <Label layoutX="220.0" layoutY="917.0" text="Тип кузова">
+                        <TextField fx:id="yearsCar" layoutX="570.0" layoutY="791.0" prefHeight="45.0" prefWidth="162.0" promptText="Год" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="219.0" layoutY="853.0" text="Цвет корпуса" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="typeBody" layoutX="569.0" layoutY="917.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите тип кузова" />
-                        <Label layoutX="220.0" layoutY="986.0" text="Коробка передач">
+                        <ComboBox fx:id="colorCar" layoutX="569.0" layoutY="853.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите цвет корпуса" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="220.0" layoutY="917.0" text="Тип кузова" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <CheckBox fx:id="automatic" layoutX="744.0" layoutY="1032.0" mnemonicParsing="false" text="Автоматическая">
+                        <ComboBox fx:id="typeBody" layoutX="569.0" layoutY="917.0" prefHeight="45.0" prefWidth="319.0" promptText="Выберите тип кузова" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="220.0" layoutY="986.0" text="Коробка передач" AnchorPane.leftAnchor="85.0">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="automatic" layoutX="744.0" layoutY="1032.0" mnemonicParsing="false" text="Автоматическая" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="450.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="mechanic" layoutX="570.0" layoutY="1030.0" mnemonicParsing="false" text="Механическая">
+                        <CheckBox fx:id="mechanic" layoutX="570.0" layoutY="1030.0" mnemonicParsing="false" text="Механическая" AnchorPane.leftAnchor="450.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="variator" layoutX="744.0" layoutY="991.0" mnemonicParsing="false" text="Вариатор">
+                        <CheckBox fx:id="variator" layoutX="744.0" layoutY="991.0" mnemonicParsing="false" text="Вариатор" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="770.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="robot" layoutX="570.0" layoutY="989.0" mnemonicParsing="false" text="Роботизированная">
+                        <CheckBox fx:id="robot" layoutX="570.0" layoutY="989.0" mnemonicParsing="false" text="Роботизированная" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="600.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </CheckBox>
-                        <Label layoutX="217.0" layoutY="1088.0" text="Мощность">
+                        <Label layoutX="217.0" layoutY="1088.0" text="Мощность" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label layoutX="215.0" layoutY="1152.0" text="Объем двигателя">
+                        <Label layoutX="215.0" layoutY="1152.0" text="Объем двигателя" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="power" layoutX="567.0" layoutY="1086.0" prefHeight="45.0" prefWidth="162.0" promptText="Лошадиные силы" />
-                        <TextField fx:id="volume" layoutX="566.0" layoutY="1155.0" prefHeight="45.0" prefWidth="162.0" promptText="Объем" />
-                        <Label layoutX="214.0" layoutY="1217.0" text="Привод">
+                        <TextField fx:id="power" layoutX="567.0" layoutY="1086.0" prefHeight="45.0" prefWidth="162.0" promptText="Лошадиные силы" AnchorPane.leftAnchor="450.0" />
+                        <TextField fx:id="volume" layoutX="566.0" layoutY="1155.0" prefHeight="45.0" prefWidth="162.0" promptText="Объем" AnchorPane.leftAnchor="450.0" />
+                        <Label layoutX="214.0" layoutY="1217.0" text="Привод" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <CheckBox fx:id="front" layoutX="790.0" layoutY="1229.0" mnemonicParsing="false" text="Передний">
+                        <CheckBox fx:id="front" layoutX="790.0" layoutY="1229.0" mnemonicParsing="false" text="Передний" AnchorPane.bottomAnchor="165.0" AnchorPane.leftAnchor="450.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="rear" layoutX="682.0" layoutY="1229.0" mnemonicParsing="false" text="Задний">
+                        <CheckBox fx:id="rear" layoutX="682.0" layoutY="1229.0" mnemonicParsing="false" text="Задний" AnchorPane.bottomAnchor="165.0" AnchorPane.leftAnchor="570.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="all" layoutX="566.0" layoutY="1229.0" mnemonicParsing="false" text="Полный">
+                        <CheckBox fx:id="all" layoutX="566.0" layoutY="1229.0" mnemonicParsing="false" text="Полный" AnchorPane.bottomAnchor="165.0" AnchorPane.leftAnchor="670.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </CheckBox>
-                        <Label layoutX="214.0" layoutY="1283.0" text="Пробег">
+                        <Label layoutX="214.0" layoutY="1283.0" text="Пробег" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label layoutX="214.0" layoutY="1349.0" text="Цена">
+                        <Label layoutX="214.0" layoutY="1349.0" text="Цена" AnchorPane.leftAnchor="85.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="run" layoutX="568.0" layoutY="1284.0" prefHeight="45.0" prefWidth="162.0" promptText="км" />
-                        <TextField fx:id="price" layoutX="569.0" layoutY="1351.0" prefHeight="45.0" prefWidth="162.0" promptText="руб" />
+                        <TextField fx:id="run" layoutX="568.0" layoutY="1284.0" prefHeight="45.0" prefWidth="162.0" promptText="км" AnchorPane.leftAnchor="450.0" />
+                        <TextField fx:id="price" layoutX="569.0" layoutY="1351.0" prefHeight="45.0" prefWidth="162.0" promptText="руб" AnchorPane.leftAnchor="450.0" />
                      </children></AnchorPane>
               </content>
             </ScrollPane>
@@ -169,9 +178,9 @@
       </AnchorPane>
    </center>
    <bottom>
-      <AnchorPane prefHeight="74.0" prefWidth="1800.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="75.0" prefWidth="1800.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="218.0" layoutY="15.0" mnemonicParsing="false" onAction="#onClickPublic" prefHeight="43.0" prefWidth="258.0" text="Разместить объявление">
+            <Button layoutX="218.0" layoutY="15.0" mnemonicParsing="false" onAction="#onClickPublic" prefHeight="35.0" prefWidth="260.0" stylesheets="@../styles/empty-button.css" text="Разместить объявление" AnchorPane.leftAnchor="85.0">
                <font>
                   <Font size="20.0" />
                </font>
