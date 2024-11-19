@@ -1,0 +1,25 @@
+.root {
+    -fx-background-color: #ffffff; 
+}
+
+.button {
+    -fx-background-color: #ff7f00; 
+    -fx-background-radius: 15; 
+    -fx-text-fill: white;
+    -fx-font-size: 20px; 
+    -fx-padding: 5 5; 
+    -fx-border-radius: 20; 
+}
+
+.button:hover {
+    -fx-background-color: #ff6600;
+    -fx-cursor: hand; 
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(#ff7f00, #ff4500); 
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.3, 0, 2); 
+    -fx-padding: 5 5; 
+}
+
+

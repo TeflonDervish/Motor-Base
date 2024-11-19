@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.motorbasejavafx.controller.ObyavlationController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0" stylesheets="@../styles/button.css" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.motorbasejavafx.controller.ObyavlationController">
    <top>
       <AnchorPane prefHeight="60.0" prefWidth="1800.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="60.0" prefWidth="1800.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="1600.0">
                <children>
-                  <ImageView fx:id="logoImage" fitHeight="33.0" fitWidth="200.0" layoutX="102.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="logoImage" fitHeight="40.0" fitWidth="300.0" layoutX="102.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="10.0">
                      <image>
                         <Image url="@../images/logo.png" />
                      </image></ImageView>
-                  <TextField fx:id="search" layoutX="1116.0" layoutY="14.0" prefHeight="32.0" prefWidth="316.0" />
-                  <Button fx:id="postObyavlation" layoutX="715.0" layoutY="8.0" mnemonicParsing="false" onAction="#showPostObyvlation" prefHeight="44.0" prefWidth="290.0" text="Разместить объявление">
+                  <TextField fx:id="search" layoutX="1013.0" layoutY="4.0" prefHeight="38.0" prefWidth="223.0" promptText="Поиск" stylesheets="@../styles/search-field.css" AnchorPane.leftAnchor="900.0" AnchorPane.topAnchor="5.0" />
+                  <Button fx:id="postObyavlation" layoutX="715.0" layoutY="8.0" mnemonicParsing="false" onAction="#showPostObyvlation" prefHeight="35.0" prefWidth="290.0" text="Разместить объявление" AnchorPane.leftAnchor="570.0" AnchorPane.topAnchor="10.0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Hyperlink layoutX="1027.0" layoutY="13.0" prefHeight="38.0" prefWidth="75.0" text="Поиск">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Hyperlink>
-                  <Button fx:id="searchButton" layoutX="1457.0" layoutY="8.0" mnemonicParsing="false" onAction="#searchObyavlation" prefHeight="36.0" prefWidth="150.0" text="Найти">
+                  <Button fx:id="searchButton" layoutX="1457.0" layoutY="8.0" mnemonicParsing="false" onAction="#searchObyavlation" prefHeight="35.0" prefWidth="105.0" text="Найти" AnchorPane.leftAnchor="1130.0" AnchorPane.topAnchor="10.0">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="chekObyvlation" layoutX="394.0" layoutY="8.0" mnemonicParsing="false" onAction="#showObyavilation" prefHeight="44.0" prefWidth="290.0" text="Смотреть объявления">
+                  <Button fx:id="chekObyvlation" layoutX="394.0" layoutY="8.0" mnemonicParsing="false" onAction="#showObyavilation" prefHeight="35.0" prefWidth="290.0" text="Смотреть объявления" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="10.0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="logout" layoutX="1641.0" layoutY="8.0" mnemonicParsing="false" onAction="#logout" prefHeight="36.0" prefWidth="150.0" text="Выход">
+                  <Button fx:id="logout" layoutX="1641.0" layoutY="8.0" mnemonicParsing="false" onAction="#logout" prefHeight="35.0" prefWidth="150.0" text="Выход" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="10.0">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1307.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="5.0">
+                     <image>
+                        <Image url="@../images/profile.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
    </top>
    <center>
-      <AnchorPane prefHeight="747.0" prefWidth="1716.0" BorderPane.alignment="CENTER">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1600.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="833.0" layoutY="41.0" prefHeight="17.0" prefWidth="376.0" text="Характеристики авто">
+            <Label layoutX="648.0" prefHeight="17.0" prefWidth="376.0" text="Характеристики авто" AnchorPane.leftAnchor="648.0">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <ImageView fitHeight="172.0" fitWidth="248.0" layoutX="1371.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1371.0" AnchorPane.topAnchor="86.0">
-               <effect>
-                  <Bloom />
-               </effect>
-            </ImageView>
-            <ListView fx:id="dataSeller" layoutX="278.0" layoutY="671.0" prefHeight="120.0" prefWidth="1346.0" />
-            <ListView fx:id="listParametr" layoutX="836.0" layoutY="104.0" prefHeight="314.0" prefWidth="788.0" />
-            <Label layoutX="283.0" layoutY="420.0" prefHeight="17.0" prefWidth="376.0" text="Описание">
+            <ListView fx:id="dataSeller" layoutX="83.0" layoutY="595.0" prefHeight="120.0" prefWidth="1346.0" AnchorPane.leftAnchor="85.0" />
+            <ListView fx:id="listParametr" layoutX="648.0" layoutY="63.0" prefHeight="270.0" prefWidth="788.0" AnchorPane.leftAnchor="648.0" />
+            <Label layoutX="83.0" layoutY="344.0" prefHeight="17.0" prefWidth="376.0" text="Описание" AnchorPane.leftAnchor="85.0">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <ListView fx:id="additionalDescription" layoutX="277.0" layoutY="485.0" prefHeight="121.0" prefWidth="1346.0" />
-            <ImageView fx:id="imageObyavlation" fitHeight="266.0" fitWidth="490.0" layoutX="277.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="logoNameOb" layoutX="283.0" layoutY="41.0" prefHeight="17.0" prefWidth="376.0" text="Название объявления">
+            <ListView fx:id="additionalDescription" layoutX="83.0" layoutY="398.0" prefHeight="121.0" prefWidth="1346.0" AnchorPane.leftAnchor="85.0" />
+            <ImageView fx:id="imageObyavlation" fitHeight="270.0" fitWidth="490.0" layoutX="83.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="85.0" />
+            <Label fx:id="logoNameOb" layoutX="83.0" prefHeight="17.0" prefWidth="376.0" text="Название объявления" AnchorPane.leftAnchor="85.0">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label layoutX="277.0" layoutY="613.0" prefHeight="45.0" prefWidth="654.0" text="Продавец/ контактная информация">
+            <Label layoutX="83.0" layoutY="531.0" prefHeight="45.0" prefWidth="654.0" text="Продавец/контактная информация" AnchorPane.leftAnchor="85.0">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Button fx:id="insertLike" layoutX="1331.0" layoutY="44.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="290.0" text="Добавить в избранное">
+            <Button fx:id="insertLike" layoutX="1148.0" layoutY="3.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="290.0" stylesheets="@../styles/empty-button.css" text="Добавить в избранное" AnchorPane.rightAnchor="160.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Label layoutX="837.0" layoutY="420.0" prefHeight="21.0" prefWidth="131.0" text="Дата публикации">
+            <Label layoutX="650.0" layoutY="345.0" prefHeight="21.0" prefWidth="131.0" text="Дата публикации" AnchorPane.leftAnchor="650.0">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <DatePicker fx:id="datePublication" layoutX="974.0" layoutY="418.0" onAction="#datePublic" />
+            <DatePicker fx:id="datePublication" layoutX="780.0" layoutY="343.0" onAction="#datePublic" AnchorPane.leftAnchor="780.0" />
          </children>
       </AnchorPane>
    </center>

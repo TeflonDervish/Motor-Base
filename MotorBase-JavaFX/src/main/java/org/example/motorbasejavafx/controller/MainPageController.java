@@ -78,7 +78,7 @@ public class MainPageController implements Initializable {
     public void showPostObyvlation(ActionEvent actionEvent) {
         try {
             // Загружаем первое окно
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("forms/obyavlation.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("forms/create_obyavlation.fxml"));
             //Scene scene = new Scene(fxmlLoader.load());
             Parent firstWindow = loader.load();
 
