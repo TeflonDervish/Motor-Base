@@ -24,4 +24,16 @@ public class AnnouncementService {
     public Optional<Announcement> getById(Long id) {
         return announcementRepository.findById(id);
     }
+
+    public Announcement postAnnouncement(Announcement announcement) {
+        return announcementRepository.save(announcement);
+    }
+
+    public void deleteById(Long id) {
+        announcementRepository.deleteById(id);
+    }
+
+    public Announcement updateAnnouncement(Announcement announcement) {
+        return announcementRepository.save(announcement);
+    }
 }

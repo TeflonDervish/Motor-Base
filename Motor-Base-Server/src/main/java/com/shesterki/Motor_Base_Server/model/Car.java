@@ -26,9 +26,7 @@ public class Car {
     @Column(name="type_body")
     private String typeBody;
     private String gearbox;
-    @Column(name="engine_powers")
     private Integer enginePowers;
-    @Column(name="engine_volume")
     private Double engineVolume;
     @Column(name="all_driver")
     private String allDriver;

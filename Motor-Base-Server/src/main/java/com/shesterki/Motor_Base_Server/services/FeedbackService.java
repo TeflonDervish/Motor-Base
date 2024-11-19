@@ -24,4 +24,16 @@ public class FeedbackService {
     public Optional<Feedback> getById(Long id) {
         return feedbackRepository.findById(id);
     }
+
+    public Feedback postFeedback(Feedback feedback) {
+        return feedbackRepository.save(feedback);
+    }
+
+    public void deleteById(Long id) {
+        feedbackRepository.deleteById(id);
+    }
+
+    public Feedback updateFeedback(Feedback feedback) {
+        return feedbackRepository.save(feedback);
+    }
 }

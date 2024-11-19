@@ -3,10 +3,9 @@ package com.shesterki.Motor_Base_Server.controllers;
 import com.shesterki.Motor_Base_Server.model.PartOfHistory;
 import com.shesterki.Motor_Base_Server.services.PathOfHistoryService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,12 +18,28 @@ public class PathOfHistoryController {
     private PathOfHistoryService pathOfHistoryService;
 
     @GetMapping("/getAll")
-    private List<PartOfHistory> getAll() {
-        return pathOfHistoryService.getAll();
+    private ResponseEntity<List<PartOfHistory>> getAll() {
+        return new ResponseEntity<>(pathOfHistoryService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/get/{id}")
-    private Optional<PartOfHistory> getById(@PathVariable Long id){
-        return pathOfHistoryService.getById(id);
+    private ResponseEntity<Optional<PartOfHistory>> getById(@PathVariable Long id){
+        return new ResponseEntity<>(pathOfHistoryService.getById(id), HttpStatus.OK);
+    }
+
+    @PostMapping("/post")
+    private ResponseEntity<PartOfHistory> postPartOfHistory(@RequestBody PartOfHistory partOfHistory) {
+        return new ResponseEntity<>(pathOfHistoryService.postPartOfHistory(partOfHistory), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    private ResponseEntity<Void> deleteById(@PathVariable Long id){
+        pathOfHistoryService.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/update")
+    private ResponseEntity<PartOfHistory> updatePartOfHistory(@RequestBody PartOfHistory partOfHistory) {
+        return new ResponseEntity<>(pathOfHistoryService.updatePartOfHistory(partOfHistory), HttpStatus.OK);
     }
 }

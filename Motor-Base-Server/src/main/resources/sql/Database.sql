@@ -1,4 +1,4 @@
-create database MotorBase
+
 create table UsersLogin(
 	ID int primary key,
 	password varchar(45),

@@ -24,4 +24,16 @@ public class PathOfHistoryService {
     public Optional<PartOfHistory> getById(Long id) {
         return partOfHistoryRepository.findById(id);
     }
+
+    public PartOfHistory postPartOfHistory(PartOfHistory partOfHistory) {
+        return partOfHistoryRepository.save(partOfHistory);
+    }
+
+    public void deleteById(Long id) {
+        partOfHistoryRepository.deleteById(id);
+    }
+
+    public PartOfHistory updatePartOfHistory(PartOfHistory partOfHistory){
+        return partOfHistoryRepository.save(partOfHistory);
+    }
 }

@@ -24,4 +24,16 @@ public class CarService {
     public Optional<Car> getById(Long id) {
         return carRepository.findById(id);
     }
+
+    public Car saveCar(Car car) {
+        return carRepository.save(car);
+    }
+
+    public void deleteById(Long id) {
+        carRepository.deleteById(id);
+    }
+
+    public Car updateCar(Car car){
+        return carRepository.save(car);
+    }
 }

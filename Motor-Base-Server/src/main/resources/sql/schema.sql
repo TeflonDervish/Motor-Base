@@ -1,20 +1,17 @@
 create database MotorBase
-create table UsersLogin(
+create table Users(
 	ID int primary key,
-	password varchar(45),
-	phone_number varchar(45),
-	email varchar(45)
-);
-
-create table UserInformation(
-	ID int primary key,
-	name varchar(45),
+	password varchar(45) not null,
+	phone_number varchar(45) ,
+	email varchar(45),
+	username varchar(45),
 	surname varchar(45),
 	user_photo varchar(300),
 	birthday date,
 	city varchar(45),
 	driving_experience varchar(45),
-	about varchar(300)
+	about varchar(300),
+	user_role varchar(45)
 );
 
 create table Car(

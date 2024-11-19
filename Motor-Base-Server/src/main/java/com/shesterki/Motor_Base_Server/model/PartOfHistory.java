@@ -18,13 +18,13 @@ public class PartOfHistory {
     @Column(name="ID")
     private Long Id;
 
-    @Column(name="ID_car")
     @ManyToOne
     @JoinColumn(name = "car_Id")
     private Car car;
 
     private String description;
     private LocalDate date;
+
     @Column(name="type_history")
     private String typeHistory;
 
