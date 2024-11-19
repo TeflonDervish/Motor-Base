@@ -14,7 +14,10 @@
 .text-field {
     -fx-background-color: #f2f1f0; 
     -fx-background-radius: 10;  
-    -fx-font-size: 12px; 
+    -fx-font-size: 12px;
+    -fx-border-color: #dcdcdc; 
+    -fx-border-width: 2; 
+    -fx-border-radius: 10; 
     -fx-text-fill: #333333;
     -fx-prompt-text-fill: #000000; 
     -fx-padding: 7; 
@@ -23,7 +26,10 @@
 .combo-box {
     -fx-background-color: #f2f1f0; 
     -fx-background-radius: 10; 
-    -fx-font-size: 12px; 
+    -fx-font-size: 12px;
+    -fx-border-color: #dcdcdc; 
+    -fx-border-width: 2; 
+    -fx-border-radius: 10; 
     -fx-text-fill: #333333; 
     -fx-prompt-text-fill: #000000; 
 }
