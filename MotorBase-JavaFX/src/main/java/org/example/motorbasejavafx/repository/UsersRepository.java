@@ -45,5 +45,33 @@ public class UsersRepository {
         return gson.fromJson(response.body(), Users.class);
     }
 
+    public Users register(Users users) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(urlUsers + "/register"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(gson.toJson(users)))
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return gson.fromJson(response.body(), Users.class);
+    }
+
+    public void deleteById(Long id) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(urlUsers + "/delete/" + id))
+                .header("Content-Type", "application/json")
+                .DELETE()
+                .build();
+        client.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
+    public Users update(Users users) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(urlUsers + "/register"))
+                .header("Content-Type", "application/json")
+                .PUT(HttpRequest.BodyPublishers.ofString(gson.toJson(users)))
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return gson.fromJson(response.body(), Users.class);
+    }
 
 }
