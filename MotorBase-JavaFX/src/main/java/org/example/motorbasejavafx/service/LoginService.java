@@ -1,18 +1,19 @@
 package org.example.motorbasejavafx.service;
 
-import org.example.motorbasejavafx.enums.Role;
+
+import org.example.motorbasejavafx.enums.Roles;
 
 public class LoginService {
 
 
-    public Role checkPassword(String username, String password) {
+    public Roles checkPassword(String username, String password) {
         if (username.equals("admin") && password.equals("admin")) {
-            return Role.ADMIN;
+            return Roles.ADMIN;
         }else if (username.equals("user") && password.equals("user")) {
-            return Role.USER;
+            return Roles.USER;
         }
 
 
-        return Role.NOT_LOGIN;
+        return Roles.NOT_LOGIN;
     }
 }

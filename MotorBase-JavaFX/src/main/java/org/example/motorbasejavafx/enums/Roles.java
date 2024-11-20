@@ -1,6 +1,6 @@
 package org.example.motorbasejavafx.enums;
 
-public enum Role {
+public enum Roles {
 
     USER,
     ADMIN,

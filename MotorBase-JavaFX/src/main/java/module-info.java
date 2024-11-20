@@ -13,6 +13,7 @@ module org.example.motorbasejavafx {
     requires java.net.http;
     requires static lombok;
     requires java.desktop;
+    requires com.google.gson;
 
     opens org.example.motorbasejavafx to javafx.fxml;
     exports org.example.motorbasejavafx;
@@ -20,4 +21,5 @@ module org.example.motorbasejavafx {
     opens org.example.motorbasejavafx.controller to javafx.fxml;
     exports org.example.motorbasejavafx.enums;
     opens org.example.motorbasejavafx.enums to javafx.fxml;
+    opens org.example.motorbasejavafx.model to com.google.gson;
 }
