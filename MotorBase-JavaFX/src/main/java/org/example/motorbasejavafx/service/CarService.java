@@ -1,42 +1,33 @@
 package org.example.motorbasejavafx.service;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import org.example.motorbasejavafx.model.Car;
+import org.example.motorbasejavafx.repository.CarRepository;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 
 public class CarService {
 
-    private List<Car> carList;
+    private CarRepository carRepository;
 
-
-    public CarService () {
-
-        carList = new ArrayList<>(){{
-                add(new Car(1, "Chevrolet", "Cruze"));
-                add(new Car(2, "Pego", "207"));
-                add(new Car(3, "Lada", "Granta"));
-        }};
+    public List<Car> getAll() throws IOException, InterruptedException {
+        return carRepository.getAll();
     }
 
-    public Car getCarById(Integer id) {
-        return carList.get(id);
+    public Car getById(Long id) throws IOException, InterruptedException {
+        return carRepository.getById(id);
     }
 
-    public List<Car> getAllCars() {
-        return carList;
+    public Car register(Car Car) throws IOException, InterruptedException {
+        return carRepository.register(Car);
     }
 
-    public void addCar(Car car) {
-        carList.add(car);
+    public void deleteById(Long id) throws IOException, InterruptedException {
+        carRepository.deleteById(id);
     }
 
-    public void deleteCar(Integer id) {
-        carList.remove(id);
+    public Car update(Car Car) throws IOException, InterruptedException {
+        return carRepository.update(Car);
     }
-
-
 
 }
