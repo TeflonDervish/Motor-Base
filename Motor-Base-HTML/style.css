@@ -20,7 +20,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 23px 40px;
+    padding: 10px 40px;
     background-color: #000;
 }
 
@@ -90,8 +90,8 @@ footer {
     background-color: rgba(0, 0, 0, 0.65);
     display: flex;
     justify-content: space-between;
-    padding-top: 23px;
-    padding-bottom: 24px;
+    padding-top: 17px;
+    padding-bottom: 20px;
 }
 
 footer .group1 {
@@ -116,15 +116,112 @@ footer .group2 {
 }
 
 footer .group1 h4 {
-    font-weight: 700;
-    font-size: 25px;
+    font-weight: 700px;
+    font-size: 20px;
     letter-spacing: 0.17em;
     color: #fff;
 }
 
 footer .group1 h5 {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     letter-spacing: 0.12em;
     color: #fff;
+}
+
+
+
+
+.recomFilt {
+    display: flex;
+    flex-direction: row;
+
+    font-size: 20px;
+    padding-top: 100px;
+    padding-left: 250px;
+    gap: 300px;
+}
+
+
+
+
+
+
+.bodyPage {
+    display: flex;
+    flex-direction: row;
+    gap: 90px;
+}
+
+.form-container {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin-left: 250px;
+    margin-top: 25px;
+    box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 7px;
+}
+select{
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    
+
+}
+
+.obyvlation {
+    margin-top: 25px;
+
+}
+.obyvlation:hover{
+    transform: scale(1.005);
+    transition: transform 0.3s;;
+}
+
+
+
+
+.kuzov{
+    display: flex;
+    
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 5px;
+    
+}
+.kuzov label{
+    margin-top: 6px;
+  
+
+}
+input[type="checkbox"] {
+    padding-left: 2px;
+    padding-right: 3px;
+    
 }

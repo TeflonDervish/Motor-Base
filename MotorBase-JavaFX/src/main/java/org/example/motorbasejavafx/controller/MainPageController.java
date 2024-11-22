@@ -133,5 +133,13 @@ public class MainPageController implements Initializable {
         );
         checkTop.setItems(observableList);
 
+        typeCar.setItems(FXCollections.observableArrayList("Легковой","Грузовой"));
+        markCar.setItems(FXCollections.observableArrayList("Peugeot","Mercedes","BMW","Audi", "Lada","Nissan","Toyota","Renault","Opel","Kia"));
+        modelCar.setItems(FXCollections.observableArrayList("Granta","Kalina","Priora","Largus"));
+        colorCar.setItems(FXCollections.observableArrayList("Черный","Белый","Серый","Золотой","Коричневый"));
+        typeBody.setItems(FXCollections.observableArrayList("Хэтчбэк","Седан","Универсал","Лифтбэк","Кабриолет","Купе","Пикап"));
+
+
+
     }
 }
