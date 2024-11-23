@@ -19,18 +19,22 @@ public class  Car{
     private String engine_volume;
     private String all_driver;
 
-    public Car(Integer ID, String mark, String model) {
-        this.ID = ID;
+    public Car(String type, String mark, String model, Integer year_make, String color, String type_body) {
+        this.type = type;
         this.mark = mark;
         this.model = model;
-
+        this.year_make = year_make;
+        this.color = color;
+        this.type_body = type_body;
     }
 
     @Override
     public String toString() {
-        return "Car{" +
-                "mark='" + mark + '\'' +
-                ", model='" + model + '\'' +
-                '}';
+        return "Тип автомобиля: " + type + ", " +
+                "Марка: " + mark + ", " +
+                "Модель: " + model + ", " +
+                "Год выпуска: " + year_make + ", " +
+                "Цвет: " + color + ", " +
+                "Тип кузова: " + type_body;
     }
 }
