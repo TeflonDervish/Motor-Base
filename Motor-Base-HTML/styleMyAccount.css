@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+.center {
+    padding-left: calc(50% - 950px);
+    padding-right: calc(50% - 950px);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: #000;
+}
+
+header .group1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 29px;
+    position: relative;
+}
+
+header .group1 img {
+    margin-right: 120px;
+    transform: scale(2.9) translate(14%, 0%);
+
+}
+
+header .group1 a {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: text-decoration 0.3s;
+    transition: transform 0.3s;
+}
+
+header .group1 a:hover {
+    transform: scale(1.1);
+}
+
+header .group2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 13px;
+}
+
+header .group2 button {
+    padding: 11px 34px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+header .group2 button:hover {
+    background-color: #0254b3;
+    transform: scale(1.01);
+
+}
+
+header .group2 input {
+    padding-left: 14px;
+    height: 37px;
+    border-radius: 14px;
+    width: 300px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 17px;
+    padding-bottom: 20px;
+}
+
+footer .group1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+footer .group1 .phone {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+
+footer .group2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 39px;
+}
+
+footer .group1 h4 {
+    font-weight: 700px;
+    font-size: 20px;
+    letter-spacing: 0.17em;
+    color: #fff;
+}
+
+footer .group1 h5 {
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+.dataUser {
+    display: flex
+;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin-left: none;
+    margin-top: 25px;
+    padding-top: 180px;
+    width: 400px;
+    
+    
+}
+
+h2{
+    padding-top: 150px;
+    padding-bottom: 20px;
+    padding-left: none;
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 1px 3px 0 rgba(0, 0, 0, 0.5);
+    
+    
+}
+
+.buttonImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttonImg button{
+    padding: 11px 34px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+    width: 350px;
+
+}
+
+.buttonImg button:hover {
+    background-color: #0254b3;
+    transform: scale(1.01);
+
+}
+
+.buttonImg img {
+    width: 450px;
+    height: 450px;
+    padding-bottom: 15px;
+
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 25px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-style: oblique;
+    
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 7px;
+}
+
+
+
+
+
+
+
+
+.myFavorite {
+    display: flex
+;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+.obyavlations {
+    display: flex
+;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    align-self: center;
+}
+
+.obyvlation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+
+
+
+
+
+
+.otzivi {
+    display: flex
+;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.otziv{
+    width: 1380px;
+    
+}
+
+.otziv form{
+    display: flex;
+    flex-direction: row;
+    background-color: #e0e0e0;
+    box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    
+}
+
+
+.bodyPage {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
