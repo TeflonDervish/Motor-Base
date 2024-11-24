@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainPage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="group1">
+            <img height="21px" src="img/login/header/logo.png" alt="">
+            <a href="#" class="link">Избранное</a>
+            <a href="#" class="link">Мои объявления</a>
+            <a href="#" class="link">Рекомендации</a>
+        </div>
+        <div class="group2">
+            <input type="text" name="" id="" class="search">
+            <img src="img/login/header/search.svg" alt="">
+            <button>Войти</button>
+            <button>Разместить объявление</button>
+        </div>
+    </header>
+
+
+    <div class="recomFilt">
+        <h2>Фильтры</h2>
+        <h2>Рекомендации</h2>
+    </div>
+
+    <div class = "bodyPage">
+        <div class="form-container">
+            <form>
+                <label for="type_car">Тип автомобиля:</label>
+                <select id="type_car" name="type_car">
+                    <option value="gruz">Грузовые</option>
+                    <option value="legk">Легковые</option>
+                    <option value="moto">Мотоциклы, мопеды, байки</option>
+                </select>
+                <label>Марка:</label>
+                <select id="mark_car" name="mark_car">
+                    <option value="Nissan">Nissan</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Lada">Lada</option>
+                </select>
+                <label>Модель:
+                </label>
+                <select id="model_car" name="model_car">
+                    <option value="Granta">Granta</option>
+                    <option value="Priora">Priora</option>
+                    <option value="Kalina">Kalina</option>
+                </select>
+                <label>Год выпуска:
+                    <input type="text" name="year">
+                </label>
+                <label>Цена:
+                    <input type="text" name="price_min" placeholder="От"> 
+                    <input type="text" name="price_max" placeholder="До">
+                </label>
+                <label>Пробег:
+                    <input type="text" name="mileage_min" placeholder="От"> 
+                    <input type="text" name="mileage_max" placeholder="До">
+                </label>
+                <label>Объем двигателя:
+                    <input type="text" name="engine_volume">
+                </label>
+                <label>Мощность:
+                    <input type="text" name="power">
+                </label>
+                <label>Тип кузова:</label>
+                
+                    <div class = "kuzov">
+                    <input type="checkbox" id="sedan" name="kuzov_type" value="sedan">
+                    <label for="sedan">Седан</label>
+                    <input type="checkbox" id="liftback" name="kuzov_type" value="liftback">
+                    <label for="liftback">Лифтбэк</label><br>
+                    </div>
+                    <div class = "kuzov">
+                    <input type="checkbox" id="hatchback" name="kuzov_type" value="hatchback">
+                    <label for="hatchback">Хэтчбэк</label>
+                    <input type="checkbox" id="universal" name="kuzov_type" value="universal">
+                    <label for="universal">Универсал</label>
+                    </div>
+                    <div class = "kuzov">
+                        <input type="checkbox" id="kabriolet" name="kuzov_type" value="kabriolet">
+                        <label for="kabriolet">Кабриолет</label>
+                        <input type="checkbox" id="pickup" name="kuzov_type" value="pickup">
+                        <label for="pickup">Пикап</label>
+                    </div>
+                    <div class = "kuzov">
+                        <input type="checkbox" id="kupe" name="kuzov_type" value="kupe">
+                        <label for="kupe">Купе</label>
+                    </div>
+                
+                <label>Коробка передач:
+                    <input type="text" name="transmission">
+                </label>
+                <label>Привод:
+                    <input type="text" name="drive_type">
+                </label>
+                <label>Цвет:
+                    <input type="text" name="color">
+                </label>
+            </form>
+        </div>
+
+        <div class = "obyvlation">
+            <img height="21px" src="img/login/body/image.jpg" alt="">
+            <p>FORD FOCUS 2009</p>
+            <p>9.000.000 руб.</p>
+
+        </div>
+    </div>
+
+
+
+    <div class="center" style="height: calc(100vh - 85px - 109px)"></div>
+
+    <footer class="center">
+        <div class="group1">
+            <h4>Связь с нами </h4>
+            <div class="phone">
+                <img src="img/login/footer/whatsapp.svg" alt="asd"></img>
+                <h5>+7(927)-081-52-66</h5>
+            </div>
+        </div>
+        <div class="group2">
+            <img src="img/login/footer/youtube.svg" alt="">
+            <img src="img/login/footer/instagram.svg" alt="">
+            <img src="img/login/footer/facebook.svg" alt="">
+            <img src="img/login/footer/twitter.svg" alt=""
+            ></div>
+    </footer>
+
+
+
+</body>
+</html>
