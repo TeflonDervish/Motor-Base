@@ -15,10 +15,10 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException, IOException {
-        // Проверяем роли пользователя
-        if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ADMIN"))) {
+
+        if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
             response.sendRedirect("/admin/main");
-        } else if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("USER"))) {
+        } else if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_USER"))) {
             response.sendRedirect("/main");
         } else {
             response.sendRedirect("/main");
