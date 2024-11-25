@@ -132,36 +132,20 @@ footer .group1 h5 {
 
 
 
-.recomFilt {
-    display: flex;
-    flex-direction: row;
-
-    font-size: 20px;
-    padding-top: 100px;
-    padding-left: 250px;
-    gap: 300px;
-}
-
-
-
-
-
-
 .bodyPage {
+    flex-direction: column;
+    display: flex;
+    gap: 30px;
+}
+.form-container {
+    gap: 20px;
+    height: 620px;
     display: flex;
     flex-direction: row;
-    gap: 90px;
-}
-
-.form-container {
-    background-color: #e0e0e0;
-    padding: 20px;
     border-radius: 10px;
-    width: 300px;
     margin-left: 250px;
-    margin-top: 25px;
-    box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
-    
+    margin-right: 250px;
+    margin-top: 50px;
 }
 
 form {
@@ -169,55 +153,111 @@ form {
     flex-direction: column;
 }
 
-input {
+.information {
     width: 100%;
-    padding: 5px;
-    margin-top: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-bottom: 7px;
-}
-select{
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    
-
-}
-
-.obyvlation {
-    margin-top: 25px;
-
-}
-.obyvlation:hover{
-    transform: scale(1.005);
-    transition: transform 0.3s;;
-}
-
-
-
-
-.kuzov{
     display: flex;
-    
-    align-items: center;
-    margin-bottom: 10px;
-    gap: 5px;
-    
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
 }
-.kuzov label{
-    margin-top: 6px;
-  
 
+
+
+
+.form-container .label h1{
+    margin-bottom: 10px;
 }
-input[type="checkbox"] {
-    padding-left: 2px;
-    padding-right: 3px;
-    
+.form-container .label h2{
+    padding-left: 25px;
+    margin-bottom: 20px;
 }
+.information .phone {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+
+
+
+.desc {
+    margin-right: 200px;
+    margin-left: 250px;
+}
+.desc h2{
+    margin-bottom: 10px;
+}
+.description {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+
+.characteristic {
+    width: 100%;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+.characteristic .text {
+    margin-bottom: 10px;
+}
+.characteristic h2 {
+    margin-bottom: 10px;
+}
+.characteristic h4 {
+    margin-bottom: 10px;
+}
+.characteristic label {
+    font-size: x-large;
+    font-weight: bold
+}
+.information button {
+    padding: 11px 30px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+.information button:hover {
+    background-color: #0254b3;
+    transform: scale(1.01);
+}
+
+
+
+.naming input {
+    padding-left: 14px;
+    height: 35px;
+    border-radius: 14px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+}
+.naming button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 11px 30px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+.naming button:hover {
+    background-color: #0254b3;
+    transform: scale(1.01);
+}
+
+
 
 
