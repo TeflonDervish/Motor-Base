@@ -204,13 +204,21 @@ select{
 }
 
 
+.type_kuzov {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    margin-left: 5px;
+    column-gap: 6px;
+}
 
-.kuzov{
+.kuzov {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     gap: 5px;
-    
+    align-items: center;
+
 }
 .kuzov label{
     margin-top: 6px;
