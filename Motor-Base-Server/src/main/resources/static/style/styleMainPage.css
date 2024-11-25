@@ -12,8 +12,8 @@ button {
 }
 
 .center {
-    padding-left: calc(50% - 950px);
-    padding-right: calc(50% - 950px);
+    padding-left: calc(50% - 480px);
+    padding-right: calc(50% - 408px);
 }
 
 .header {
@@ -139,7 +139,6 @@ footer .group1 h5 {
 
     font-size: 20px;
     padding-top: 100px;
-    padding-left: 250px;
     gap: 300px;
 }
 
@@ -159,21 +158,14 @@ footer .group1 h5 {
     padding: 20px;
     border-radius: 10px;
     width: 300px;
-    margin-left: 250px;
     margin-top: 25px;
     box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
-    
+
 }
 
 form {
     display: flex;
     flex-direction: column;
-}
-
-label {
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #333;
 }
 
 input {
@@ -185,14 +177,15 @@ input {
     box-sizing: border-box;
     margin-bottom: 7px;
 }
-select{
+
+select {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
     margin-bottom: 15px;
-    
+
 
 }
 
@@ -200,35 +193,47 @@ select{
     margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-items: start;
-    align-items: start;
-    grid-template-rows: min-content;
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    grid-auto-rows: max-content;
 
 }
-.card:hover{
+
+card {
+}
+
+.card:hover {
     transform: scale(1.005);
-    transition: transform 0.3s;;
+    transition: transform 0.3s;
 }
 
 
+.type_kuzov {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    margin-left: 5px;
+    column-gap: 6px;
+}
 
-
-.kuzov{
+.kuzov {
     display: flex;
+    align-items: center;
     margin-bottom: 10px;
-    gap: 20px;
-    place-self: flex-start;
-}
-.kuzov label{
-    margin-top: 6px;
-  
+    gap: 5px;
+    align-items: center;
 
 }
+
+.kuzov label {
+    margin-top: 6px;
+
+
+}
+
 input[type="checkbox"] {
     padding-left: 2px;
     padding-right: 3px;
-    
+
 }
-
-

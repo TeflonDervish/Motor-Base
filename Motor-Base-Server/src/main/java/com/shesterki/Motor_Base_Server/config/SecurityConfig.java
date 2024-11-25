@@ -25,12 +25,15 @@ public class SecurityConfig  {
         http.csrf().disable()
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/**").hasRole("ADMIN")
-                        .requestMatchers("/users/**").authenticated()
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/user/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .httpBasic(httpSecurityHttpBasicConfigurer -> {})
-                .formLogin()
-                .loginPage("/login");
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/main", true)
+                        .permitAll());
         return http.build();
     }
 
@@ -46,7 +49,7 @@ public class SecurityConfig  {
                 .password(passwordEncoder().encode("user"))
                 .roles("USER")
                 .build();
-        return new InMemoryUserDetailsManager(admin);
+        return new InMemoryUserDetailsManager(admin, user);
     }
 
     @Bean

@@ -12,8 +12,8 @@ button {
 }
 
 .center {
-    padding-left: calc(50% - 950px);
-    padding-right: calc(50% - 950px);
+    padding-left: calc(50% - 480px);
+    padding-right: calc(50% - 480px);
 }
 
 .header {
@@ -92,7 +92,7 @@ footer {
     justify-content: space-between;
     padding-top: 17px;
     padding-bottom: 20px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 footer .group1 {
@@ -145,6 +145,7 @@ footer .group1 h5 {
     flex-direction: row;
     justify-content: center;
     gap: 90px;
+    height: calc(100vh - 211.5px);
 }
 
 .form-container {
@@ -153,7 +154,7 @@ footer .group1 h5 {
     border-radius: 30px;
     width: 400px;
     height: 450px;
-    margin-top: 200px;
+    margin-top: 50px;
     box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
 }
 

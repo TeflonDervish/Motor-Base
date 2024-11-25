@@ -7,28 +7,29 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пользователь</title>
+    <title>My account</title>
     <link rel="stylesheet" th:href="@{/style/styleMyAccount.css}">
 </head>
 <body>
     
     <header class="header">
         <div class="group1">
-            <img height="21px" th:src="@{/img/login/header/logo.png}" alt="">
-            <a href="#" class="link">Избранное</a>
-            <a href="#" class="link">Мои объявления</a>
-            <a href="#" class="link">Рекомендации</a>
+            <a th:href="@{/main}">
+                <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
+            <a th:href="@{/user}" class="link">Избранное</a>
+            <a th:href="@{/user}" class="link">Мои объявления</a>
+            <a th:href="@{/main}" class="link">Рекомендации</a>
         </div>
         <div class="group2">
             <input type="text" name="" id="" class="search">
             <img th:src="@{/img/login/header/search.svg}" alt="">
-            <img th:src="@{/img/login/body/icon-user.png}" alt="">
+            <button th:onclick="|window.location.href='@{/login}'|">Войти</button>
             <button>Разместить объявление</button>
         </div>
     </header>
 
 
-    <div class = "dataUser">
+    <div class = "dataUser center">
         <div class = "myProfile">
             <h2>Мой личный профиль</h2>
             <div class = "buttonImg">
@@ -63,7 +64,7 @@
         
     </div>
 
-    <div class = "bodyPage">
+    <div class = "bodyPage center">
     <div class = "myFavorite">
         <h2>Избранное</h2>
         <div class="obyavlations">
@@ -127,7 +128,7 @@
             </form>
         </div>
     </div>
-</div>
+    </div>
 
 
 
@@ -135,24 +136,20 @@
         <div class="group1">
             <h4>Связь с нами </h4>
             <div class="phone">
-                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd"></img>
+                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
                 <h5>+7(927)-081-52-66</h5>
             </div>
         </div>
         <div class="group2">
-            <a href="'https://www.youtube.com/'">
-                <img th:src="@{/img/login/footer/youtube.svg}" alt="">
-            </a>
-            <a href="'https://www.instagram.com/'">
-                <img th:src="@{/img/login/footer/instagram.svg}" alt="">
-            </a>
-            <a href="'https://www.facebook.com/'">
-                <img th:src="@{/img/login/footer/facebook.svg}" alt="">
-            </a>
-            <a href="'https://www.twitter.com/'">
-                <img th:src="@{/img/login/footer/twitter.svg}" alt="">
-            </a>
-        </div>
+            <a th:href="'https://www.youtube.com/'">
+                <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
+            <a th:href="'https://www.instagram.com/'">
+                <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
+            <a th:href="'https://www.facebook.com/'">
+                <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
+            <a th:href="'https://www.twitter.com/'">
+                <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
+            </div>
     </footer>
 
 

@@ -2,6 +2,7 @@ package com.shesterki.Motor_Base_Server.controllers;
 
 
 import com.shesterki.Motor_Base_Server.config.SecurityConfig;
+import com.shesterki.Motor_Base_Server.enums.Roles;
 import com.shesterki.Motor_Base_Server.model.Car;
 import com.shesterki.Motor_Base_Server.model.Users;
 import com.shesterki.Motor_Base_Server.model.dto.LoginForm;
@@ -26,7 +27,7 @@ public class PageController {
     private UsersService usersService;
     private CarService carService;
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/user/{id}")
     public String login(@PathVariable Long id, Model model) {
         Users users = usersService.getById(id).orElseThrow();
         log.info(String.valueOf(users));
@@ -54,6 +55,7 @@ public class PageController {
 
     @PostMapping("/register-user")
     public String registerUser(@ModelAttribute Users user){
+        user.setUser_role(Roles.USER);
         usersService.saveUser(user);
         return "redirect:/main";
     }
@@ -64,10 +66,12 @@ public class PageController {
         return "login";
     }
 
-    @PostMapping("/login-user")
+    @PostMapping("/login")
     public String loginUser(@ModelAttribute LoginForm loginForm){
         log.info(String.valueOf(loginForm));
         return "redirect:/main";
     }
+
+
 
 }

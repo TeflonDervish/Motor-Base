@@ -12,8 +12,8 @@ button {
 }
 
 .center {
-    padding-left: calc(50% - 950px);
-    padding-right: calc(50% - 950px);
+    padding-left: calc(50% - 480px);
+    padding-right: calc(50% - 480px);
 }
 
 .header {
@@ -138,13 +138,11 @@ footer .group1 h5 {
 
 
 .dataUser {
-    display: flex
-;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
     align-content: center;
-    flex-wrap: wrap;
     gap: 80px;
 }
 
