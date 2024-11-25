@@ -21,7 +21,7 @@ public class SecurityConfig  {
 
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, CustomAuthenticationSuccessHandler successHandler) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/**").hasRole("ADMIN")
@@ -32,7 +32,7 @@ public class SecurityConfig  {
                 .httpBasic(httpSecurityHttpBasicConfigurer -> {})
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .defaultSuccessUrl("/main", true)
+                        .successHandler(successHandler)
                         .permitAll());
         return http.build();
     }

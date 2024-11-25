@@ -8,21 +8,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style/style_admin_users.css">
+    <link rel="stylesheet" th:href="@{/style/style_admin_users.css}">
 </head>
 <body>
     
     <header class="header">
         <div class="group1">
-            <img height="21px" src="img/login/header/logo.png" alt="">
-            <a href="#" class="link">Избранное</a>
-            <a href="#" class="link">Мои объявления</a>
-            <a href="#" class="link">Рекомендации</a>
+            <a th:href="@{/main}">
+                <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
+            <a th:href="@{/user}" class="link">Избранное</a>
+            <a th:href="@{/user}" class="link">Мои объявления</a>
+            <a th:href="@{/main}" class="link">Рекомендации</a>
         </div>
         <div class="group2">
             <input type="text" name="" id="" class="search">
-            <img src="img/login/header/search.svg" alt="">
-            <button>Войти</button>
+            <img th:src="@{/img/login/header/search.svg}" alt="">
+            <button th:onclick="|window.location.href='@{/login}'|">Войти</button>
             <button>Разместить объявление</button>
         </div>
     </header>
@@ -69,20 +70,12 @@
             </div>
     
             <div class = "users">
-                <div class="ob1">
-                    <img src="img/login/body/user.jpg" alt="">
-                    <p>Имя: Муремеджон</p>
-                    <p>Фамилия: Айджн</p>
-                    <p>Номер телефона: +7 800 555 35 35</p>
-                    <p>Дата рождения: 30.09.2003</p>
-                </div>
-    
-                <div class="ob2">
-                    <img src="img/login/body/user.jpg" alt="">
-                    <p>Имя: Муремеджон</p>
-                    <p>Фамилия: Айджн</p>
-                    <p>Номер телефона: +7 800 555 35 35</p>
-                    <p>Дата рождения: 30.09.2003</p>
+                <div class="card" th:each="users : ${users}">
+                    <img th:src="@{/img/login/body/user.jpg}" alt="">
+                    <p th:text="${users.name}">Имя: Муремеджон</p>
+                    <p th:text="${users.surname}">Фамилия: Айджн</p>
+                    <p th:text="${users.phoneNumber}">Номер телефона: +7 800 555 35 35</p>
+                    <p th:text="${users.birthday}">Дата рождения: 30.09.2003</p>
                 </div>
     
             </div>
@@ -94,16 +87,20 @@
         <div class="group1">
             <h4>Связь с нами </h4>
             <div class="phone">
-                <img src="img/login/footer/whatsapp.svg" alt="asd"></img>
+                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
                 <h5>+7(927)-081-52-66</h5>
             </div>
         </div>
         <div class="group2">
-            <img src="img/login/footer/youtube.svg" alt="">
-            <img src="img/login/footer/instagram.svg" alt="">
-            <img src="img/login/footer/facebook.svg" alt="">
-            <img src="img/login/footer/twitter.svg" alt=""
-            ></div>
+            <a th:href="'https://www.youtube.com/'">
+                <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
+            <a th:href="'https://www.instagram.com/'">
+                <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
+            <a th:href="'https://www.facebook.com/'">
+                <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
+            <a th:href="'https://www.twitter.com/'">
+                <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
+            </div>
     </footer>
 
 
