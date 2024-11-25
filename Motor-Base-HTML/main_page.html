@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MainPage</title>
-    <link rel="stylesheet" href="styleMainPage.css">
+    <link rel="stylesheet" href="style/styleMainPage.css">
 </head>
 <body>
     
@@ -28,12 +28,12 @@
     </header>
 
 
-    <div class="recomFilt">
+    <div class="recomFilt center">
         <h2>Фильтры</h2>
         <h2>Рекомендации</h2>
     </div>
 
-    <div class = "bodyPage">
+    <div class = "bodyPage center">
         <div class="form-container">
             <form>
                 <label for="type_car">Тип автомобиля:</label>
@@ -73,28 +73,36 @@
                     <input type="text" name="power">
                 </label>
                 <label>Тип кузова:</label>
-                
-                    <div class = "kuzov">
-                    <input type="checkbox" id="sedan" name="kuzov_type" value="sedan">
-                    <label for="sedan">Седан</label>
-                    <input type="checkbox" id="liftback" name="kuzov_type" value="liftback">
-                    <label for="liftback">Лифтбэк</label><br>
-                    </div>
-                    <div class = "kuzov">
-                    <input type="checkbox" id="hatchback" name="kuzov_type" value="hatchback">
-                    <label for="hatchback">Хэтчбэк</label>
-                    <input type="checkbox" id="universal" name="kuzov_type" value="universal">
-                    <label for="universal">Универсал</label>
-                    </div>
-                    <div class = "kuzov">
-                        <input type="checkbox" id="kabriolet" name="kuzov_type" value="kabriolet">
-                        <label for="kabriolet">Кабриолет</label>
-                        <input type="checkbox" id="pickup" name="kuzov_type" value="pickup">
-                        <label for="pickup">Пикап</label>
-                    </div>
-                    <div class = "kuzov">
-                        <input type="checkbox" id="kupe" name="kuzov_type" value="kupe">
-                        <label for="kupe">Купе</label>
+                    <div class="type_kuzov">
+
+                        <div class = "kuzov">
+                            <input type="checkbox" id="sedan" name="kuzov_type" value="sedan">
+                            <label for="sedan">Седан</label>
+                        </div>
+                        <div class="kuzov">                
+                            <input type="checkbox" id="liftback" name="kuzov_type" value="liftback">
+                            <label for="liftback">Лифтбэк</label><br>
+                        </div>
+                        <div class = "kuzov">
+                            <input type="checkbox" id="hatchback" name="kuzov_type" value="hatchback">
+                            <label for="hatchback">Хэтчбэк</label>
+                        </div>
+                        <div class="kuzov">
+                            <input type="checkbox" id="universal" name="kuzov_type" value="universal">
+                            <label for="universal">Универсал</label>
+                        </div>
+                        <div class = "kuzov">
+                            <input type="checkbox" id="kabriolet" name="kuzov_type" value="kabriolet">
+                            <label for="kabriolet">Кабриолет</label>
+                        </div>
+                        <div class="kuzov">
+                            <input type="checkbox" id="pickup" name="kuzov_type" value="pickup">
+                            <label for="pickup">Пикап</label>
+                        </div>
+                        <div class = "kuzov">
+                            <input type="checkbox" id="kupe" name="kuzov_type" value="kupe">
+                            <label for="kupe">Купе</label>
+                        </div>
                     </div>
                 
                 <label>Коробка передач:

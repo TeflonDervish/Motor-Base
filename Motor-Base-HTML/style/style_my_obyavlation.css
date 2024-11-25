@@ -12,8 +12,8 @@ button {
 }
 
 .center {
-    padding-left: calc(50% - 950px);
-    padding-right: calc(50% - 950px);
+    padding-left: calc(50% - 480px);
+    padding-right: calc(50% - 480px);
 }
 
 .header {
@@ -92,6 +92,7 @@ footer {
     justify-content: space-between;
     padding-top: 17px;
     padding-bottom: 20px;
+    margin-top: 50px;
 }
 
 footer .group1 {
@@ -137,14 +138,13 @@ footer .group1 h5 {
     display: flex;
     gap: 30px;
 }
+
 .form-container {
     gap: 20px;
     height: 620px;
     display: flex;
     flex-direction: row;
     border-radius: 10px;
-    margin-left: 250px;
-    margin-right: 250px;
     margin-top: 50px;
 }
 
@@ -178,12 +178,6 @@ form {
     align-items: center;
 }
 
-
-
-.desc {
-    margin-right: 200px;
-    margin-left: 250px;
-}
 .desc h2{
     margin-bottom: 10px;
 }
@@ -233,14 +227,7 @@ form {
 
 
 
-.naming input {
-    padding-left: 14px;
-    height: 35px;
-    border-radius: 14px;
-    width: 100%;
-    font-weight: 500;
-    font-size: 16px;
-}
+
 .naming button {
     margin-top: 10px;
     margin-bottom: 10px;

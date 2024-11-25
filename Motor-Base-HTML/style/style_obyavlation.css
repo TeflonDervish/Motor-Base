@@ -92,7 +92,7 @@ footer {
     justify-content: space-between;
     padding-top: 17px;
     padding-bottom: 20px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 footer .group1 {
@@ -133,173 +133,103 @@ footer .group1 h5 {
 
 
 
-
-
-
-
-.dataUser {
-    display: flex
-;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    flex-wrap: wrap;
-    gap: 80px;
-}
-
-.form-container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    margin-left: none;
-    margin-top: 25px;
-    padding-top: 180px;
-    width: 400px;
-    
-    
-}
-
-h2{
-    padding-top: 150px;
-    padding-bottom: 20px;
-    padding-left: none;
-    font-size: 30px;
-    letter-spacing: 0.1em;
-    color: rgba(0, 0, 0, 0.8);
-    text-shadow: 2px 1px 3px 0 rgba(0, 0, 0, 0.5);
-    
-    
-}
-
-.buttonImg {
-    display: flex;
+.bodyPage {
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    display: flex;
+    gap: 30px;
 }
-
-.buttonImg button{
-    padding: 11px 34px;
-    border-radius: 14px;
-    background-color: #0077fe;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.24em;
-    color: #fff;
-    transition: background-color 0.3s;
-    width: 350px;
-
+.form-container {
+    gap: 20px;
+    height: 620px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 50px;
 }
-
-.buttonImg button:hover {
-    background-color: #0254b3;
-    transform: scale(1.01);
-
-}
-
-.buttonImg img {
-    width: 450px;
-    height: 450px;
-    padding-bottom: 15px;
-
-}
-
 
 form {
     display: flex;
     flex-direction: column;
 }
 
-label {
-    margin-bottom: 8px;
-    font-size: 25px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    font-style: oblique;
-    
-}
-
-input {
+.information {
     width: 100%;
-    padding: 5px;
-    margin-top: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-bottom: 7px;
-}
-
-
-
-
-
-
-
-
-.myFavorite {
-    display: flex
-;
+    display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: stretch;
-    align-content: center;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 
 
-.obyavlations {
-    display: flex
-;
+
+.form-container .label h1{
+    margin-bottom: 10px;
+}
+.form-container .label h2{
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+.information .phone {
+    display: flex;
     flex-direction: row;
+    gap: 6px;
     align-items: center;
-    gap: 50px;
-    align-self: center;
-}
-
-.obyvlation {
-    display: flex;
-    flex-direction: column;
-    gap: 5px
 }
 
 
 
-
-
-
-
-.otzivi {
-    display: flex
-;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
+.desc {
+    margin-right: 200px;
+    margin-left: 250px;
 }
-
-.otziv{
-    width: 1380px;
-    
+.desc h2{
+    margin-bottom: 10px;
 }
-
-.otziv form{
-    display: flex;
-    flex-direction: row;
+.description {
     background-color: #e0e0e0;
-    box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
     padding: 20px;
-    margin-top: 10px;
-    
+    border-radius: 10px;
 }
 
 
-.bodyPage {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+
+
+.characteristic {
+    width: 100%;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: scroll;
 }
+.characteristic .text {
+    margin-bottom: 10px;
+}
+.characteristic h2 {
+    margin-bottom: 10px;
+}
+.characteristic h4 {
+    margin-bottom: 10px;
+}
+.characteristic label {
+    font-size: x-large;
+    font-weight: bold
+}
+.information button {
+    padding: 11px 30px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+.information button:hover {
+    background-color: #0254b3;
+    transform: scale(1.01);
+}
+
+
