@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
@@ -30,39 +30,98 @@
     <div class = "bodyPage">
         <div class="form-container">
             <div class="naming">
-                <input type="name">
-                <img width="500px" src="img/login/body/image.jpg" alt="">
+                <input type="text" placeholder="Введите название">
+                <img width="450px" src="img/login/body/photo-camera.png" alt="">
             </div>
             <div class = "information">
-                <h2>Связаться с продавцом</h2> 
-                <div class="phone">
-                    <img src="img/login/footer/whatsapp_black.svg" alt=""></img>
-                    <h3>Александр</h3>
+                <div class="price">
+                    <label>Цена:</label> 
+                    <input type="text" placeholder="Введите цену">
                 </div>
-                <h4>+7(927)-081-52-66</h4>
+                <h1>Характеристики</h1>
                 <div class="characteristic">
                     <form>
-                        <h2>Характеристики</h2>
-                        <label>Пробег:</label>
-                        <h4>158 695 км</h4>
-                        <label>Год выпуска:</label>
-                        <h4>2017 год</h4>
-                        <label>Марка:</label>
-                        <h4>Chery</h4>
-                        <label>Модель:</label>
-                        <h4>Tiggo 8 Pro Max</h4>
-                        <label>Мощность:</label>
-                        <h4>300 лс</h4>
-                        <label>Объем двигателя:</label>
-                        <h4>4</h4>
-                        <label>Цвет:</label>
-                        <h4>Черный</h4>
-                        <label>Коробка передач:</label>
-                        <h4>Робот</h4>
-                        <label>Привод: </label>
-                        <h4>Полный</h4>
-                        <label>Тип кузова:</label>
-                        <h4>Седан</h4>
+                        <div class="form-column">
+                            <div class="two-column">
+                                <label for="run">Пробег:</label>
+                                <input type="text" id="run" placeholder="Введите пробег">
+                            </div>
+                        
+                            <div class="two-column">
+                                <label for="year">Год выпуска:</label>
+                                <input type="text" id="year" placeholder="Введите год выпуска">
+                            </div>
+
+                            <div class="two-column">
+                                <label for="mark_car">Марка:</label>
+                                <select id="mark_car" name="mark_car">
+                                    <option value="Nissan">Nissan</option>
+                                    <option value="Ford">Ford</option>
+                                    <option value="Lada">Lada</option>
+                                </select>
+                            </div>
+                        
+                            <div class="two-column">
+                                <label for="model_car">Модель:</label>
+                                <select id="model_car" name="model_car">
+                                    <option value="Granta">Granta</option>
+                                    <option value="Priora">Priora</option>
+                                    <option value="Kalina">Kalina</option>
+                                </select>
+                            </div>
+
+                            <div class="two-column">
+                                <label for="body">Тип кузова:</label>
+                                <select id="body" name="body">
+                                    <option value="sedan">Седан</option>
+                                    <option value="liftback">Лифтбэк</option>
+                                    <option value="hatchback">Хэтчбэк</option>
+                                    <option value="universal">Универсал</option>
+                                    <option value="kabriolet">Кабриолет</option>
+                                    <option value="pickup">Пикап</option>
+                                    <option value="kupe">Купе</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        <div class="form-column">
+                            <div class="two-column">
+                                <label for="volume">Объем двигателя:</label>
+                                <input type="text" id="volume" placeholder="Введите объем">
+                            </div>
+
+                            <div class="two-column">
+                                <label for="power">Мощность:</label>
+                                <input type="text" id="power" placeholder="Введите мощность">
+                            </div>
+                        
+                            <div class="two-column">
+                                <label for="color">Цвет:</label>
+                                <select id="color" name="color">
+                                    <option value="white">Белый</option>
+                                    <option value="black">Черный</option>
+                                </select>
+                            </div>
+                        
+                            <div class="two-column">
+                                <label for="transmission">Коробка передач:</label>
+                                <select id="transmission" name="transmission">
+                                    <option value="robot">Робот</option>
+                                    <option value="variator">Вариатор</option>
+                                    <option value="automat">Автоматическая</option>
+                                    <option value="mechanic">Механическая</option>
+                                </select>
+                            </div>
+                        
+                            <div class="two-column">
+                                <label for="drive_type">Привод:</label>
+                                <select id="drive_type" name="drive_type">
+                                    <option value="all">Полный</option>
+                                    <option value="front">Передний</option>
+                                    <option value="back">Задний</option>
+                                </select>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -75,7 +134,9 @@
                 <p>🎁 У нас подарок на выбор: <br> ✅ Сигнализация <br>✅ Комплект зимней резины <br> ✅ Аксессуары</p>
             </div>
         </div>
-        
+        <div class="save-button">
+            <button>Сохранить</button>
+        </div>
     </div>
 
     <footer class="center">
