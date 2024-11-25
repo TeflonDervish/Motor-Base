@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/announcement")
+@RequestMapping("/api/announcement")
 @AllArgsConstructor
 public class AnnouncementController{
 

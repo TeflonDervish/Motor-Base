@@ -92,6 +92,7 @@ footer {
     justify-content: space-between;
     padding-top: 17px;
     padding-bottom: 20px;
+    margin-top: 30px;
 }
 
 footer .group1 {
@@ -132,36 +133,79 @@ footer .group1 h5 {
 
 
 
-.recomFilt {
-    display: flex;
+
+
+
+
+.dataUser {
+    display: flex
+;
     flex-direction: row;
-
-    font-size: 20px;
-    padding-top: 100px;
-    padding-left: 250px;
-    gap: 300px;
-}
-
-
-
-
-
-
-.bodyPage {
-    display: flex;
-    gap: 90px;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
 }
 
 .form-container {
-    background-color: #e0e0e0;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
-    margin-left: 250px;
+    margin-left: none;
     margin-top: 25px;
-    box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
+    padding-top: 180px;
+    width: 400px;
+    
     
 }
+
+h2{
+    padding-top: 150px;
+    padding-bottom: 20px;
+    padding-left: none;
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 1px 3px 0 rgba(0, 0, 0, 0.5);
+    
+    
+}
+
+.buttonImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttonImg button{
+    padding: 11px 34px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+    width: 350px;
+
+}
+
+.buttonImg button:hover {
+    background-color: #0254b3;
+    transform: scale(1.01);
+
+}
+
+.buttonImg img {
+    width: 450px;
+    height: 450px;
+    padding-bottom: 15px;
+
+}
+
 
 form {
     display: flex;
@@ -170,8 +214,11 @@ form {
 
 label {
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 25px;
     color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-style: oblique;
+    
 }
 
 input {
@@ -183,88 +230,76 @@ input {
     box-sizing: border-box;
     margin-bottom: 7px;
 }
-select{
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    
 
+
+
+
+
+
+
+
+.myFavorite {
+    display: flex
+;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+.obyavlations {
+    display: flex
+;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    align-self: center;
 }
 
 .obyvlation {
-    margin-top: 25px;
     display: flex;
-    gap: 20px;
-
+    flex-direction: column;
+    gap: 5px
 }
 
 
 
-.kuzov{
+
+
+
+
+.otzivi {
+    display: flex
+;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.otziv{
+    width: 1380px;
+    
+}
+
+.otziv form{
     display: flex;
+    flex-direction: row;
+    background-color: #e0e0e0;
+    box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    
+}
+
+
+.bodyPage {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-    gap: 5px;
-    
-}
-.kuzov label{
-    margin-top: 6px;
-  
-
-}
-input[type="checkbox"] {
-    padding-left: 2px;
-    padding-right: 3px;
-    
-}
-
-
-
-.button_admin {
-    display: flex;
-    flex-direction: row;
-    margin-left: 250px;
-    margin-top: 20px;
-    gap: 10px;
-}
-.button_admin button {
-    padding: 11px 34px;
-    border-radius: 14px;
-    background-color: #0077fe;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.24em;
-    color: #fff;
-    transition: background-color 0.3s;
-}
-.button_admin button:hover {
-    background-color: #0254b3;
-    transform: scale(1.01);
-}
-
-
-
-.button_edit {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    gap: 20px;
-}
-.button_edit button {
-    padding: 11px 48px;
-    border-radius: 14px;
-    background-color: #0077fe;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.24em;
-    color: #fff;
-    transition: background-color 0.3s;
-}
-.button_edit button:hover {
-    background-color: #0254b3;
-    transform: scale(1.01);
 }

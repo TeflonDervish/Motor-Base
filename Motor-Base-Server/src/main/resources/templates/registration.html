@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7,21 +7,23 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styleRegistration.css">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/style/styleRegistration.css}">
 </head>
 <body>
     
     <header class="header">
         <div class="group1">
-            <img height="21px" src="img/login/header/logo.png" alt="">
-            <a href="#" class="link">Избранное</a>
-            <a href="#" class="link">Мои объявления</a>
-            <a href="#" class="link">Рекомендации</a>
+            <a th:href="@{/main}">
+                <img height="21px" th:src="@{/img/login/header/logo.png}" alt="">
+            </a>
+            <a th:href="@{/main}" class="link">Избранное</a>
+            <a th:href="@{/main}" class="link">Мои объявления</a>
+            <a th:href="@{/main}" class="link">Рекомендации</a>
         </div>
         <div class="group2">
             <input type="text" name="" id="" class="search">
-            <img src="img/login/header/search.svg" alt="">
+            <img th:src="@{/img/login/header/search.svg}" alt="">
             <button>Войти</button>
             <button>Разместить объявление</button>
         </div>
@@ -29,49 +31,56 @@
 
     <div class = "bodyPage">
         <div class="form-container">
-            <form>
-                <img height="25px" src="img/login/header/logo.png" alt="">
+            <form action="#" th:action="@{/register-user}" th:object="${user}" method="post">
+                <img height="25px" th:src="@{/img/login/header/logo.png}" alt="">
                 <label>Номер телефона:<br>
-                    <input type="text" name="nuber_phone">
+                    <input type="text" name="number_phone" th:field="*{phoneNumber}">
                 </label>
                 <label>Почта:<br>
-                    <input type="text" name="mail">
+                    <input type="text" name="mail" th:field="*{email}">
                 </label>
                 <label>Пароль:<br>
-                    <input type="text" name="password">
+                    <input type="text" name="password" th:field="*{password}">
                 </label>
                 <label>Имя:<br>
-                    <input type="text" name="name">
+                    <input type="text" name="name" th:field="*{name}">
                 </label>
                 <label>Фамилия:<br>
-                    <input type="text" name="surname">
+                    <input type="text" name="surname" th:field="*{surname}">>
                 </label>
                 <label>Дата рождения:<br>
-                    <input type="date" name="birthday">
+                    <input type="date" name="birthday" th:field="*{birthday}">>
                 </label>
                 <label>Город:<br>
-                    <input type="text" name="city">
+                    <input type="text" name="city" th:field="*{city}">>
                 </label>
                 <button>Зарегистрироваться</button>
             </form>
         </div>
     </div>
 
-
     <footer class="center">
         <div class="group1">
             <h4>Связь с нами </h4>
             <div class="phone">
-                <img src="img/login/footer/whatsapp.svg" alt="asd"></img>
+                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd"></img>
                 <h5>+7(927)-081-52-66</h5>
             </div>
         </div>
         <div class="group2">
-            <img src="img/login/footer/youtube.svg" alt="">
-            <img src="img/login/footer/instagram.svg" alt="">
-            <img src="img/login/footer/facebook.svg" alt="">
-            <img src="img/login/footer/twitter.svg" alt=""
-            ></div>
+            <a href="'https://www.youtube.com/'">
+                <img th:src="@{/img/login/footer/youtube.svg}" alt="">
+            </a>
+            <a href="'https://www.instagram.com/'">
+                <img th:src="@{/img/login/footer/instagram.svg}" alt="">
+            </a>
+            <a href="'https://www.facebook.com/'">
+                <img th:src="@{/img/login/footer/facebook.svg}" alt="">
+            </a>
+            <a href="'https://www.twitter.com/'">
+                <img th:src="@{/img/login/footer/twitter.svg}" alt="">
+            </a>
+        </div>
     </footer>
 
 </body>
