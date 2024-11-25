@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,16 +16,21 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityConfig  {
+
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/**").hasRole("ADMIN")
+                        .requestMatchers("/users/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .httpBasic(httpSecurityHttpBasicConfigurer -> {})
-                .formLogin();
+                .formLogin()
+                .loginPage("/login");
         return http.build();
     }
 
@@ -34,6 +40,11 @@ public class SecurityConfig {
                 .username("admin")
                 .password(passwordEncoder().encode("admin"))
                 .roles("ADMIN")
+                .build();
+        UserDetails user = User.builder()
+                .username("user")
+                .password(passwordEncoder().encode("user"))
+                .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(admin);
     }

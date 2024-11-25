@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/pathOfHistory")
+@RequestMapping("/api/pathOfHistory")
 @AllArgsConstructor
 public class PathOfHistoryController {
 

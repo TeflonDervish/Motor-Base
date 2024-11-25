@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style_admin_obyavlation.css">
+    <link rel="stylesheet" href="style/style_admin_obyavlation.css">
 </head>
 <body>
     
@@ -27,27 +27,29 @@
         </div>
     </header>
 
-    <div class="button_admin">
+    <div class="button_admin center">
         <button>Объявления</button>
         <button>Пользователи</button>
     </div>
 
-    <div class="recomFilt">
+    <div class="recomFilt center">
         <h2>Фильтры</h2>
         <h2>Объявления</h2>
     </div>
 
-    <div class = "bodyPage">
+    <div class = "bodyPage center">
         <div class="form-container">
             <form>
                 <label for="type_car">Тип автомобиля:</label>
                 <select id="type_car" name="type_car">
+                    <option value="none">Любой</option>
                     <option value="gruz">Грузовые</option>
                     <option value="legk">Легковые</option>
                     <option value="moto">Мотоциклы, мопеды, байки</option>
                 </select>
                 <label>Марка:</label>
                 <select id="mark_car" name="mark_car">
+                    <option value="none">Любая</option>
                     <option value="Nissan">Nissan</option>
                     <option value="Ford">Ford</option>
                     <option value="Lada">Lada</option>
@@ -55,6 +57,7 @@
                 <label>Модель:
                 </label>
                 <select id="model_car" name="model_car">
+                    <option value="none">Любая</option>
                     <option value="Granta">Granta</option>
                     <option value="Priora">Priora</option>
                     <option value="Kalina">Kalina</option>
@@ -137,7 +140,6 @@
         </div>
     </div>
 
-    <div class="center" style="height: calc(100vh - 85px - 109px)"></div>
 
     <footer class="center">
         <div class="group1">

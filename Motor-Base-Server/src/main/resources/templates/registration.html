@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/style/styleRegistration.css}">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="group1">
+            <a th:href="@{/main}">
+                <img height="21px" th:src="@{/img/login/header/logo.png}" alt="">
+            </a>
+            <a th:href="@{/main}" class="link">Избранное</a>
+            <a th:href="@{/main}" class="link">Мои объявления</a>
+            <a th:href="@{/main}" class="link">Рекомендации</a>
+        </div>
+        <div class="group2">
+            <input type="text" name="" id="" class="search">
+            <img th:src="@{/img/login/header/search.svg}" alt="">
+            <button>Войти</button>
+            <button>Разместить объявление</button>
+        </div>
+    </header>
+
+    <div class = "bodyPage">
+        <div class="form-container">
+            <form action="#" th:action="@{/register-user}" th:object="${user}" method="post">
+                <img height="25px" th:src="@{/img/login/header/logo.png}" alt="">
+                <label>Номер телефона:<br>
+                    <input type="text" name="number_phone" th:field="*{phoneNumber}">
+                </label>
+                <label>Почта:<br>
+                    <input type="text" name="mail" th:field="*{email}">
+                </label>
+                <label>Пароль:<br>
+                    <input type="text" name="password" th:field="*{password}">
+                </label>
+                <label>Имя:<br>
+                    <input type="text" name="name" th:field="*{name}">
+                </label>
+                <label>Фамилия:<br>
+                    <input type="text" name="surname" th:field="*{surname}">>
+                </label>
+                <label>Дата рождения:<br>
+                    <input type="date" name="birthday" th:field="*{birthday}">>
+                </label>
+                <label>Город:<br>
+                    <input type="text" name="city" th:field="*{city}">>
+                </label>
+                <button>Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="center">
+        <div class="group1">
+            <h4>Связь с нами </h4>
+            <div class="phone">
+                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd"></img>
+                <h5>+7(927)-081-52-66</h5>
+            </div>
+        </div>
+        <div class="group2">
+            <a href="'https://www.youtube.com/'">
+                <img th:src="@{/img/login/footer/youtube.svg}" alt="">
+            </a>
+            <a href="'https://www.instagram.com/'">
+                <img th:src="@{/img/login/footer/instagram.svg}" alt="">
+            </a>
+            <a href="'https://www.facebook.com/'">
+                <img th:src="@{/img/login/footer/facebook.svg}" alt="">
+            </a>
+            <a href="'https://www.twitter.com/'">
+                <img th:src="@{/img/login/footer/twitter.svg}" alt="">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

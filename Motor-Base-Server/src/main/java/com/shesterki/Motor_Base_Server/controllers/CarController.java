@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/car")
+@RequestMapping("/api/car")
 @AllArgsConstructor
 public class CarController {
 

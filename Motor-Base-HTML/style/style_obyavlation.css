@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+.center {
+    padding-left: calc(50% - 950px);
+    padding-right: calc(50% - 950px);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: #000;
+}
+
+header .group1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 29px;
+    position: relative;
+}
+
+header .group1 img {
+    margin-right: 120px;
+    transform: scale(2.9) translate(14%, 0%);
+
+}
+
+header .group1 a {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: text-decoration 0.3s;
+    transition: transform 0.3s;
+}
+
+header .group1 a:hover {
+    transform: scale(1.1);
+}
+
+header .group2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 13px;
+}
+
+header .group2 button {
+    padding: 11px 34px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+header .group2 button:hover {
+    background-color: #0254b3;
+    transform: scale(1.01);
+
+}
+
+header .group2 input {
+    padding-left: 14px;
+    height: 37px;
+    border-radius: 14px;
+    width: 300px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 17px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+
+footer .group1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+footer .group1 .phone {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+
+footer .group2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 39px;
+}
+
+footer .group1 h4 {
+    font-weight: 700px;
+    font-size: 20px;
+    letter-spacing: 0.17em;
+    color: #fff;
+}
+
+footer .group1 h5 {
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    color: #fff;
+}
+
+
+
+
+.bodyPage {
+    flex-direction: column;
+    display: flex;
+    gap: 30px;
+}
+.form-container {
+    gap: 20px;
+    height: 620px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+
+
+.form-container .label h1{
+    margin-bottom: 10px;
+}
+.form-container .label h2{
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+.information .phone {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+
+
+
+.desc {
+    margin-right: 200px;
+    margin-left: 250px;
+}
+.desc h2{
+    margin-bottom: 10px;
+}
+.description {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+
+.characteristic {
+    width: 100%;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+.characteristic .text {
+    margin-bottom: 10px;
+}
+.characteristic h2 {
+    margin-bottom: 10px;
+}
+.characteristic h4 {
+    margin-bottom: 10px;
+}
+.characteristic label {
+    font-size: x-large;
+    font-weight: bold
+}
+.information button {
+    padding: 11px 30px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+.information button:hover {
+    background-color: #0254b3;
+    transform: scale(1.01);
+}
+
+

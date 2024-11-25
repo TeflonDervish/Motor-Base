@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,17 +27,17 @@
         </div>
     </header>
 
-    <div class="button_admin center">
+    <div class="button_admin">
         <button>Объявления</button>
         <button>Пользователи</button>
     </div>
 
-    <div class="recomFilt center">
+    <div class="recomFilt">
         <h2>Фильтры</h2>
         <h2>Пользователи</h2>
     </div>
 
-    <div class="bodyPage center">
+    <div class = "bodyPage">
         <div class="form-container">
             <form>
                 <label>Имя:
@@ -94,16 +94,24 @@
         <div class="group1">
             <h4>Связь с нами </h4>
             <div class="phone">
-                <img src="img/login/footer/whatsapp.svg" alt="asd"></img>
+                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd"></img>
                 <h5>+7(927)-081-52-66</h5>
             </div>
         </div>
         <div class="group2">
-            <img src="img/login/footer/youtube.svg" alt="">
-            <img src="img/login/footer/instagram.svg" alt="">
-            <img src="img/login/footer/facebook.svg" alt="">
-            <img src="img/login/footer/twitter.svg" alt=""
-            ></div>
+            <a href="'https://www.youtube.com/'">
+                <img th:src="@{/img/login/footer/youtube.svg}" alt="">
+            </a>
+            <a href="'https://www.instagram.com/'">
+                <img th:src="@{/img/login/footer/instagram.svg}" alt="">
+            </a>
+            <a href="'https://www.facebook.com/'">
+                <img th:src="@{/img/login/footer/facebook.svg}" alt="">
+            </a>
+            <a href="'https://www.twitter.com/'">
+                <img th:src="@{/img/login/footer/twitter.svg}" alt="">
+            </a>
+        </div>
     </footer>
 
 

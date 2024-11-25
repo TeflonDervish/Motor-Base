@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/feedback")
+@RequestMapping("/api/feedback")
 @AllArgsConstructor
 public class FeedbackController {
 
