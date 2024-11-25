@@ -92,7 +92,6 @@ footer {
     justify-content: space-between;
     padding-top: 17px;
     padding-bottom: 20px;
-    margin-top: 30px;
 }
 
 footer .group1 {
@@ -152,7 +151,7 @@ footer .group1 h5 {
     padding: 40px;
     border-radius: 30px;
     width: 400px;
-    height: 800px;
+    height: 450px;
     margin-top: 200px;
     box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
 }
