@@ -1,7 +1,6 @@
 package com.shesterki.Motor_Base_Server.controllers;
 
 
-import com.shesterki.Motor_Base_Server.config.SecurityConfig;
 import com.shesterki.Motor_Base_Server.enums.Roles;
 import com.shesterki.Motor_Base_Server.model.*;
 import com.shesterki.Motor_Base_Server.model.dto.LoginForm;
@@ -9,10 +8,7 @@ import com.shesterki.Motor_Base_Server.services.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
