@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,153 +12,151 @@
     <link rel="stylesheet" th:href="@{style/style_create_obyavlation.css}">
 </head>
 <body>
-    
-    <header class="header">
-        <div class="group1">
-            <a th:href="@{/main}">
-                <img height="21px" th:src="@{img/login/header/logo.png}" alt=""></a>
-            <a th:href="@{/user}" class="link">Избранное</a>
-            <a th:href="@{/user}" class="link">Мои объявления</a>
-            <a th:href="@{/main}" class="link">Рекомендации</a>
-        </div>
-        <div class="group2">
-            <input type="text" name="" id="" class="search">
-            <img th:src="@{img/login/header/search.svg}" alt="">
-            <button th:onclick="|window.location.href='@{/login}'|">Войти</button>
-            <button th:onclick="|window.location.href='@{/create-obyavlation}'|">Разместить объявление</button>
-        </div>
-    </header>
 
-    <div class = "bodyPage">
+<header class="header">
+    <div class="group1">
+        <a th:href="@{/main}">
+            <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
+        <a th:href="@{/user}" class="link">Избранное</a>
+        <a th:href="@{/user}" class="link">Мои объявления</a>
+        <a th:href="@{/main}" class="link">Рекомендации</a>
+    </div>
+    <div class="group2">
+        <input type="text" name="" id="" class="search">
+        <img th:src="@{/img/login/header/search.svg}" alt="">
+        <button th:onclick="|window.location.href='@{/login}'|">Войти</button>
+        <button th:onclick="|window.location.href='@{/create-obyavlation}'|">Разместить объявление</button>
+    </div>
+</header>
+
+<div class="bodyPage center">
+    <form action="#" th:action="@{/create-obyavlation}" th:object="${car}" method="post">
         <div class="form-container">
-            <div class="naming">
-                <input type="text" placeholder="Введите название">
-                <img width="450px" src="img/login/body/photo-camera.png" alt="">
-            </div>
-            <div class = "information">
-                <div class="price">
-                    <label>Цена:</label> 
-                    <input type="text" placeholder="Введите цену">
+            <div class="group1">
+                <div class="naming">
+                    <input type="text" placeholder="Введите название">
+                    <img width="450px" src="img/login/body/photo-camera.png" alt="">
                 </div>
-                <h1>Характеристики</h1>
-                <div class="characteristic">
-                    <form action="#" th:action="@{/create-obyavlation}" th:object="${car}" method="post">
-                        <div class="form-column">
-                            <div class="two-column">
-                                <label for="run">Пробег:</label>
-                                <input type="text" id="run" placeholder="Введите пробег" th:field="*{run}">
-                            </div>
-                        
-                            <div class="two-column">
-                                <label for="year">Год выпуска:</label>
-                                <input type="text" id="year" placeholder="Введите год выпуска" th:field="*{yearMake}">
-                            </div>
-
-                            <div class="two-column">
-                                <label for="mark_car">Марка:</label>
-                                <select id="mark_car" name="mark_car" th:field="*{mark}">
-                                    <option value="Nissan">Nissan</option>
-                                    <option value="Ford">Ford</option>
-                                    <option value="Lada">Lada</option>
-                                </select>
-                            </div>
-                        
-                            <div class="two-column">
-                                <label for="model_car">Модель:</label>
-                                <select id="model_car" name="model_car" th:field="*{model}">
-                                    <option value="Granta">Granta</option>
-                                    <option value="Priora">Priora</option>
-                                    <option value="Kalina">Kalina</option>
-                                </select>
-                            </div>
-
-                            <div class="two-column">
-                                <label for="body">Тип кузова:</label>
-                                <select id="body" name="body" th:field="*{typeBody}">
-                                    <option value="sedan">Седан</option>
-                                    <option value="liftback">Лифтбэк</option>
-                                    <option value="hatchback">Хэтчбэк</option>
-                                    <option value="universal">Универсал</option>
-                                    <option value="kabriolet">Кабриолет</option>
-                                    <option value="pickup">Пикап</option>
-                                    <option value="kupe">Купе</option>
-                                </select>
-                            </div>
+                <div class="information">
+                    <div class="price">
+                        <label>Цена:</label>
+                        <input type="text" placeholder="Введите цену">
+                    </div>
+                    <h1>Характеристики</h1>
+                    <div class="characteristic">
+                        <div class="two-column">
+                            <label for="run">Пробег:</label>
+                            <input type="text" id="run" placeholder="Введите пробег" th:field="*{run}">
                         </div>
-                    
-                        <div class="form-column">
-                            <div class="two-column" >
-                                <label for="volume">Объем двигателя:</label>
-                                <input type="text" id="volume" placeholder="Введите объем" th:field="*{engineVolume}">
-                            </div>
 
-                            <div class="two-column">
-                                <label for="power">Мощность:</label>
-                                <input type="text" id="power" placeholder="Введите мощность" th:field="*{enginePowers}">
-                            </div>
-                        
-                            <div class="two-column">
-                                <label for="color">Цвет:</label>
-                                <select id="color" name="color" th:field="*{color}">
-                                    <option value="white">Белый</option>
-                                    <option value="black">Черный</option>
-                                </select>
-                            </div>
-                        
-                            <div class="two-column">
-                                <label for="transmission">Коробка передач:</label>
-                                <select id="transmission" name="transmission" th:field="*{gearbox}">
-                                    <option value="robot">Робот</option>
-                                    <option value="variator">Вариатор</option>
-                                    <option value="automat">Автоматическая</option>
-                                    <option value="mechanic">Механическая</option>
-                                </select>
-                            </div>
-                        
-                            <div class="two-column">
-                                <label for="drive_type">Привод:</label>
-                                <select id="drive_type" name="drive_type" th:field="*{type}">
-                                    <option value="all">Полный</option>
-                                    <option value="front">Передний</option>
-                                    <option value="back">Задний</option>
-                                </select>
-                            </div>
+                        <div class="two-column">
+                            <label for="year">Год выпуска:</label>
+                            <input type="text" id="year" placeholder="Введите год выпуска" th:field="*{yearMake}">
                         </div>
-                    </form>
+
+                        <div class="two-column">
+                            <label for="mark_car">Марка:</label>
+                            <select id="mark_car" name="mark_car" th:field="*{mark}">
+                                <option value="Nissan">Nissan</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Lada">Lada</option>
+                            </select>
+                        </div>
+
+                        <div class="two-column">
+                            <label for="model_car">Модель:</label>
+                            <select id="model_car" name="model_car" th:field="*{model}">
+                                <option value="Granta">Granta</option>
+                                <option value="Priora">Priora</option>
+                                <option value="Kalina">Kalina</option>
+                            </select>
+                        </div>
+
+                        <div class="two-column">
+                            <label for="body">Тип кузова:</label>
+                            <select id="body" name="body" th:field="*{typeBody}">
+                                <option value="sedan">Седан</option>
+                                <option value="liftback">Лифтбэк</option>
+                                <option value="hatchback">Хэтчбэк</option>
+                                <option value="universal">Универсал</option>
+                                <option value="kabriolet">Кабриолет</option>
+                                <option value="pickup">Пикап</option>
+                                <option value="kupe">Купе</option>
+                            </select>
+                        </div>
+
+                        <div class="two-column">
+                            <label for="volume">Объем двигателя:</label>
+                            <input type="text" id="volume" placeholder="Введите объем" th:field="*{engineVolume}">
+                        </div>
+
+                        <div class="two-column">
+                            <label for="power">Мощность:</label>
+                            <input type="text" id="power" placeholder="Введите мощность" th:field="*{enginePowers}">
+                        </div>
+
+                        <div class="two-column">
+                            <label for="color">Цвет:</label>
+                            <select id="color" name="color" th:field="*{color}">
+                                <option value="white">Белый</option>
+                                <option value="black">Черный</option>
+                            </select>
+                        </div>
+
+                        <div class="two-column">
+                            <label for="transmission">Коробка передач:</label>
+                            <select id="transmission" name="transmission" th:field="*{gearbox}">
+                                <option value="robot">Робот</option>
+                                <option value="variator">Вариатор</option>
+                                <option value="automat">Автоматическая</option>
+                                <option value="mechanic">Механическая</option>
+                            </select>
+                        </div>
+
+                        <div class="two-column">
+                            <label for="drive_type">Привод:</label>
+                            <select id="drive_type" name="drive_type" th:field="*{type}">
+                                <option value="all">Полный</option>
+                                <option value="front">Передний</option>
+                                <option value="back">Задний</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group2">
+                <div class="desc">
+                    <div class="description">
+                        <label for="description">Описание:</label>
+                        <input type="text" id="description" placeholder="Описание ...">
+                    </div>
+                </div>
+                <div class="save-button">
+                    <button>Сохранить</button>
                 </div>
             </div>
         </div>
-        <div class="desc">
-            <h2>Описание</h2>
-            <div class="description">
-                <p>🚨 Держим цены и предлагаем выгодные условия для покупки нового автомобиля💥 Максимальная выгода до - 1 505 000 рублей!</p>
-                <p>🔥 Скидка до 200 000₽ по программе «СЕМЕЙНЫЙ АВТОМОБИЛЬ» до 31 октября 2024 года</p>
-                <p>🎁 У нас подарок на выбор: <br> ✅ Сигнализация <br>✅ Комплект зимней резины <br> ✅ Аксессуары</p>
-            </div>
-        </div>
-        <div class="save-button">
-            <button>Сохранить</button>
+    </form>
+</div>
+
+<footer class="center">
+    <div class="group1">
+        <h4>Связь с нами </h4>
+        <div class="phone">
+            <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
+            <h5>+7(927)-081-52-66</h5>
         </div>
     </div>
-
-    <footer class="center">
-        <div class="group1">
-            <h4>Связь с нами </h4>
-            <div class="phone">
-                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
-                <h5>+7(927)-081-52-66</h5>
-            </div>
-        </div>
-        <div class="group2">
-            <a th:href="'https://www.youtube.com/'">
-                <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
-            <a th:href="'https://www.instagram.com/'">
-                <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
-            <a th:href="'https://www.facebook.com/'">
-                <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
-            <a th:href="'https://www.twitter.com/'">
-                <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
-            </div>
-    </footer>
+    <div class="group2">
+        <a th:href="'https://www.youtube.com/'">
+            <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
+        <a th:href="'https://www.instagram.com/'">
+            <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
+        <a th:href="'https://www.facebook.com/'">
+            <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
+        <a th:href="'https://www.twitter.com/'">
+            <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
+    </div>
+</footer>
 </body>
 </html>

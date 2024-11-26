@@ -15,14 +15,14 @@
     <header class="header">
         <div class="group1">
             <a th:href="@{/main}">
-                <img height="21px" th:src="@{img/login/header/logo.png}" alt=""></a>
+                <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
             <a th:href="@{/user}" class="link">Избранное</a>
             <a th:href="@{/user}" class="link">Мои объявления</a>
             <a th:href="@{/main}" class="link">Рекомендации</a>
         </div>
         <div class="group2">
             <input type="text" name="" id="" class="search">
-            <img th:src="@{img/login/header/search.svg}" alt="">
+            <img th:src="@{/img/login/header/search.svg}" alt="">
             <button th:onclick="|window.location.href='@{/login}'|">Войти</button>
             <button th:onclick="|window.location.href='@{/create-obyavlation}'|">Разместить объявление</button>
         </div>
@@ -56,7 +56,7 @@
                     <input type="text" name="city" th:value="${city}">
                 </label>
                 <label>Дата рождения:
-                    <input type="text" name="db" th:value="${db}">
+                    <input type="date" name="db" th:value="${db}">
                 </label>
             </form>
         </div>
@@ -121,8 +121,8 @@
 
     <div class = "otzivi">
         <h2>Отзывы</h2>
-        <div class="otziv">
-            <label> Автор</label>
+        <div class="otziv" th:each="feedback : ${feedback}">
+            <label th:text="${feedback.user}"> Автор</label>
             <form>
                 <label> Автодилер Мэйджор на Новорижском мне известен потому, что я имел неосторожность отогнать им свой КИА на гарантийное обслуживание. И вот уже пошел пятый месяц, как идет ремонт двигателя. То ДВС не тот привезут, то с дефектом, а то и мастера установить не могут правильно. А самое удивительное в этой истории то, что руководитель данного автосалона совершенно пассивно реагирует на подобные замечания – улыбается, обещает помочь, однако ничегошеньки не делает. Пора подавать жалобы на них во все инстанции, это точно.</label>
             </form>

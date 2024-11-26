@@ -23,9 +23,9 @@ public class AdminPageController {
     private CarService carService;
     private UsersService usersService;
 
-    @GetMapping("")
+    @GetMapping({"", "/"})
     public String admin(){
-        return "redirect:/main";
+        return "redirect:/admin/main";
     }
 
     @GetMapping("/main")

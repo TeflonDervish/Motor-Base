@@ -8,6 +8,7 @@ import com.shesterki.Motor_Base_Server.model.UserDetailsAdapter;
 import com.shesterki.Motor_Base_Server.model.Users;
 import com.shesterki.Motor_Base_Server.model.dto.LoginForm;
 import com.shesterki.Motor_Base_Server.services.CarService;
+import com.shesterki.Motor_Base_Server.services.FeedbackService;
 import com.shesterki.Motor_Base_Server.services.UsersService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +29,7 @@ public class PageController {
 
     private UsersService usersService;
     private CarService carService;
+    private FeedbackService feedbackService;
 
     @GetMapping("/user")
     public String user(@AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
@@ -39,7 +41,8 @@ public class PageController {
     }
 
     @GetMapping("/user/{id}")
-    public String login(@PathVariable Long id, Model model) {
+    public String user(@PathVariable Long id, Model model, @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+
         Users users = usersService.getById(id).orElseThrow();
         log.info(String.valueOf(users));
         model.addAttribute("name", users.getName());
@@ -48,7 +51,15 @@ public class PageController {
         model.addAttribute("email", users.getEmail());
         model.addAttribute("city", users.getCity());
         model.addAttribute("db", users.getBirthday());
-        return "my_account";
+
+        feedbackService.getById(users.getId());
+
+        if (userDetailsAdapter.getUser().getId() == id) {
+            return "my_account";
+        }else {
+
+            return "user_account";
+        }
     }
 
     @GetMapping("/main")
@@ -113,6 +124,8 @@ public class PageController {
         log.info(String.valueOf(car));
         return "redirect:/car/" + id;
     }
+
+
 
 
 
