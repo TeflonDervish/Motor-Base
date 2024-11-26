@@ -38,6 +38,14 @@ header .group1 img {
 
 }
 
+header .group2 img {
+    transition: transform 0.3s;
+}
+
+header .group2 img:hover {
+    transform: scale(1.1);
+}
+
 header .group1 a {
     font-weight: 700;
     font-size: 16px;
@@ -107,6 +115,22 @@ footer .group1 .phone {
     flex-direction: row;
     gap: 6px;
     align-items: center;
+}
+
+footer .group1 img {
+    transition: transform 0.3s;
+}
+
+footer .group2 img {
+    transition: transform 0.3s;
+}
+
+footer .group1 img:hover {
+    transform: scale(1.1);
+}
+
+footer .group2 img:hover {
+    transform: scale(1.1);
 }
 
 footer .group2 {
