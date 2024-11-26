@@ -3,10 +3,7 @@ package com.shesterki.Motor_Base_Server.controllers;
 
 import com.shesterki.Motor_Base_Server.config.SecurityConfig;
 import com.shesterki.Motor_Base_Server.enums.Roles;
-import com.shesterki.Motor_Base_Server.model.Announcement;
-import com.shesterki.Motor_Base_Server.model.Car;
-import com.shesterki.Motor_Base_Server.model.UserDetailsAdapter;
-import com.shesterki.Motor_Base_Server.model.Users;
+import com.shesterki.Motor_Base_Server.model.*;
 import com.shesterki.Motor_Base_Server.model.dto.LoginForm;
 import com.shesterki.Motor_Base_Server.services.*;
 import lombok.AllArgsConstructor;
@@ -30,7 +27,7 @@ public class PageController {
 
     private UsersService usersService;
     private CarService carService;
-    private FeedbackService feedbackService;
+    private UserFeedbackService feedbackService;
     private AnnouncementService announcementService;
     private UsersDetailsService usersDetailsService;
     private AuthenticationManager authenticationManager;
@@ -167,7 +164,12 @@ public class PageController {
         return "redirect:/car/" + car.getId();
     }
 
+    @PostMapping("/create-feedback/{id}")
+    public void createFeedback(@PathVariable Long id,
+                                 @RequestParam("otziv") String text,
+                                 @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter){
 
+    }
 
 
 

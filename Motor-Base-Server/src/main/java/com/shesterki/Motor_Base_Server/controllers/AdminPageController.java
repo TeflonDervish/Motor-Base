@@ -6,7 +6,7 @@ import com.shesterki.Motor_Base_Server.model.Car;
 import com.shesterki.Motor_Base_Server.model.Users;
 import com.shesterki.Motor_Base_Server.services.AnnouncementService;
 import com.shesterki.Motor_Base_Server.services.CarService;
-import com.shesterki.Motor_Base_Server.services.FeedbackService;
+import com.shesterki.Motor_Base_Server.services.UserFeedbackService;
 import com.shesterki.Motor_Base_Server.services.UsersService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ public class AdminPageController {
 
     private UsersService usersService;
     private CarService carService;
-    private FeedbackService feedbackService;
+    private UserFeedbackService feedbackService;
     private AnnouncementService announcementService;
 
     @GetMapping({"", "/"})

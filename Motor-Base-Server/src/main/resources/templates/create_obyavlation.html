@@ -63,12 +63,12 @@
                     <div class="characteristic">
                         <div class="two-column">
                             <label for="run">Пробег:</label>
-                            <input type="text" id="run" placeholder="Введите пробег" th:field="*{run}">
+                            <input type="number" step="1" id="run" placeholder="Введите пробег" th:field="*{run}">
                         </div>
 
                         <div class="two-column">
                             <label for="year">Год выпуска:</label>
-                            <input type="text" id="year" placeholder="Введите год выпуска" th:field="*{yearMake}">
+                            <input type="number" step="1" id="year" placeholder="Введите год выпуска" th:field="*{yearMake}">
                         </div>
 
                         <div class="two-column">
@@ -102,12 +102,12 @@
 
                         <div class="two-column">
                             <label for="volume">Объем двигателя:</label>
-                            <input type="text" id="volume" placeholder="Введите объем" th:field="*{engineVolume}">
+                            <input type="number" step="1" id="volume" placeholder="Введите объем" th:field="*{engineVolume}">
                         </div>
 
                         <div class="two-column">
                             <label for="power">Мощность:</label>
-                            <input type="text" id="power" placeholder="Введите мощность" th:field="*{enginePowers}">
+                            <input type="number" id="power" placeholder="Введите мощность" th:field="*{enginePowers}">
                         </div>
 
                         <div class="two-column">
