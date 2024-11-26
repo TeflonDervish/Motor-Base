@@ -4,6 +4,7 @@ package com.shesterki.Motor_Base_Server.controllers;
 import com.shesterki.Motor_Base_Server.config.SecurityConfig;
 import com.shesterki.Motor_Base_Server.enums.Roles;
 import com.shesterki.Motor_Base_Server.model.Car;
+import com.shesterki.Motor_Base_Server.model.UserDetailsAdapter;
 import com.shesterki.Motor_Base_Server.model.Users;
 import com.shesterki.Motor_Base_Server.model.dto.LoginForm;
 import com.shesterki.Motor_Base_Server.services.CarService;
@@ -11,6 +12,7 @@ import com.shesterki.Motor_Base_Server.services.UsersService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -27,12 +29,14 @@ public class PageController {
     private UsersService usersService;
     private CarService carService;
 
-//    @GetMapping("/user")
-//    public String user() {
-//        Authentication user = SecurityContextHolder.getContext().getAuthentication();
-//        user.get
-//    }
-
+    @GetMapping("/user")
+    public String user(@AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+        if (userDetailsAdapter != null) {
+            return "redirect:/user/" + userDetailsAdapter.getUser().getId();
+        }else {
+            return "redirect:/login";
+        }
+    }
 
     @GetMapping("/user/{id}")
     public String login(@PathVariable Long id, Model model) {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
@@ -82,36 +82,27 @@
                 </label>
                 <label>Тип кузова:</label>
                 
-                    <div class="type_kuzov">
-
-                        <div class = "kuzov">
-                            <input type="checkbox" id="sedan" name="kuzov_type" value="sedan">
-                            <label for="sedan">Седан</label>
-                        </div>
-                        <div class="kuzov">
-                            <input type="checkbox" id="liftback" name="kuzov_type" value="liftback">
-                            <label for="liftback">Лифтбэк</label><br>
-                        </div>
-                        <div class = "kuzov">
-                            <input type="checkbox" id="hatchback" name="kuzov_type" value="hatchback">
-                            <label for="hatchback">Хэтчбэк</label>
-                        </div>
-                        <div class="kuzov">
-                            <input type="checkbox" id="universal" name="kuzov_type" value="universal">
-                            <label for="universal">Универсал</label>
-                        </div>
-                        <div class = "kuzov">
-                            <input type="checkbox" id="kabriolet" name="kuzov_type" value="kabriolet">
-                            <label for="kabriolet">Кабриолет</label>
-                        </div>
-                        <div class="kuzov">
-                            <input type="checkbox" id="pickup" name="kuzov_type" value="pickup">
-                            <label for="pickup">Пикап</label>
-                        </div>
-                        <div class = "kuzov">
-                            <input type="checkbox" id="kupe" name="kuzov_type" value="kupe">
-                            <label for="kupe">Купе</label>
-                        </div>
+                    <div class = "kuzov">
+                    <input type="checkbox" id="sedan" name="kuzov_type" value="sedan">
+                    <label for="sedan">Седан</label>
+                    <input type="checkbox" id="liftback" name="kuzov_type" value="liftback">
+                    <label for="liftback">Лифтбэк</label><br>
+                    </div>
+                    <div class = "kuzov">
+                    <input type="checkbox" id="hatchback" name="kuzov_type" value="hatchback">
+                    <label for="hatchback">Хэтчбэк</label>
+                    <input type="checkbox" id="universal" name="kuzov_type" value="universal">
+                    <label for="universal">Универсал</label>
+                    </div>
+                    <div class = "kuzov">
+                        <input type="checkbox" id="kabriolet" name="kuzov_type" value="kabriolet">
+                        <label for="kabriolet">Кабриолет</label>
+                        <input type="checkbox" id="pickup" name="kuzov_type" value="pickup">
+                        <label for="pickup">Пикап</label>
+                    </div>
+                    <div class = "kuzov">
+                        <input type="checkbox" id="kupe" name="kuzov_type" value="kupe">
+                        <label for="kupe">Купе</label>
                     </div>
                 
                 <label>Коробка передач:
@@ -134,15 +125,16 @@
             </div>
     
             <div class = "obyvlation">
-            <div class="card" th:each="cars : ${cars}">
+                <div class="card" th:each="cars : ${cars}">
                 <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <p th:text="${cars.mark}">FORD FOCUS 2009</p>
-                <p th:text="${cars.model}"9.000.000 руб.</p>
+                <p th:text="${cars.model}">FORD FOCUS 2009</p>
+                <p th:text="${cars.mark}">9.000.000 руб.</p>
             </div>
-
-        </div>
+    
+            </div>
         </div>
     </div>
+
 
     <footer class="center">
         <div class="group1">
@@ -163,7 +155,6 @@
                 <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
             </div>
     </footer>
-
 
 
 

@@ -23,6 +23,11 @@ public class AdminPageController {
     private CarService carService;
     private UsersService usersService;
 
+    @GetMapping("/")
+    public String admin(){
+        return "redirect:/main";
+    }
+
     @GetMapping("/main")
     public String main(Model model) {
         List<Car> cars = carService.getAll();

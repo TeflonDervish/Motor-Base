@@ -139,6 +139,7 @@ footer .group1 h5 {
 
     font-size: 20px;
     padding-top: 100px;
+    padding-left: 250px;
     gap: 300px;
 }
 
@@ -185,8 +186,6 @@ select {
     border-radius: 5px;
     box-sizing: border-box;
     margin-bottom: 15px;
-
-
 }
 
 .obyvlation {
@@ -200,12 +199,10 @@ select {
 
 }
 
-card {
-}
-
-.card:hover {
+.obyvlation:hover {
     transform: scale(1.005);
     transition: transform 0.3s;
+    ;
 }
 
 
@@ -214,7 +211,6 @@ card {
     grid-template-columns: repeat(2, 1fr);
     justify-items: start;
     margin-left: 5px;
-    column-gap: 6px;
 }
 
 .kuzov {
@@ -222,7 +218,6 @@ card {
     align-items: center;
     margin-bottom: 10px;
     gap: 5px;
-    align-items: center;
 
 }
 
