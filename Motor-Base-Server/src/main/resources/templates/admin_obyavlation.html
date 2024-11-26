@@ -41,82 +41,89 @@
 </div>
 
 <div class="bodyPage center">
-    <div class="form-container">
-        <form>
-            <label for="type_car">Тип автомобиля:</label>
-            <select id="type_car" name="type_car">
-                <option value="none">Любой</option>
-                <option value="gruz">Грузовые</option>
-                <option value="legk">Легковые</option>
-                <option value="moto">Мотоциклы, мопеды, байки</option>
-            </select>
-            <label>Марка:</label>
-            <select id="mark_car" name="mark_car">
-                <option value="none">Любая</option>
-                <option value="Nissan">Nissan</option>
-                <option value="Ford">Ford</option>
-                <option value="Lada">Lada</option>
-            </select>
-            <label>Модель:
-            </label>
-            <select id="model_car" name="model_car">
-                <option value="none">Любая</option>
-                <option value="Granta">Granta</option>
-                <option value="Priora">Priora</option>
-                <option value="Kalina">Kalina</option>
-            </select>
-            <label>Год выпуска:
-                <input type="text" name="year">
-            </label>
-            <label>Цена:
-                <input type="text" name="price_min" placeholder="От">
-                <input type="text" name="price_max" placeholder="До">
-            </label>
-            <label>Пробег:
-                <input type="text" name="mileage_min" placeholder="От">
-                <input type="text" name="mileage_max" placeholder="До">
-            </label>
-            <label>Объем двигателя:
-                <input type="text" name="engine_volume">
-            </label>
-            <label>Мощность:
-                <input type="text" name="power">
-            </label>
-            <label>Тип кузова:</label>
+    <div class = "filters">
+        <div class="form-container">
+            <form>
+                <label for="type_car">Тип автомобиля:</label>
+                <select id="type_car" name="type_car">
+                    <option value="none">Любой</option>
+                    <option value="gruz">Грузовые</option>
+                    <option value="legk">Легковые</option>
+                    <option value="moto">Мотоциклы, мопеды, байки</option>
+                </select>
+                <label>Марка:</label>
+                <select id="mark_car" name="mark_car">
+                    <option value="none">Любая</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Lada">Lada</option>
+                </select>
+                <label>Модель:
+                </label>
+                <select id="model_car" name="model_car">
+                    <option value="none">Любая</option>
+                    <option value="Granta">Granta</option>
+                    <option value="Priora">Priora</option>
+                    <option value="Kalina">Kalina</option>
+                </select>
+                <label>Год выпуска:
+                    <input type="text" name="year">
+                </label>
+                <label>Цена:
+                    <input type="text" name="price_min" placeholder="От">
+                    <input type="text" name="price_max" placeholder="До">
+                </label>
+                <label>Пробег:
+                    <input type="text" name="mileage_min" placeholder="От">
+                    <input type="text" name="mileage_max" placeholder="До">
+                </label>
+                <label>Объем двигателя:
+                    <input type="text" name="engine_volume">
+                </label>
+                <label>Мощность:
+                    <input type="text" name="power">
+                </label>
+                <label>Тип кузова:</label>
 
-            <div class="kuzov">
-                <input type="checkbox" id="sedan" name="kuzov_type" value="sedan">
-                <label for="sedan">Седан</label>
-                <input type="checkbox" id="liftback" name="kuzov_type" value="liftback">
-                <label for="liftback">Лифтбэк</label><br>
-            </div>
-            <div class="kuzov">
-                <input type="checkbox" id="hatchback" name="kuzov_type" value="hatchback">
-                <label for="hatchback">Хэтчбэк</label>
-                <input type="checkbox" id="universal" name="kuzov_type" value="universal">
-                <label for="universal">Универсал</label>
-            </div>
-            <div class="kuzov">
-                <input type="checkbox" id="kabriolet" name="kuzov_type" value="kabriolet">
-                <label for="kabriolet">Кабриолет</label>
-                <input type="checkbox" id="pickup" name="kuzov_type" value="pickup">
-                <label for="pickup">Пикап</label>
-            </div>
-            <div class="kuzov">
-                <input type="checkbox" id="kupe" name="kuzov_type" value="kupe">
-                <label for="kupe">Купе</label>
-            </div>
+                <div class="kuzov">
+                    <input type="checkbox" id="sedan" name="kuzov_type" value="sedan">
+                    <label for="sedan">Седан</label>
+                    <input type="checkbox" id="liftback" name="kuzov_type" value="liftback">
+                    <label for="liftback">Лифтбэк</label><br>
+                </div>
+                <div class="kuzov">
+                    <input type="checkbox" id="hatchback" name="kuzov_type" value="hatchback">
+                    <label for="hatchback">Хэтчбэк</label>
+                    <input type="checkbox" id="universal" name="kuzov_type" value="universal">
+                    <label for="universal">Универсал</label>
+                </div>
+                <div class="kuzov">
+                    <input type="checkbox" id="kabriolet" name="kuzov_type" value="kabriolet">
+                    <label for="kabriolet">Кабриолет</label>
+                    <input type="checkbox" id="pickup" name="kuzov_type" value="pickup">
+                    <label for="pickup">Пикап</label>
+                </div>
+                <div class="kuzov">
+                    <input type="checkbox" id="kupe" name="kuzov_type" value="kupe">
+                    <label for="kupe">Купе</label>
+                </div>
 
-            <label>Коробка передач:
-                <input type="text" name="transmission">
-            </label>
-            <label>Привод:
-                <input type="text" name="drive_type">
-            </label>
-            <label>Цвет:
-                <input type="text" name="color">
-            </label>
-        </form>
+                <label>Коробка передач:
+                    <input type="text" name="transmission">
+                </label>
+                <label>Привод:
+                    <input type="text" name="drive_type">
+                </label>
+                <label>Цвет:
+                    <input type="text" name="color">
+                </label>
+            </form>
+        </div>
+
+        <div class="filtButton">
+            <button type="submit">Добавить филтры</button>
+            <button type="reset">Сбросить филтры</button>
+        </div>
     </div>
 
     <div class="obyvlation_list">

@@ -179,6 +179,39 @@ footer .group1 h5 {
     gap: 90px;
 }
 
+.filters {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.filtButton {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filtButton button {
+    padding: 11px 34px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.filtButton button:hover {
+    background-color: #0254b3;
+    transform: scale(1.01);
+
+}
+
 .form-container {
     background-color: #e0e0e0;
     padding: 20px;
