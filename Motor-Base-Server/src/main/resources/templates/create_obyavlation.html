@@ -57,6 +57,7 @@
                         <div class="two-column">
                             <label for="mark_car">Марка:</label>
                             <select id="mark_car" name="mark_car" th:field="*{mark}">
+                                <option value="null">Не выбрана...</option>
                                 <option value="Nissan">Nissan</option>
                                 <option value="Ford">Ford</option>
                                 <option value="Lada">Lada</option>
@@ -66,6 +67,7 @@
                         <div class="two-column">
                             <label for="model_car">Модель:</label>
                             <select id="model_car" name="model_car" th:field="*{model}">
+                                <option value="null">Не выбрана...</option>
                                 <option value="Granta">Granta</option>
                                 <option value="Priora">Priora</option>
                                 <option value="Kalina">Kalina</option>
@@ -75,6 +77,7 @@
                         <div class="two-column">
                             <label for="body">Тип кузова:</label>
                             <select id="body" name="body" th:field="*{typeBody}">
+                                <option value="null">Не выбран...</option>
                                 <option value="sedan">Седан</option>
                                 <option value="liftback">Лифтбэк</option>
                                 <option value="hatchback">Хэтчбэк</option>
@@ -97,15 +100,13 @@
 
                         <div class="two-column">
                             <label for="color">Цвет:</label>
-                            <select id="color" name="color" th:field="*{color}">
-                                <option value="white">Белый</option>
-                                <option value="black">Черный</option>
-                            </select>
+                            <input type="text" id="color" placeholder="Введите мощность" th:field="*{color}">
                         </div>
 
                         <div class="two-column">
                             <label for="transmission">Коробка передач:</label>
                             <select id="transmission" name="transmission" th:field="*{gearbox}">
+                                <option value="null">Не выбрана...</option>
                                 <option value="robot">Робот</option>
                                 <option value="variator">Вариатор</option>
                                 <option value="automat">Автоматическая</option>
@@ -116,6 +117,7 @@
                         <div class="two-column">
                             <label for="drive_type">Привод:</label>
                             <select id="drive_type" name="drive_type" th:field="*{type}">
+                                <option value="null">Не выбран...</option>
                                 <option value="all">Полный</option>
                                 <option value="front">Передний</option>
                                 <option value="back">Задний</option>
