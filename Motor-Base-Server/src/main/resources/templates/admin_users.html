@@ -74,12 +74,6 @@
     </div>
 
     <div class="users_list">
-        <div class="button_edit">
-            <button>Добавить</button>
-            <button>Удалить</button>
-            <button>Изменить</button>
-        </div>
-
         <div class="users">
             <div class="card" th:each="users : ${users}">
                 <a th:href="@{/user/{id}(id=${users.id})}">
@@ -89,8 +83,11 @@
                     <p th:text="${users.phoneNumber}">Номер телефона: +7 800 555 35 35</p>
                     <p th:text="${users.birthday}">Дата рождения: 30.09.2003</p>
                 </a>
+                <div class="button_edit">
+                    <input type="image" th:src="@{/img/login/body/icon-edit.svg}" alt="">
+                    <input type="image" th:src="@{/img/login/body/icon-delete.svg}" alt="">
+                </div>
             </div>
-
         </div>
     </div>
 </div>

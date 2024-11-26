@@ -127,11 +127,6 @@
     </div>
 
     <div class="obyvlation_list">
-        <div class="button_edit">
-            <button>Удалить</button>
-            <button>Изменить</button>
-        </div>
-
         <div class="obyvlation">
             <div class="card" th:each="announcements : ${announcements}">
                 <a th:href="@{/car/{id}(id=${announcements.car.id})}">
@@ -139,6 +134,10 @@
                     <p th:text="${announcements.car.model}">FORD FOCUS 2009</p>
                     <p th:text="${announcements.car.mark}">9.000.000 руб.</p>
                 </a>
+                <div class="button_edit">
+                    <input type="image" th:src="@{/img/login/body/icon-edit.svg}" alt="">
+                    <input type="image" th:src="@{/img/login/body/icon-delete.svg}" alt="">
+                </div>
             </div>
 
         </div>

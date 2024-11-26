@@ -233,7 +233,7 @@ label {
     color: #333;
 }
 
-input {
+.filters input {
     width: 100%;
     padding: 5px;
     margin-top: 8px;
@@ -305,7 +305,7 @@ input[type="checkbox"] {
     border-radius: 14px;
     background-color: #0077fe;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 0.24em;
     color: #fff;
     transition: background-color 0.3s;
@@ -321,20 +321,13 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     gap: 20px;
 }
-.button_edit button {
-    padding: 11px 48px;
-    border-radius: 14px;
-    background-color: #0077fe;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.24em;
-    color: #fff;
-    transition: background-color 0.3s;
+.button_edit input {
+    width: 30px;
 }
-.button_edit button:hover {
-    background-color: #0254b3;
-    transform: scale(1.01);
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
 }
