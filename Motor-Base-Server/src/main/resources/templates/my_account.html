@@ -69,10 +69,12 @@
     <div class = "myFavorite">
         <h2>Избранное</h2>
         <div class="obyavlations">
-            <div class="obyvlation" th:each="announcements : ${announcements}">
-                <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label th:text="${announcements.car.model}">FORD FOCUS 2003</label>
-                <label th:text="${announcements.car.mark}">5.000.000руб.</label>
+            <div class="card" th:each="announcements : ${announcements}">
+                <a th:href="@{/car/{id}(id=${announcements.car.id})}">
+                    <img th:src="@{img/login/body/image.jpg}" alt="">
+                    <p th:text="${announcements.car.model}">FORD FOCUS 2009</p>
+                    <p th:text="${announcements.car.mark}">9.000.000 руб.</p>
+                </a>
             </div>
         </div>
     </div>
@@ -81,10 +83,12 @@
     <div class = "myFavorite">
         <h2>Мои объявления</h2>
         <div class="obyavlations">
-            <div class="obyvlation" th:each="announcements : ${announcements}">
-                <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label th:text="${announcements.car.model}">FORD FOCUS 2003</label>
-                <label th:text="${announcements.car.mark}">5.000.000руб.</label>
+            <div class="card" th:each="announcements : ${announcements}">
+                <a th:href="@{/car/{id}(id=${announcements.car.id})}">
+                    <img th:src="@{img/login/body/image.jpg}" alt="">
+                    <p th:text="${announcements.car.model}">FORD FOCUS 2009</p>
+                    <p th:text="${announcements.car.mark}">9.000.000 руб.</p>
+                </a>
             </div>
         </div>
     </div>

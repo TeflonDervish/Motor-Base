@@ -58,6 +58,10 @@ header .group1 a {
 header .group1 a:hover {
     transform: scale(1.1);
 }
+header .group1 a:active{
+    transform: scale(0.9);
+
+}
 
 header .group2 {
     display: flex;
@@ -251,6 +255,7 @@ input {
     border-radius: 5px;
     box-sizing: border-box;
     margin-bottom: 7px;
+    background-color: #ffffff;
 }
 
 
@@ -278,7 +283,14 @@ input {
     gap: 50px;
 }
 
-.obyvlation {
+
+.obyvlations:hover {
+    transform: scale(1.005);
+    transition: transform 0.3s;
+
+}
+
+.card {
     display: flex;
     flex-direction: column;
     gap: 5px

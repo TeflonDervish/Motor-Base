@@ -58,6 +58,10 @@ header .group1 a {
 header .group1 a:hover {
     transform: scale(1.1);
 }
+header .group1 a:active{
+    transform: scale(0.9);
+
+}
 
 header .group2 {
     display: flex;
