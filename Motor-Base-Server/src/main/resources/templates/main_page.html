@@ -118,10 +118,12 @@
         </div>
 
         <div class = "obyvlation">
-            <div class="card" th:each="cars : ${cars}">
-                <img th:src="@{img/login/body/image.jpg}" alt="">
-                <p th:text="${cars.model}">FORD FOCUS 2009</p>
-                <p th:text="${cars.mark}">9.000.000 руб.</p>
+            <div class="card" th:each="announcements : ${announcements}">
+                <a th:href="@{/car/{id}(id=${announcements.car.id})}">
+                    <img th:src="@{img/login/body/image.jpg}" alt="">
+                    <p th:text="${announcements.car.model}">FORD FOCUS 2009</p>
+                    <p th:text="${announcements.car.mark}">9.000.000 руб.</p>
+                </a>
             </div>
 
         </div>

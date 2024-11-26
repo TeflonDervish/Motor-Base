@@ -64,29 +64,14 @@
 
 </div>
 
-<div class="bodyPage">
+<div class="bodyPage center">
     <div class="myFavorite">
         <h2>Объявления</h2>
         <div class="obyavlations">
-            <div class="obyvlation">
-                <img src="img/login/body/image.jpg" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
-            </div>
-            <div class="obyvlation">
-                <img src="img/login/body/image.jpg" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
-            </div>
-            <div class="obyvlation">
-                <img src="img/login/body/image.jpg" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
-            </div>
-            <div class="obyvlation">
-                <img src="img/login/body/image.jpg" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
+            <div class="obyvlation" th:each="announcements : ${announcements}">
+                <img th:src="@{/img/login/body/image.jpg}" alt="">
+                <label th:text="${announcements.car.model}">FORD FOCUS 2003</label>
+                <label th:text="${announcements.car.mark}">5.000.000руб.</label>
             </div>
         </div>
     </div>
@@ -95,7 +80,8 @@
         <div class="otziv">
             <label th:text="author"> Автор</label>
             <form>
-                <label th:text="text"> Автодилер Мэйджор на Новорижском мне известен потому, что я имел неосторожность отогнать им свой
+                <label th:text="text"> Автодилер Мэйджор на Новорижском мне известен потому, что я имел неосторожность
+                    отогнать им свой
                     КИА на гарантийное обслуживание. И вот уже пошел пятый месяц, как идет ремонт двигателя. То ДВС не
                     тот привезут, то с дефектом, а то и мастера установить не могут правильно. А самое удивительное в
                     этой истории то, что руководитель данного автосалона совершенно пассивно реагирует на подобные

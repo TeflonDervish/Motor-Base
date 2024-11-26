@@ -30,7 +30,7 @@
 
     <div class = "bodyPage">
         <div class="form-container">
-            <form action="#" th:action="@{/register-user}" th:object="${user}" method="post">
+            <form action="#" th:action="@{/register}" th:object="${user}" method="post">
                 <img height="25px" th:src="@{/img/login/header/logo.png}" alt="">
                 <label>Номер телефона:<br>
                     <input type="text" name="number_phone" th:field="*{phoneNumber}" required>
@@ -53,7 +53,7 @@
                 <label>Город:<br>
                     <input type="text" name="city" th:field="*{city}" required>
                 </label>
-                <button>Зарегистрироваться</button>
+                <button type="submit">Зарегистрироваться</button>
             </form>
         </div>
     </div>

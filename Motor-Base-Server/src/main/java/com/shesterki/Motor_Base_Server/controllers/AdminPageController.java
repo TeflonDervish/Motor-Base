@@ -1,9 +1,12 @@
 package com.shesterki.Motor_Base_Server.controllers;
 
 
+import com.shesterki.Motor_Base_Server.model.Announcement;
 import com.shesterki.Motor_Base_Server.model.Car;
 import com.shesterki.Motor_Base_Server.model.Users;
+import com.shesterki.Motor_Base_Server.services.AnnouncementService;
 import com.shesterki.Motor_Base_Server.services.CarService;
+import com.shesterki.Motor_Base_Server.services.FeedbackService;
 import com.shesterki.Motor_Base_Server.services.UsersService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,8 +23,10 @@ import java.util.List;
 @RequestMapping("/admin")
 public class AdminPageController {
 
-    private CarService carService;
     private UsersService usersService;
+    private CarService carService;
+    private FeedbackService feedbackService;
+    private AnnouncementService announcementService;
 
     @GetMapping({"", "/"})
     public String admin(){
@@ -30,8 +35,8 @@ public class AdminPageController {
 
     @GetMapping("/main")
     public String main(Model model) {
-        List<Car> cars = carService.getAll();
-        model.addAttribute("cars", cars);
+        List<Announcement> announcements = announcementService.getAll();
+        model.addAttribute("announcements", announcements);
         return "admin_obyavlation";
     }
 

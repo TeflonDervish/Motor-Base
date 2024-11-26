@@ -1,4 +1,4 @@
-package com.shesterki.Motor_Base_Server.controllers;
+package com.shesterki.Motor_Base_Server.services;
 
 import com.shesterki.Motor_Base_Server.model.UserDetailsAdapter;
 import com.shesterki.Motor_Base_Server.model.Users;
@@ -8,7 +8,6 @@ import lombok.Data;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Service
 @Data

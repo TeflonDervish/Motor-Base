@@ -36,4 +36,8 @@ public class AnnouncementService {
     public Announcement updateAnnouncement(Announcement announcement) {
         return announcementRepository.save(announcement);
     }
+
+    public List<Announcement> getByUserId(Long userId) {
+        return announcementRepository.findByUserId(userId);
+    }
 }

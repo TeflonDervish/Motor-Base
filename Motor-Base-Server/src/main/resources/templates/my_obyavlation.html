@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MainPage</title>
-    <link rel="stylesheet" href="style_my_obyavlation.css">
+    <link rel="stylesheet" th:href="@{/style/style_my_obyavlation.css}">
 </head>
 <body>
     
@@ -28,44 +28,44 @@
         </div>
     </header>
 
-    <div class = "bodyPage">
+    <div class = "bodyPage center">
         <div class="form-container">
             <div class="naming">
-                <h1>CHERY Tiggo 8 Pro Max, 2024</h1>
+                <h1 th:text="${info_car}">CHERY Tiggo 8 Pro Max, 2024</h1>
                 <button>Редактировать</button>
                 <button>Снять с публикации</button>
-                <img width="800px" src="img/login/body/image.jpg" alt="">
+                <img width="600px" th:src="@{/img/login/body/image.jpg}" alt="">
             </div>
             <div class = "information">
                 <h2>Связаться с продавцом</h2> 
                 <div class="phone">
                     <img src="img/login/footer/whatsapp_black.svg" alt=""></img>
-                    <h3>Александр</h4>
+                    <h3 th:text="${name}">Александр</h4>
                 </div>
-                <h4>+7(927)-081-52-66</h4>
+                <h4 th:text="${phoneNumber}">+7(927)-081-52-66</h4>
                 <div class="characteristic">
                     <form>
                         <h2>Характеристики</h2>
-                        <label>Пробег:</label>
-                        <h4>158 695 км</h4>
+                        <label >Пробег:</label>
+                        <h4 th:text="${run}">158 695 км</h4>
                         <label>Год выпуска:</label>
-                        <h4>2017 год</h4>
+                        <h4 th:text="${year}">2017 год</h4>
                         <label>Марка:</label>
-                        <h4>Chery</h4>
+                        <h4 th:text="${mark}">Chery</h4>
                         <label>Модель:</label>
-                        <h4>Tiggo 8 Pro Max</h4>
+                        <h4 th:text="${model}">Tiggo 8 Pro Max</h4>
                         <label>Мощность:</label>
-                        <h4>300 лс</h4>
+                        <h4 th:text="${engine_powers}">300 лс</h4>
                         <label>Объем двигателя:</label>
-                        <h4>4</h4>
+                        <h4 th:text="${engine_volume}">4</h4>
                         <label>Цвет:</label>
-                        <h4>Черный</h4>
+                        <h4 th:text="${color}">Черный</h4>
                         <label>Коробка передач:</label>
-                        <h4>Робот</h4>
+                        <h4 th:text="${gearbox}">Робот</h4>
                         <label>Привод: </label>
-                        <h4>Полный</h4>
+                        <h4 th:text="${type}">Полный</h4>
                         <label>Тип кузова:</label>
-                        <h4>Седан</h4>
+                        <h4 th:text="${type_body}">Седан</h4>
                     </form>
                 </div>
             </div>
@@ -73,16 +73,14 @@
         <div class="desc">
             <h2>Описание</h2>
             <div class="description">
-                <p>🚨 Держим цены и предлагаем выгодные условия для покупки нового автомобиля💥 Максимальная выгода до - 1 505 000 рублей!</p>
-                <p>🔥 Скидка до 200 000₽ по программе «СЕМЕЙНЫЙ АВТОМОБИЛЬ» до 31 октября 2024 года</p>
-                <p>🎁 У нас подарок на выбор: <br> ✅ Сигнализация <br>✅ Комплект зимней резины <br> ✅ Аксессуары</p>
-            </div>
+                <p th:text="${description}">🚨 Держим цены и предлагаем выгодные условия для покупки нового автомобиля💥 Максимальная выгода до - 1 505 000 рублей!</p>
+             </div>
         </div>
         
     </div>
 
 
-    <<footer class="center">
+    <footer class="center">
         <div class="group1">
             <h4>Связь с нами </h4>
             <div class="phone">

@@ -22,10 +22,11 @@ public class Announcement {
     private Car car;
 
     @ManyToOne
-    @JoinColumn(name = "userLogin_Id")
-    private Users userLogin;
+    @JoinColumn(name = "user_Id")
+    private Users user;
 
     private Double price;
     private LocalDate date;
+    private String description;
 
 }

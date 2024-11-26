@@ -68,25 +68,10 @@
     <div class = "myFavorite">
         <h2>Избранное</h2>
         <div class="obyavlations">
-            <div class="obyvlation">
+            <div class="obyvlation" th:each="announcements : ${announcements}">
                 <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
-            </div>
-            <div class="obyvlation">
-                <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
-            </div>
-            <div class="obyvlation">
-                <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
-            </div>
-            <div class="obyvlation">
-                <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
+                <label th:text="${announcements.car.model}">FORD FOCUS 2003</label>
+                <label th:text="${announcements.car.mark}">5.000.000руб.</label>
             </div>
         </div>
     </div>
@@ -95,25 +80,10 @@
     <div class = "myFavorite">
         <h2>Мои объявления</h2>
         <div class="obyavlations">
-            <div class="obyvlation">
+            <div class="obyvlation" th:each="announcements : ${announcements}">
                 <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
-            </div>
-            <div class="obyvlation">
-                <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
-            </div>
-            <div class="obyvlation">
-                <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
-            </div>
-            <div class="obyvlation">
-                <img th:src="@{/img/login/body/image.jpg}" alt="">
-                <label>FORD FOCUS 2003</label>
-                <label>5.000.000руб.</label>
+                <label th:text="${announcements.car.model}">FORD FOCUS 2003</label>
+                <label th:text="${announcements.car.mark}">5.000.000руб.</label>
             </div>
         </div>
     </div>

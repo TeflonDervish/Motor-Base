@@ -12,8 +12,8 @@ button {
 }
 
 .center {
-    padding-left: calc(50% - 950px);
-    padding-right: calc(50% - 950px);
+    padding-left: calc(50% - 480px);
+    padding-right: calc(50% - 480px);
 }
 
 .header {
@@ -138,13 +138,11 @@ footer .group1 h5 {
 
 
 .dataUser {
-    display: flex
-;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
     align-content: center;
-    flex-wrap: wrap;
     gap: 80px;
 }
 
@@ -251,12 +249,9 @@ input {
 
 
 .obyavlations {
-    display: flex
-;
-    flex-direction: row;
-    align-items: center;
-    gap: 50px;
-    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
 .obyvlation {
@@ -272,16 +267,14 @@ input {
 
 
 .otzivi {
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
 }
 
 .otziv{
-    width: 1380px;
-    
+    width:100%;
 }
 
 .otziv form{
@@ -322,7 +315,7 @@ input {
     background-color: #e0e0e0;
     font-size: 25px;
     font-style: oblique;
-    width: 1340px;
+    width: 100%;
 }
 
 .inputOtz button{
@@ -334,7 +327,6 @@ input {
     letter-spacing: 0.24em;
     color: #fff;
     transition: background-color 0.3s;
-    width: 350px;
 
 }
 
