@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+.center {
+    padding-left: calc(50% - 480px);
+    padding-right: calc(50% - 480px);
+}
+
+/*HEADER*/
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: #000;
+}
+
+header .group1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 29px;
+    position: relative;
+}
+header .group1 img {
+    margin-right: 120px;
+    transform: scale(2.9) translate(14%, 0%);
+
+}
+header .group2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 13px;
+}
+header .group2 img {
+    transition: transform 0.3s;
+}
+header .group2 img:hover {
+    transform: scale(1.1);
+}
+
+.link__page {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: text-decoration 0.3s;
+    transition: transform 0.3s;
+}
+.link__page:hover {
+    transform: scale(1.1);
+}
+.link__page:active{
+    transform: scale(0.9);
+
+}
+
+
+/*FOOTER*/
+
+footer {
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 17px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+footer .group1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+footer .group1 .phone {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+footer .group1 h4 {
+    font-weight: 700px;
+    font-size: 20px;
+    letter-spacing: 0.17em;
+    color: #fff;
+}
+footer .group1 h5 {
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    color: #fff;
+}
+footer .group2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 39px;
+}
+
+.link__icon {
+    transition: transform 0.3s;
+}
+.link__icon:hover {
+    transform: scale(1.1);
+}
+.link__icon:active {
+    transform: scale(1.02);
+}
+
+
+/*CONTENT*/
+
+.button__blue  {
+    padding: 11px 34px;
+    border-radius: 14px;
+    background-color: #0077fe;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+.button__blue:hover {
+    background-color: #0254b3;
+    transform: scale(1.02);
+}
+.button__blue:active {
+    transform: scale(0.98);
+}
+
+.button__white  {
+    padding: 11px 34px;
+    border-radius: 14px;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: #0077fe;
+    transition: background-color 0.3s;
+    border: 1px solid #0077fe;
+}
+.button__white:hover {
+    background-color: #c4deff;
+    transform: scale(1.02);
+}
+.button__white:active {
+    transform: scale(0.98);
+}
+
+.search__global {
+    padding-left: 14px;
+    height: 37px;
+    border-radius: 14px;
+    width: 300px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.body__page {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 90px;
+}
+
+.form__container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #e0e0e0;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
+}
+.form__container input:not([type="checkbox"]),
+.form__container select{
+    width: 250px;
+    padding: 6px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 7px;
+}
+.form__container textarea{
+    height: auto;
+    overflow: hidden;
+    resize: none;
+    padding: 6px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 7px;
+}
+.form__container .type__kuzov {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.form__container .type__kuzov label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+.form__element {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+    align-self: center;
+}
+
+.default__link {
+    align-self: center;
+    font-size: 20px;
+    padding-top: 10px;
+    color:#0254b3
+}
+.default__link:hover {
+    color: #2a008d;
+}
+
+.container__two__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
+    align-items: start;
+    grid-template-rows: max-content;
+}
+
+.container__four__columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-items: center;
+    align-items: start;
+    grid-template-rows: max-content;
+}
+
+.card a{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.3s;
+}
+.card a:hover {
+    transform: scale(1.03);
+}
+
+.filter__button {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*Не трогать не ошибка*/
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.content label:not(.form__container label){
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+.content input{
+    width: 100%;
+    padding: 6px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 7px;
+}
+
+.image {
+    width: 550px;
+    height: 550px;
+    border-radius: 25px;
+    border: 1px solid #ffffff;
+}
+
+.feedback{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.feedback h3{
+    margin-left: 20px
+}
+.feedback p{
+    display: block;
+    padding: 10px;
+    background-color: #e0e0e0;
+    box-shadow: 11px 10px 14px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.two__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.two__buttons button{
+    width: 250px;
+}

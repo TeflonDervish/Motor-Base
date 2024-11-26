@@ -8,8 +8,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Account</title>
-    <link rel="stylesheet" th:href="@{/style/styleUserAccount.css}">
+    <title>Аккаунт</title>
+    <link rel="stylesheet" th:href="@{/style/style.css}">
 </head>
 <body>
 
@@ -17,90 +17,87 @@
     <div class="group1">
         <a th:href="@{/main}">
             <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
-        <a th:href="@{/user}" class="link">Избранное</a>
-        <a th:href="@{/user}" class="link">Мои объявления</a>
-        <a th:href="@{/main}" class="link">Рекомендации</a>
+        <a th:href="@{/user}" class="link__page">Избранное</a>
+        <a th:href="@{/user}" class="link__page">Мои объявления</a>
+        <a th:href="@{/main}" class="link__page">Рекомендации</a>
     </div>
     <div class="group2">
-        <input type="text" name="" id="" class="search">
+        <input type="text" name="" id="" class="search__global">
         <img th:src="@{/img/login/header/search.svg}" alt="">
-        <button th:onclick="|window.location.href='@{/login}'|">Войти</button>
-        <button th:onclick="|window.location.href='@{/create-obyavlation}'|">Разместить объявление</button>
+        <button class="button__blue" th:onclick="|window.location.href='@{/login}'|">Войти</button>
+        <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
+            объявление
+        </button>
     </div>
 </header>
+<div class="content center">
 
-
-<div class="dataUser center">
-    <div class="myProfile">
-        <h2>Мой личный профиль</h2>
-        <div class="buttonImg">
-            <img th:src="@{/img/login/body/user.jpg}" alt="">
+    <div class="body__page">
+        <div class="content">
+            <h1>Мой личный профиль</h1>
+            <img class="image" th:src="@{/img/login/body/user.jpg}" alt="">
+        </div>
+        <div class="form__container">
+            <form>
+                <label>Имя:
+                    <input type="text" name="name" th:value="${name}" readonly>
+                </label>
+                <label>Фамилия:
+                    <input type="text" name="surname" th:value="${surname}" readonly>
+                </label>
+                <label>Контактный номер:
+                    <input type="text" name="number" th:value="${number}" readonly>
+                </label>
+                <label>Почта:
+                    <input type="text" name="email" th:value="${email}" readonly>
+                </label>
+                <label>Город:
+                    <input type="text" name="city" th:value="${city}" readonly>
+                </label>
+                <label>Дата рождения:
+                    <input type="date" name="db" th:value="${db}" readonly>
+                </label>
+            </form>
         </div>
     </div>
-
-    <div class="form-container">
-        <form>
-            <label>Имя:
-                <input type="text" name="name" th:value="${name}" readonly>
-            </label>
-            <label>Фамилия:
-                <input type="text" name="surname" th:value="${surname}" readonly>
-            </label>
-            <label>Контактный номер:
-                <input type="text" name="number" th:value="${number}" readonly>
-            </label>
-            <label>Почта:
-                <input type="text" name="email" th:value="${email}" readonly>
-            </label>
-            <label>Город:
-                <input type="text" name="city" th:value="${city}" readonly>
-            </label>
-            <label>Дата рождения:
-                <input type="date" name="db" th:value="${db}" readonly>
-            </label>
-        </form>
-    </div>
-
-
-</div>
-
-<div class="bodyPage center">
-    <div class="myFavorite">
-        <h2>Объявления</h2>
-        <div class="obyavlations">
+    <div class="content">
+        <h1>Объявления</h1>
+        <div class="container__four__columns">
             <div class="card" th:each="announcements : ${announcements}">
                 <a th:href="@{/car/{id}(id=${announcements.car.id})}">
-                    <img th:src="@{img/login/body/image.jpg}" alt="">
+                    <img th:src="@{/img/login/body/image.jpg}" alt="">
                     <p th:text="${announcements.car.model}">FORD FOCUS 2009</p>
                     <p th:text="${announcements.car.mark}">9.000.000 руб.</p>
                 </a>
             </div>
         </div>
     </div>
-    <h2>Отзывы</h2>
-    <div class="otzivi">
-        <div class="otziv">
-            <label th:text="author"> Автор</label>
-            <form>
-                <label th:text="text"> Автодилер Мэйджор на Новорижском мне известен потому, что я имел неосторожность
-                    отогнать им свой
-                    КИА на гарантийное обслуживание. И вот уже пошел пятый месяц, как идет ремонт двигателя. То ДВС не
-                    тот привезут, то с дефектом, а то и мастера установить не могут правильно. А самое удивительное в
-                    этой истории то, что руководитель данного автосалона совершенно пассивно реагирует на подобные
-                    замечания – улыбается, обещает помочь, однако ничегошеньки не делает. Пора подавать жалобы на них во
-                    все инстанции, это точно.</label>
-            </form>
+    <div class="content">
+        <h1>Отзывы</h1>
+        <div class="feedback">
+            <div>
+                <h3>Author</h3>
+                <p>Text feedback</p>
+            </div>
         </div>
     </div>
 
-    <div class="inputOtz">
-        <h2>Оставить отзыв</h2>
-        <form>
-            <input type="text" name="otziv" >
-            <button>Опубликовать отзыв</button>
+    <div class="content">
+        <h1>Оставить отзыв</h1>
+        <form class="form__container">
+                <textarea id="myTextarea"
+                          oninput="autoResize(this)"
+                          placeholder="Введите текст..."
+                ></textarea>
+            <script>
+                function autoResize(textarea) {
+                    textarea.style.height = 'auto';
+                    textarea.style.height = textarea.scrollHeight + 'px';
+                }
+            </script>
+            <button class="button__blue" type="submit">Опубликовать отзыв</button>
         </form>
     </div>
-
 </div>
 
 
@@ -113,13 +110,13 @@
         </div>
     </div>
     <div class="group2">
-        <a th:href="'https://www.youtube.com/'">
+        <a class="link__icon" th:href="'https://www.youtube.com/'">
             <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
-        <a th:href="'https://www.instagram.com/'">
+        <a class="link__icon" th:href="'https://www.instagram.com/'">
             <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
-        <a th:href="'https://www.facebook.com/'">
+        <a class="link__icon" th:href="'https://www.facebook.com/'">
             <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
-        <a th:href="'https://www.twitter.com/'">
+        <a class="link__icon" th:href="'https://www.twitter.com/'">
             <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
     </div>
 </footer>

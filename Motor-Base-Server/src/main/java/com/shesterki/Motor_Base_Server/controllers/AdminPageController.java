@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class AdminPageController {
     public String main(Model model) {
         List<Announcement> announcements = announcementService.getAll();
         model.addAttribute("announcements", announcements);
-        return "admin_obyavlation";
+        return "admin_main_announcement";
     }
 
     @GetMapping("/users")
@@ -44,9 +45,13 @@ public class AdminPageController {
         List<Users> users = usersService.getAll();
         model.addAttribute("users", users);
 
-        return "admin_users";
+        return "admin_main_users";
     }
 
+    @GetMapping("/change_user/{id}")
+    public String changeUser(@PathVariable Long id) {
+        return "admin_edit_users";
+    }
 
 
 

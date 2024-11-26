@@ -2,44 +2,44 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My account</title>
-    <link rel="stylesheet" th:href="@{/style/styleMyAccount.css}">
+    <title>Мой аккаунт</title>
+    <link rel="stylesheet" th:href="@{/style/style.css}">
 </head>
 <body>
-    
-    <header class="header">
-        <div class="group1">
-            <a th:href="@{/main}">
-                <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
-            <a th:href="@{/user}" class="link">Избранное</a>
-            <a th:href="@{/user}" class="link">Мои объявления</a>
-            <a th:href="@{/main}" class="link">Рекомендации</a>
-        </div>
-        <div class="group2">
-            <input type="text" name="" id="" class="search">
-            <img th:src="@{/img/login/header/search.svg}" alt="">
-            <img th:src="@{/img/login/body/icon-user.png}" alt="">
-            <img th:src="@{/img/login/body/icon-exit.png}" alt="">
-            <button th:onclick="|window.location.href='@{/create-obyavlation}'|">Разместить объявление</button>
-        </div>
-    </header>
 
+<header class="header">
+    <div class="group1">
+        <a th:href="@{/main}">
+            <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
+        <a th:href="@{/user}" class="link__page">Избранное</a>
+        <a th:href="@{/user}" class="link__page">Мои объявления</a>
+        <a th:href="@{/main}" class="link__page">Рекомендации</a>
+    </div>
+    <div class="group2">
+        <input type="text" name="" id="" class="search__global">
+        <img th:src="@{/img/login/header/search.svg}" alt="">
+        <button class="button__blue" th:onclick="|window.location.href='@{/login}'|">Войти</button>
+        <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
+            объявление
+        </button>
+    </div>
+</header>
 
-    <div class = "dataUser center">
-        <div class = "myProfile">
-            <h2>Мой личный профиль</h2>
-            <div class = "buttonImg">
-                <img th:src="@{/img/login/body/user.jpg}" alt="">
-                <button>Редактировать профиль</button>
-            </div>
+<div class="content center">
+
+    <div class="body__page">
+        <div class="content">
+            <h1>Мой личный профиль</h1>
+            <img class="image" th:src="@{/img/login/body/user.jpg}" alt="">
+            <button class="button__blue">Редактировать профиль</button>
         </div>
-
-        <div class="form-container">
+        <div class="form__container">
             <form>
                 <label>Имя:
                     <input type="text" name="name" th:value="${name}">
@@ -61,14 +61,10 @@
                 </label>
             </form>
         </div>
-        
-        
     </div>
-
-    <div class = "bodyPage center">
-    <div class = "myFavorite">
+    <div>
         <h2>Избранное</h2>
-        <div class="obyavlations">
+        <div class="container__four__columns">
             <div class="card" th:each="announcements : ${announcements}">
                 <a th:href="@{/car/{id}(id=${announcements.car.id})}">
                     <img th:src="@{img/login/body/image.jpg}" alt="">
@@ -78,11 +74,9 @@
             </div>
         </div>
     </div>
-
-
-    <div class = "myFavorite">
+    <div>
         <h2>Мои объявления</h2>
-        <div class="obyavlations">
+        <div class="container__four__columns">
             <div class="card" th:each="announcements : ${announcements}">
                 <a th:href="@{/car/{id}(id=${announcements.car.id})}">
                     <img th:src="@{img/login/body/image.jpg}" alt="">
@@ -92,41 +86,42 @@
             </div>
         </div>
     </div>
-
-
-    <div class = "otzivi">
+    <div>
         <h2>Отзывы</h2>
-        <div class="otziv" th:each="feedback : ${feedback}">
+        <div class="content" th:each="feedback : ${feedback}">
             <label th:text="${feedback.user}"> Автор</label>
             <form>
-                <label> Автодилер Мэйджор на Новорижском мне известен потому, что я имел неосторожность отогнать им свой КИА на гарантийное обслуживание. И вот уже пошел пятый месяц, как идет ремонт двигателя. То ДВС не тот привезут, то с дефектом, а то и мастера установить не могут правильно. А самое удивительное в этой истории то, что руководитель данного автосалона совершенно пассивно реагирует на подобные замечания – улыбается, обещает помочь, однако ничегошеньки не делает. Пора подавать жалобы на них во все инстанции, это точно.</label>
+                <label> Автодилер Мэйджор на Новорижском мне известен потому, что я имел неосторожность отогнать им
+                    свой КИА на гарантийное обслуживание. И вот уже пошел пятый месяц, как идет ремонт двигателя. То
+                    ДВС не тот привезут, то с дефектом, а то и мастера установить не могут правильно. А самое
+                    удивительное в этой истории то, что руководитель данного автосалона совершенно пассивно
+                    реагирует на подобные замечания – улыбается, обещает помочь, однако ничегошеньки не делает. Пора
+                    подавать жалобы на них во все инстанции, это точно.</label>
             </form>
         </div>
     </div>
-    </div>
+</div>
 
 
-
-    <footer class="center">
-        <div class="group1">
-            <h4>Связь с нами </h4>
-            <div class="phone">
-                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
-                <h5>+7(927)-081-52-66</h5>
-            </div>
+<footer class="center">
+    <div class="group1">
+        <h4>Связь с нами </h4>
+        <div class="phone">
+            <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
+            <h5>+7(927)-081-52-66</h5>
         </div>
-        <div class="group2">
-            <a th:href="'https://www.youtube.com/'">
-                <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
-            <a th:href="'https://www.instagram.com/'">
-                <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
-            <a th:href="'https://www.facebook.com/'">
-                <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
-            <a th:href="'https://www.twitter.com/'">
-                <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
-            </div>
-    </footer>
-
+    </div>
+    <div class="group2">
+        <a class="link__icon" th:href="'https://www.youtube.com/'">
+            <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
+        <a class="link__icon" th:href="'https://www.instagram.com/'">
+            <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
+        <a class="link__icon" th:href="'https://www.facebook.com/'">
+            <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
+        <a class="link__icon" th:href="'https://www.twitter.com/'">
+            <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
+    </div>
+</footer>
 
 
 </body>

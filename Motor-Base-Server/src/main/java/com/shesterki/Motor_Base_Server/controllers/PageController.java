@@ -69,13 +69,13 @@ public class PageController {
         List<Announcement> announcements = announcementService.getAll();
 
         model.addAttribute("announcements", announcements);
-        return "main_page";
+        return "main";
     }
 
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("user", new Users());
-        return "registration";
+        return "register";
     }
 
     @PostMapping("/register")
@@ -126,21 +126,21 @@ public class PageController {
         model.addAttribute("description", announcement.getDescription());
 
         if (userDetailsAdapter.getUser().getId() == users.getId()) {
-            return "my_obyavlation";
+            return "my_announcement";
         }else {
-            return "obyavlation";
+            return "announcement";
 
         }
 
     }
 
-    @GetMapping("/create-obyavlation")
+    @GetMapping("/create_announcement")
     public String createObyavliation(Model model) {
         model.addAttribute("car", new Car());
-        return "create_obyavlation";
+        return "create_announcement";
     }
 
-    @PostMapping("/create-obyavlation")
+    @PostMapping("/create_announcement")
     public String createObyavliation(@ModelAttribute Car car,
                                      @RequestParam("name") String name,
                                      @RequestParam("price") Double price,

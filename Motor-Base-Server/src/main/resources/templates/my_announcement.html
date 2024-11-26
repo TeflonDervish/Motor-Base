@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мое объявление</title>
+    <link rel="stylesheet" th:href="@{/style/style.css}">
+</head>
+<body>
+    
+<header class="header">
+    <div class="group1">
+        <a th:href="@{/main}">
+            <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
+        <a th:href="@{/user}" class="link__page">Избранное</a>
+        <a th:href="@{/user}" class="link__page">Мои объявления</a>
+        <a th:href="@{/main}" class="link__page">Рекомендации</a>
+    </div>
+    <div class="group2">
+        <input type="text" name="" id="" class="search__global">
+        <img th:src="@{/img/login/header/search.svg}" alt="">
+        <button class="button__blue" th:onclick="|window.location.href='@{/login}'|">Войти</button>
+        <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
+            объявление
+        </button>
+    </div>
+</header>
+
+<div class="content center">
+    <div class="body__page">
+        <div class="content">
+            <h1 th:text="${info_car}">CHERY Tiggo 8 Pro Max, 2024</h1>
+            <h3 th:text="${price}">Цена: 19 000 000 руб.</h3>
+            <img class="image" th:src="@{/img/login/body/image.jpg}" alt="">
+            <div class="two__buttons">
+                <button class="button__blue">Удалить</button>
+                <button class="button__blue">Редактировать</button>
+            </div>
+        </div>
+        <div class="form__container">
+            <div class="phone">
+                <h2 th:text="${name}">Александр</h2>
+                <h4 th:text="${phoneNumber}">+7(927)-081-52-66</h4>
+            </div>
+            <div class="characteristic">
+                <h2>Характеристики</h2>
+                <label>Пробег:
+                    <input type="text" th:value="${run}" name="run" readonly></label>
+                <label>Год выпуска:
+                    <input type="number" th:value="${year}" name="run" readonly></label>
+                <label>Марка:
+                    <input type="text" th:value="${mark}" name="run" readonly></label>
+                <label>Модель:
+                    <input type="text" th:value="${model}" name="run" readonly></label>
+                <label>Мощность:
+                    <input type="text" th:value="${engine_powers}" name="run" readonly></label>
+                <label>Объем двигателя:
+                    <input type="text" th:value="${engine_volume}" name="run" readonly></label>
+                <label>Цвет:
+                    <input type="text" th:value="${color}" name="run" readonly></label>
+                <label>Коробка передач:
+                    <input type="text" th:value="${gearbox}" name="run" readonly></label>
+                <label>Привод:
+                    <input type="text" th:value="${type}" name="run" readonly></label>
+                <label>Тип кузова:
+                    <input type="text" th:value="${type_body}" name="run" readonly></label>
+            </div>
+            <button class="button__blue">Добавить в избранное</button>
+        </div>
+    </div>
+    <div class="form__container">
+        <h1>Описание</h1>
+        <p th:text="${description}"></p>
+    </div>
+
+</div>
+
+
+<footer class="center">
+        <div class="group1">
+            <h4>Связь с нами </h4>
+            <div class="phone">
+                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
+                <h5>+7(927)-081-52-66</h5>
+            </div>
+        </div>
+        <div class="group2">
+            <a th:href="'https://www.youtube.com/'">
+                <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
+            <a th:href="'https://www.instagram.com/'">
+                <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
+            <a th:href="'https://www.facebook.com/'">
+                <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
+            <a th:href="'https://www.twitter.com/'">
+                <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
+            </div>
+    </footer>
+</body>
+</html>
