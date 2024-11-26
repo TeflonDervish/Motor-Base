@@ -35,7 +35,24 @@
             <div class="group1">
                 <div class="naming">
                     <input type="text" name="name" placeholder="Введите название" required>
-                    <input type="image" width="450px" height="450px" th:src="@{img/login/body/photo-camera.png}" alt="">
+                    <img id="imagePreview" width="450px" height="450px" th:src="@{img/login/body/photo-camera.png}" alt="">
+                    <input type="file" id="fileInput" accept="image/*">
+                    <script>
+                        const fileInput = document.getElementById('fileInput');
+                        const imagePreview = document.getElementById('imagePreview');
+
+                        fileInput.addEventListener('change', function(event) {
+                            const file = event.target.files[0]; // Получаем выбранный файл
+                            if (file) {
+                                const reader = new FileReader(); // Создаем FileReader для чтения файла
+                                reader.onload = function(e) {
+                                    imagePreview.src = e.target.result; // Устанавливаем src изображения
+                                    imagePreview.style.display = 'block'; // Показываем изображение
+                                }
+                                reader.readAsDataURL(file); // Читаем файл как URL
+                            }
+                        });
+                    </script>
                 </div>
                 <div class="information">
                     <div class="price">
