@@ -27,6 +27,13 @@ public class PageController {
     private UsersService usersService;
     private CarService carService;
 
+//    @GetMapping("/user")
+//    public String user() {
+//        Authentication user = SecurityContextHolder.getContext().getAuthentication();
+//        user.get
+//    }
+
+
     @GetMapping("/user/{id}")
     public String login(@PathVariable Long id, Model model) {
         Users users = usersService.getById(id).orElseThrow();
@@ -57,6 +64,7 @@ public class PageController {
     public String registerUser(@ModelAttribute Users user){
         user.setUser_role(Roles.USER);
         usersService.saveUser(user);
+        log.info(String.valueOf(user));
         return "redirect:/main";
     }
 
