@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account</title>
+    <link rel="stylesheet" th:href="@{/style/styleUserAccount.css}">
+</head>
+<body>
+
+<header class="header">
+    <div class="group1">
+        <a th:href="@{/main}">
+            <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
+        <a th:href="@{/user}" class="link">Избранное</a>
+        <a th:href="@{/user}" class="link">Мои объявления</a>
+        <a th:href="@{/main}" class="link">Рекомендации</a>
+    </div>
+    <div class="group2">
+        <input type="text" name="" id="" class="search">
+        <img th:src="@{/img/login/header/search.svg}" alt="">
+        <button th:onclick="|window.location.href='@{/login}'|">Войти</button>
+        <button th:onclick="|window.location.href='@{/create-obyavlation}'|">Разместить объявление</button>
+    </div>
+</header>
+
+
+<div class="dataUser center">
+    <div class="myProfile">
+        <h2>Мой личный профиль</h2>
+        <div class="buttonImg">
+            <img th:src="@{/img/login/body/user.jpg}" alt="">
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form>
+            <label>Имя:
+                <input type="text" name="name" th:value="${name}" readonly>
+            </label>
+            <label>Фамилия:
+                <input type="text" name="surname" th:value="${surname}" readonly>
+            </label>
+            <label>Контактный номер:
+                <input type="text" name="number" th:value="${number}" readonly>
+            </label>
+            <label>Почта:
+                <input type="text" name="email" th:value="${email}" readonly>
+            </label>
+            <label>Пароль:
+                <input type="text" name="password" th:value="${password}" readonly>
+            </label>
+            <label>Роль:
+                <select id="role" name="role">
+                    <option value="USER">USER</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+            </label>
+            <button>Сохранить</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+<footer class="center">
+    <div class="group1">
+        <h4>Связь с нами </h4>
+        <div class="phone">
+            <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
+            <h5>+7(927)-081-52-66</h5>
+        </div>
+    </div>
+    <div class="group2">
+        <a th:href="'https://www.youtube.com/'">
+            <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
+        <a th:href="'https://www.instagram.com/'">
+            <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
+        <a th:href="'https://www.facebook.com/'">
+            <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
+        <a th:href="'https://www.twitter.com/'">
+            <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
+    </div>
+</footer>
+
+
+</body>
+</html>
