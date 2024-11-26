@@ -2,7 +2,6 @@ package com.shesterki.Motor_Base_Server.controllers;
 
 
 import com.shesterki.Motor_Base_Server.model.Announcement;
-import com.shesterki.Motor_Base_Server.model.Car;
 import com.shesterki.Motor_Base_Server.model.Users;
 import com.shesterki.Motor_Base_Server.services.AnnouncementService;
 import com.shesterki.Motor_Base_Server.services.CarService;
