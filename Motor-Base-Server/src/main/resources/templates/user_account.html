@@ -14,16 +14,17 @@
     
     <header class="header">
         <div class="group1">
-            <img height="21px" src="img/login/header/logo.png" alt="">
-            <a href="#" class="link">Избранное</a>
-            <a href="#" class="link">Мои объявления</a>
-            <a href="#" class="link">Рекомендации</a>
+            <a th:href="@{/main}">
+                <img height="21px" th:src="@{img/login/header/logo.png}" alt=""></a>
+            <a th:href="@{/user}" class="link">Избранное</a>
+            <a th:href="@{/user}" class="link">Мои объявления</a>
+            <a th:href="@{/main}" class="link">Рекомендации</a>
         </div>
         <div class="group2">
             <input type="text" name="" id="" class="search">
-            <img src="img/login/header/search.svg" alt="">
-            <img src="img/login/body/icon-user.png" alt="">
-            <button>Разместить объявление</button>
+            <img th:src="@{img/login/header/search.svg}" alt="">
+            <button th:onclick="|window.location.href='@{/login}'|">Войти</button>
+            <button th:onclick="|window.location.href='@{/create-obyavlation}'|">Разместить объявление</button>
         </div>
     </header>
 

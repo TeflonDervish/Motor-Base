@@ -84,6 +84,37 @@ public class PageController {
         return "redirect:/main";
     }
 
+    @GetMapping("/car/{id}")
+    public String car(@PathVariable Long id, Model model) {
+        Car car = carService.getById(id).orElseThrow();
+        model.addAttribute("run", car.getRun());
+        model.addAttribute("year", car.getYearMake());
+        model.addAttribute("mark", car.getMark());
+        model.addAttribute("model", car.getModel());
+        model.addAttribute("engine_powers", car.getEnginePowers());
+        model.addAttribute("engine_volume", car.getEngineVolume());
+        model.addAttribute("color", car.getColor());
+        model.addAttribute("gearbox", car.getGearbox());
+        model.addAttribute("type", car.getType());
+        model.addAttribute("type_body", car.getTypeBody());
+
+        return "obyavlation";
+    }
+
+    @GetMapping("/create-obyavlation")
+    public String createObyavliation(Model model) {
+        model.addAttribute("car", new Car());
+        return "create_obyavlation";
+    }
+
+    @PostMapping("/create-obyavlation")
+    public String createObyavliation(@ModelAttribute Car car){
+        Long id = carService.saveCar(car).getId();
+        log.info(String.valueOf(car));
+        return "redirect:/car/" + id;
+    }
+
+
 
 
 }

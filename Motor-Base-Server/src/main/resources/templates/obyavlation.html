@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,22 +8,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MainPage</title>
-    <link rel="stylesheet" href="style_obyavlation.css">
+    <link rel="stylesheet" th:href="@{/style/style_obyavlation.css}">
 </head>
 <body>
     
     <header class="header">
         <div class="group1">
-            <img height="21px" src="img/login/header/logo.png" alt="">
-            <a href="#" class="link">Избранное</a>
-            <a href="#" class="link">Мои объявления</a>
-            <a href="#" class="link">Рекомендации</a>
+            <a th:href="@{/main}">
+                <img height="21px" th:src="@{img/login/header/logo.png}" alt=""></a>
+            <a th:href="@{/user}" class="link">Избранное</a>
+            <a th:href="@{/user}" class="link">Мои объявления</a>
+            <a th:href="@{/main}" class="link">Рекомендации</a>
         </div>
         <div class="group2">
             <input type="text" name="" id="" class="search">
-            <img src="img/login/header/search.svg" alt="">
-            <img src="img/login/header/icon-user.png" alt="">
-            <button>Разместить объявление</button>
+            <img th:src="@{img/login/header/search.svg}" alt="">
+            <button th:onclick="|window.location.href='@{/login}'|">Войти</button>
+            <button th:onclick="|window.location.href='@{/create-obyavlation}'|">Разместить объявление</button>
         </div>
     </header>
 
@@ -44,26 +45,26 @@
                 <div class="characteristic">
                     <form>
                         <h2>Характеристики</h2>
-                        <label>Пробег:</label>
-                        <h4>158 695 км</h4>
+                        <label >Пробег:</label>
+                        <h4 th:text="${run}">158 695 км</h4>
                         <label>Год выпуска:</label>
-                        <h4>2017 год</h4>
+                        <h4 th:text="${year}">2017 год</h4>
                         <label>Марка:</label>
-                        <h4>Chery</h4>
+                        <h4 th:text="${mark}">Chery</h4>
                         <label>Модель:</label>
-                        <h4>Tiggo 8 Pro Max</h4>
+                        <h4 th:text="${model}">Tiggo 8 Pro Max</h4>
                         <label>Мощность:</label>
-                        <h4>300 лс</h4>
+                        <h4 th:text="${engine_powers}">300 лс</h4>
                         <label>Объем двигателя:</label>
-                        <h4>4</h4>
+                        <h4 th:text="${engine_volume}">4</h4>
                         <label>Цвет:</label>
-                        <h4>Черный</h4>
+                        <h4 th:text="${color}">Черный</h4>
                         <label>Коробка передач:</label>
-                        <h4>Робот</h4>
+                        <h4 th:text="${gearbox}">Робот</h4>
                         <label>Привод: </label>
-                        <h4>Полный</h4>
+                        <h4 th:text="${type}">Полный</h4>
                         <label>Тип кузова:</label>
-                        <h4>Седан</h4>
+                        <h4 th:text="${type_body}">Седан</h4>
                     </form>
                 </div>
                 <button>Добавить в избранное</button>
@@ -80,23 +81,24 @@
         
     </div>
 
-
-    <div class="center" style="height: calc(100vh - 85px - 109px)"></div>
-
     <footer class="center">
         <div class="group1">
             <h4>Связь с нами </h4>
             <div class="phone">
-                <img src="img/login/footer/whatsapp.svg" alt="asd"></img>
+                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
                 <h5>+7(927)-081-52-66</h5>
             </div>
         </div>
         <div class="group2">
-            <img src="img/login/footer/youtube.svg" alt="">
-            <img src="img/login/footer/instagram.svg" alt="">
-            <img src="img/login/footer/facebook.svg" alt="">
-            <img src="img/login/footer/twitter.svg" alt="">
-        </div>
+            <a th:href="'https://www.youtube.com/'">
+                <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
+            <a th:href="'https://www.instagram.com/'">
+                <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
+            <a th:href="'https://www.facebook.com/'">
+                <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
+            <a th:href="'https://www.twitter.com/'">
+                <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
+            </div>
     </footer>
 </body>
 </html>
