@@ -157,7 +157,7 @@ public class PageController {
         announcementService.postAnnouncement(announcement);
 
         log.info(String.valueOf(car));
-        return "redirect:/car/" + car.getId();
+        return "redirect:/car/" + announcement.getId();
     }
 
     @PostMapping("/create-feedback/{id}")
