@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Set;
 
 @Data
@@ -35,7 +34,7 @@ public class Users {
     private String drivingExperience;
     private String about;
     @Enumerated(EnumType.STRING)
-    private Roles user_role;
+    private Roles userRole;
     @ManyToMany
     @JoinTable(
       name = "user_favorite_announcements",

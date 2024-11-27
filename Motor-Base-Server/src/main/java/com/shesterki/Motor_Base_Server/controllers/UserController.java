@@ -1,16 +1,15 @@
 package com.shesterki.Motor_Base_Server.controllers;
 
 
-import com.google.cloud.storage.Acl;
 import com.shesterki.Motor_Base_Server.enums.Roles;
 import com.shesterki.Motor_Base_Server.model.Announcement;
 import com.shesterki.Motor_Base_Server.model.UserDetailsAdapter;
+import com.shesterki.Motor_Base_Server.model.UserFeedback;
 import com.shesterki.Motor_Base_Server.model.Users;
 import com.shesterki.Motor_Base_Server.model.dto.LoginForm;
 import com.shesterki.Motor_Base_Server.services.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,12 +46,6 @@ public class UserController {
 
         Users users = usersService.getById(id).orElseThrow();
         log.info(String.valueOf(users));
-//        model.addAttribute("name", users.getName());
-//        model.addAttribute("surname", users.getSurname());
-//        model.addAttribute("number", users.getPhoneNumber());
-//        model.addAttribute("email", users.getEmail());
-//        model.addAttribute("city", users.getCity());
-//        model.addAttribute("db", users.getBirthday());
 
         List<Announcement> announcements = announcementService.getByUserId(users.getId());
         model.addAttribute("announcements", announcements);
@@ -62,7 +55,10 @@ public class UserController {
 
         model.addAttribute("user", users);
 
-        feedbackService.getById(users.getId());
+        model.addAttribute("user_id", users.getId());
+
+        List<UserFeedback> userFeedbacks = feedbackService.getByUserToId(users.getId());
+        model.addAttribute("feedback", userFeedbacks);
 
         if (userDetailsAdapter.getUser().getId() == id) {
             return "my_account";
@@ -80,7 +76,7 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute Users user){
-        user.setUser_role(Roles.USER);
+        user.setUserRole(Roles.USER);
         usersService.saveUser(user);
         log.info(String.valueOf(user));
         return "redirect:/login";

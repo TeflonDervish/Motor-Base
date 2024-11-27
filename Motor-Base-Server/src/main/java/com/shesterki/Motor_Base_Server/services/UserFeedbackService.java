@@ -36,4 +36,8 @@ public class UserFeedbackService {
     public UserFeedback updateFeedback(UserFeedback feedback) {
         return feedbackRepository.save(feedback);
     }
+
+    public List<UserFeedback> getByUserToId(Long id) {
+        return feedbackRepository.findByUserToId(id);
+    }
 }

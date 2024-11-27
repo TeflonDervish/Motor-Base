@@ -67,6 +67,7 @@
             <div class="form__container">
                 <form>
                     <input type="hidden" th:field="*{id}" />
+                    <input type="hidden" th:field="*{userRole}" />
                     <label>Имя:
                         <input type="text" name="name" th:field="*{name}">
                     </label>
@@ -83,7 +84,10 @@
                         <input type="text" name="city" th:value="*{city}">
                     </label>
                     <label>Дата рождения:
-                        <input type="date" name="db" th:value="*{birthday}">
+                        <input type="date" name="birthday" th:value="*{birthday}">
+                    </label>
+                    <label>Пароль:
+                        <input type="text" name="password" th:value="*{password}">
                     </label>
                 </form>
             </div>
@@ -114,17 +118,14 @@
         </div>
     </div>
     <div>
-        <h2>Отзывы</h2>
-        <div class="content" th:each="feedback : ${feedback}">
-            <label th:text="${feedback.user}"> Автор</label>
-            <form>
-                <label> Автодилер Мэйджор на Новорижском мне известен потому, что я имел неосторожность отогнать им
-                    свой КИА на гарантийное обслуживание. И вот уже пошел пятый месяц, как идет ремонт двигателя. То
-                    ДВС не тот привезут, то с дефектом, а то и мастера установить не могут правильно. А самое
-                    удивительное в этой истории то, что руководитель данного автосалона совершенно пассивно
-                    реагирует на подобные замечания – улыбается, обещает помочь, однако ничегошеньки не делает. Пора
-                    подавать жалобы на них во все инстанции, это точно.</label>
-            </form>
+        <h1>Отзывы</h1>
+        <div class="feedback">
+            <div th:each="feedback : ${feedback}">
+                <a th:href="@{/user/{id}(id=${feedback.userFrom.id})}">
+                    <h3 th:text="${feedback.userFrom.name}">Author</h3>
+                </a>
+                <p th:text="${feedback.comment}">Text feedback</p>
+            </div>
         </div>
     </div>
 </div>

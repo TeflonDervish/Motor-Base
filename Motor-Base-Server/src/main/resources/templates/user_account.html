@@ -38,24 +38,29 @@
             <img class="image" th:src="@{/img/login/body/user.jpg}" alt="">
         </div>
         <div class="form__container">
-            <form>
+            <form th:object="${user}">
+                <input type="hidden" th:field="*{id}" readonly/>
+                <input type="hidden" th:field="*{userRole}" readonly/>
                 <label>Имя:
-                    <input type="text" name="name" th:value="${name}" readonly>
+                    <input type="text" name="name" th:field="*{name}" readonly>
                 </label>
                 <label>Фамилия:
-                    <input type="text" name="surname" th:value="${surname}" readonly>
+                    <input type="text" name="surname" th:value="*{surname}" readonly>
                 </label>
                 <label>Контактный номер:
-                    <input type="text" name="number" th:value="${number}" readonly>
+                    <input type="text" name="phoneNumber" th:value="*{phoneNumber}" readonly>
                 </label>
                 <label>Почта:
-                    <input type="text" name="email" th:value="${email}" readonly>
+                    <input type="email" name="email" th:value="*{email}" readonly>
                 </label>
                 <label>Город:
-                    <input type="text" name="city" th:value="${city}" readonly>
+                    <input type="text" name="city" th:value="*{city}" readonly>
                 </label>
                 <label>Дата рождения:
-                    <input type="date" name="db" th:value="${db}" readonly>
+                    <input type="date" name="birthday" th:value="*{birthday}" readonly>
+                </label>
+                <label>Пароль:
+                    <input type="text" name="password" th:value="*{password}" readonly>
                 </label>
             </form>
         </div>
@@ -75,19 +80,22 @@
     <div class="content">
         <h1>Отзывы</h1>
         <div class="feedback">
-            <div>
-                <h3>Author</h3>
-                <p>Text feedback</p>
+            <div th:each="feedback : ${feedback}">
+                <a th:href="@{/user/{id}(id=${feedback.userFrom.id})}">
+                    <h3 th:text="${feedback.userFrom.name}">Author</h3>
+                </a>
+                <p th:text="${feedback.comment}">Text feedback</p>
             </div>
         </div>
     </div>
 
     <div class="content">
         <h1>Оставить отзыв</h1>
-        <form class="form__container">
+        <form th:action="@{/feedback/{id}(id=${user_id})}" class="form__container" method="post">
                 <textarea id="myTextarea"
                           oninput="autoResize(this)"
                           placeholder="Введите текст..."
+                          name="description"
                 ></textarea>
             <script>
                 function autoResize(textarea) {
