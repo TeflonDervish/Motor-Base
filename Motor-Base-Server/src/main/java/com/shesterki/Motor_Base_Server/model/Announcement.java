@@ -4,6 +4,8 @@ package com.shesterki.Motor_Base_Server.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDate;
 
@@ -19,10 +21,12 @@ public class Announcement {
 
     @ManyToOne
     @JoinColumn(name = "car_Id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Car car;
 
     @ManyToOne
     @JoinColumn(name = "user_Id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Users user;
 
     private Double price;
