@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,9 +23,13 @@ public class FeedbackController {
     private UsersService usersService;
 
     @PostMapping("/feedback/{id}")
-    public String createFeedback(@PathVariable Long id,
+    public String createFeedback(Model model,
+                                 @PathVariable Long id,
                                  @RequestParam("description") String description,
                                  @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter){
+
+        model.addAttribute("isAuthenticated", userDetailsAdapter==null);
+
         UserFeedback userFeedback = new UserFeedback();
         userFeedback.setUserTo(usersService.getById(id).orElseThrow());
         userFeedback.setUserFrom(userDetailsAdapter.getUser());

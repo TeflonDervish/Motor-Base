@@ -2,6 +2,7 @@ package com.shesterki.Motor_Base_Server.controllers;
 
 
 import com.shesterki.Motor_Base_Server.model.Announcement;
+import com.shesterki.Motor_Base_Server.model.UserDetailsAdapter;
 import com.shesterki.Motor_Base_Server.model.Users;
 import com.shesterki.Motor_Base_Server.services.AnnouncementService;
 import com.shesterki.Motor_Base_Server.services.CarService;
@@ -9,6 +10,7 @@ import com.shesterki.Motor_Base_Server.services.UserFeedbackService;
 import com.shesterki.Motor_Base_Server.services.UsersService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,14 +36,22 @@ public class AdminController {
     }
 
     @GetMapping("/main")
-    public String main(Model model) {
+    public String main(Model model,
+                       @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+
+        model.addAttribute("isAuthenticated", userDetailsAdapter==null);
+
         List<Announcement> announcements = announcementService.getAll();
         model.addAttribute("announcements", announcements);
         return "admin_main_announcement";
     }
 
     @GetMapping("/users")
-    public String users(Model model) {
+    public String users(Model model,
+                       @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+
+        model.addAttribute("isAuthenticated", userDetailsAdapter==null);
+
         List<Users> users = usersService.getAll();
         model.addAttribute("users", users);
 
@@ -49,7 +59,11 @@ public class AdminController {
     }
 
     @GetMapping("/change_user/{id}")
-    public String changeUser(@PathVariable Long id) {
+    public String changeUser(@PathVariable Long id,
+                             Model model,
+                             @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+        model.addAttribute("isAuthenticated", userDetailsAdapter==null);
+
         return "admin_edit_users";
     }
 

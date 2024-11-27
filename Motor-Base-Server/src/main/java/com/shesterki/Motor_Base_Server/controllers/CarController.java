@@ -29,6 +29,9 @@ public class CarController {
     public String car(@PathVariable Long id,
                       Model model,
                       @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+
+        model.addAttribute("isAuthenticated", userDetailsAdapter == null);
+
         Announcement announcement = announcementService.getById(id).orElseThrow();
         Car car = announcement.getCar();
         Users users = announcement.getUser();
@@ -58,7 +61,7 @@ public class CarController {
 
         if (userDetailsAdapter.getUser().getId() == users.getId()) {
             return "my_announcement";
-        }else {
+        } else {
             return "announcement";
 
         }
@@ -66,18 +69,23 @@ public class CarController {
     }
 
     @GetMapping("/create_announcement")
-    public String createAnnouncement(Model model) {
+    public String createAnnouncement(Model model,
+                                     @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+
+        model.addAttribute("isAuthenticated", userDetailsAdapter == null);
         model.addAttribute("car", new Car());
         return "create_announcement";
     }
 
     @PostMapping("/create_announcement")
-    public String createAnnouncement(@ModelAttribute Car car,
+    public String createAnnouncement(Model model,
+                                     @ModelAttribute Car car,
                                      @RequestParam("name") String name,
                                      @RequestParam("price") Double price,
                                      @RequestParam("description") String description,
-                                     @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter){
+                                     @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
 
+        model.addAttribute("isAuthenticated", userDetailsAdapter == null);
         Car newCar = carService.saveCar(car);
         Announcement announcement = new Announcement();
         announcement.setCar(newCar);
@@ -92,7 +100,12 @@ public class CarController {
     }
 
     @PostMapping("/delete_announcement/{id}")
-    public String deleteAnnouncement(@PathVariable Long id) {
+    public String deleteAnnouncement(@PathVariable Long id,
+                                     Model model,
+                                     @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+
+        model.addAttribute("isAuthenticated", userDetailsAdapter == null);
+
         Announcement announcement = announcementService.getById(id).orElseThrow();
         announcementService.deleteById(id);
         carService.deleteById(announcement.getCar().getId());
@@ -101,7 +114,9 @@ public class CarController {
 
     @PostMapping("/add_to_favorite/{announcement_id}")
     public String addToFavorite(@PathVariable Long announcement_id,
-                                @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter){
+                                Model model,
+                                @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+        model.addAttribute("isAuthenticated", userDetailsAdapter == null);
         usersService.AddFavoriteAnnouncement(userDetailsAdapter.getUser().getId(), announcement_id);
         return "redirect:/car/" + announcement_id;
     }

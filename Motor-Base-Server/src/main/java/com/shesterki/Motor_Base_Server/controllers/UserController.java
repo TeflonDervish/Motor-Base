@@ -32,9 +32,10 @@ public class UserController {
 
     @GetMapping("/user")
     public String user(@AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+
         if (userDetailsAdapter != null) {
             return "redirect:/user/" + userDetailsAdapter.getUser().getId();
-        }else {
+        } else {
             return "redirect:/login";
         }
     }
@@ -43,6 +44,8 @@ public class UserController {
     public String user(@PathVariable Long id,
                        Model model,
                        @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+
+        model.addAttribute("isAuthenticated", userDetailsAdapter == null);
 
         Users users = usersService.getById(id).orElseThrow();
         log.info(String.valueOf(users));
@@ -62,7 +65,7 @@ public class UserController {
 
         if (userDetailsAdapter.getUser().getId() == id) {
             return "my_account";
-        }else {
+        } else {
 
             return "user_account";
         }
@@ -75,7 +78,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@ModelAttribute Users user){
+    public String registerUser(@ModelAttribute Users user) {
         user.setUserRole(Roles.USER);
         usersService.saveUser(user);
         log.info(String.valueOf(user));
@@ -83,19 +86,24 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login(Model model){
+    public String login(Model model) {
         model.addAttribute("loginForm", new LoginForm());
         return "login";
     }
 
     @PostMapping("/login")
-    public String loginUser(@ModelAttribute LoginForm loginForm){
+    public String loginUser(@ModelAttribute LoginForm loginForm,
+                            Model model,
+                            @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
         log.info(String.valueOf(loginForm));
         return "redirect:/main";
     }
 
     @PostMapping("/change_user")
-    public String changeUser(@ModelAttribute Users user) {
+    public String changeUser(@ModelAttribute Users user,
+                             Model model,
+                             @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+        model.addAttribute("isAuthenticated", userDetailsAdapter == null);
         log.info(String.valueOf(user));
         usersService.updateUser(user);
         return "redirect:/user/" + user.getId();

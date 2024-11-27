@@ -30,7 +30,14 @@ public class SecurityConfig  {
                 .formLogin(form -> form
                         .loginPage("/login")
                         .successHandler(successHandler)
-                        .permitAll());
+                        .permitAll())
+                .logout(form -> form
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login")
+                        .invalidateHttpSession(true)
+                        .clearAuthentication(true)
+                        .permitAll()
+                );
         return http.build();
     }
 

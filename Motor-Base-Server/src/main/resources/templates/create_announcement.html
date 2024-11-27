@@ -24,10 +24,17 @@
     <div class="group2">
         <input type="text" name="" id="" class="search__global">
         <img th:src="@{/img/login/header/search.svg}" alt="">
-        <button class="button__blue" th:onclick="|window.location.href='@{/login}'|">Войти</button>
         <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
             объявление
         </button>
+        <div th:if="${isAuthenticated}">
+            <button class="button__blue" th:onclick="|window.location.href='@{/login}'|">Войти</button>
+        </div>
+        <div th:unless="${isAuthenticated}">
+            <a th:href="@{/user}">
+                <img height="25px" th:src="@{/img/login/body/icon-user.png}">
+            </a>
+        </div>
     </div>
 </header>
 
