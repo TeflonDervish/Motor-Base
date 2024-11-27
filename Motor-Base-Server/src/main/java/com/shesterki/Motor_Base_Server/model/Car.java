@@ -30,4 +30,5 @@ public class Car {
     private Double engineVolume;
     @Column(name="all_driver")
     private String allDriver;
+    private String imageUrl;
 }

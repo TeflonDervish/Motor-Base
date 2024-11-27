@@ -42,12 +42,12 @@
         </label>
         <button class="button__blue" type="submit">Войти</button>
         <a th:href="@{/register}" class="default__link">Зарегистрироваться</a>
-    </form>
     <div th:if="${param.error}">
         <div class="alert alert-danger" role="alert">
             Неверное имя пользователя или пароль.
         </div>
     </div>
+    </form>
 </div>
 
 <footer class="center">

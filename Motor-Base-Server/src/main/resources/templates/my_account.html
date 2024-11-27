@@ -33,43 +33,70 @@
 
 <div class="content center">
 
-    <div class="body__page">
-        <div class="content">
-            <h1>Мой личный профиль</h1>
-            <img class="image" th:src="@{/img/login/body/user.jpg}" alt="">
-            <button class="button__blue">Редактировать профиль</button>
+    <form id="profileForm" th:action="@{/change_user}" th:object="${user}" method="post">
+        <div class="body__page">
+            <div class="content">
+                <h1>Мой личный профиль</h1>
+                <img id="imagePreview" class="image" th:src="@{/img/login/body/user.jpg}" alt="">
+                <input type="file" id="fileInput" accept="image/*">
+                <script>
+                    const fileInput = document.getElementById('fileInput');
+                    const imagePreview = document.getElementById('imagePreview');
+                    const form = document.getElementById('profileForm');
+                    const submitButton = document.getElementById('submitButton');
+
+
+                    fileInput.addEventListener('change', function(event) {
+                        const file = event.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = function(e) {
+                                imagePreview.src = e.target.result;
+                                imagePreview.style.display = 'block';
+                            }
+                            reader.readAsDataURL(file);
+                        }
+                        submitButton.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            form.submit();
+                        });
+                    });
+                </script>
+                <button id="submitButton" type="submit" class="button__blue">Редактировать профиль</button>
+            </div>
+            <div class="form__container">
+                <form>
+                    <input type="hidden" th:field="*{id}" />
+                    <label>Имя:
+                        <input type="text" name="name" th:field="*{name}">
+                    </label>
+                    <label>Фамилия:
+                        <input type="text" name="surname" th:value="*{surname}">
+                    </label>
+                    <label>Контактный номер:
+                        <input type="text" name="phoneNumber" th:value="*{phoneNumber}">
+                    </label>
+                    <label>Почта:
+                        <input type="email" name="email" th:value="*{email}">
+                    </label>
+                    <label>Город:
+                        <input type="text" name="city" th:value="*{city}">
+                    </label>
+                    <label>Дата рождения:
+                        <input type="date" name="db" th:value="*{birthday}">
+                    </label>
+                </form>
+            </div>
         </div>
-        <div class="form__container">
-            <form>
-                <label>Имя:
-                    <input type="text" name="name" th:value="${name}">
-                </label>
-                <label>Фамилия:
-                    <input type="text" name="surname" th:value="${surname}">
-                </label>
-                <label>Контактный номер:
-                    <input type="text" name="number" th:value="${number}">
-                </label>
-                <label>Почта:
-                    <input type="text" name="email" th:value="${email}">
-                </label>
-                <label>Город:
-                    <input type="text" name="city" th:value="${city}">
-                </label>
-                <label>Дата рождения:
-                    <input type="date" name="db" th:value="${db}">
-                </label>
-            </form>
-        </div>
-    </div>
+    </form>
     <div>
         <h2>Избранное</h2>
         <div class="container__four__columns">
-            <div class="card" th:each="announcements : ${announcements}">
-                <a th:href="@{/car/{id}(id=${announcements.car.id})}">
-                    <img th:src="@{img/login/body/image.jpg}" alt="">
-                    <p th:text="${announcements.car.model}">FORD FOCUS 2009</p>
-                    <p th:text="${announcements.car.mark}">9.000.000 руб.</p>
+            <div class="card" th:each="favorite_announcement : ${favorite_announcement}">
+                <a th:href="@{/car/{id}(id=${favorite_announcement.id})}">
+                    <img th:src="@{/img/login/body/image.jpg}" alt="">
+                    <p th:text="${favorite_announcement.car.model}">FORD FOCUS 2009</p>
+                    <p th:text="${favorite_announcement.car.mark}">9.000.000 руб.</p>
                 </a>
             </div>
         </div>
@@ -78,8 +105,8 @@
         <h2>Мои объявления</h2>
         <div class="container__four__columns">
             <div class="card" th:each="announcements : ${announcements}">
-                <a th:href="@{/car/{id}(id=${announcements.car.id})}">
-                    <img th:src="@{img/login/body/image.jpg}" alt="">
+                <a th:href="@{/car/{id}(id=${announcements.id})}">
+                    <img th:src="@{/img/login/body/image.jpg}" alt="">
                     <p th:text="${announcements.car.model}">FORD FOCUS 2009</p>
                     <p th:text="${announcements.car.mark}">9.000.000 руб.</p>
                 </a>

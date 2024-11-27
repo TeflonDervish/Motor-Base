@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -34,5 +36,11 @@ public class Users {
     private String about;
     @Enumerated(EnumType.STRING)
     private Roles user_role;
+    @ManyToMany
+    @JoinTable(
+      name = "user_favorite_announcements",
+      joinColumns = @JoinColumn(name = "user_id"),
+      inverseJoinColumns = @JoinColumn(name = "announcement_id"))
+    private Set<Announcement> favoriteAnnouncement;
 
 }

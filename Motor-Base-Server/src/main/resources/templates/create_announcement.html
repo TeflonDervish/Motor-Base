@@ -41,7 +41,7 @@
                 <label>Цена:
                     <input type="number" name="price" placeholder="Введите цену" required>
                 </label>
-                <img class="image" id="imagePreview" width="450px" height="450px"
+                <img class="image" id="imagePreview"
                      th:src="@{img/login/body/photo-camera.png}" alt="">
                 <input type="file" id="fileInput" accept="image/*">
                 <script>
@@ -107,7 +107,7 @@
 
                     <div class="two-column">
                         <label for="volume">Объем двигателя:</label>
-                        <input type="number" step="1" id="volume" placeholder="Введите объем"
+                        <input type="number" id="volume" placeholder="Введите объем"
                                th:field="*{engineVolume}">
                     </div>
 
@@ -118,7 +118,7 @@
 
                     <div class="two-column">
                         <label for="color">Цвет:</label>
-                        <input type="text" id="color" placeholder="Введите мощность" th:field="*{color}">
+                        <input type="text" id="color" placeholder="Введите цвет" th:field="*{color}">
                     </div>
 
                     <div class="two-column">
@@ -149,6 +149,7 @@
                 <textarea id="myTextarea"
                           oninput="autoResize(this)"
                           placeholder="Введите Описание..."
+                          name="description"
                 ></textarea>
             <script>
                 function autoResize(textarea) {
@@ -157,7 +158,7 @@
                 }
             </script>
 
-            <button class="button__blue">Сохранить</button>
+            <button type="submit" class="button__blue">Сохранить</button>
         </div>
     </form>
 </div>

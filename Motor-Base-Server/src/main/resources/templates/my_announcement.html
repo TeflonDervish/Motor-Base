@@ -2,8 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
     <link rel="stylesheet" th:href="@{/style/style.css}">
 </head>
 <body>
-    
+
 <header class="header">
     <div class="group1">
         <a th:href="@{/main}">
@@ -33,12 +34,36 @@
 <div class="content center">
     <div class="body__page">
         <div class="content">
-            <h1 th:text="${info_car}">CHERY Tiggo 8 Pro Max, 2024</h1>
-            <h3 th:text="${price}">Цена: 19 000 000 руб.</h3>
-            <img class="image" th:src="@{/img/login/body/image.jpg}" alt="">
+            <label>Название:
+                <input type="text" th:value="${info_car}" name="name" placeholder="Введите название" required>
+            </label>
+            <label>Цена:
+                <input type="number" th:value="${price}" name="price" placeholder="Введите цену" required>
+            </label>
+            <img class="image" id="imagePreview" width="450px" height="450px"
+                 th:src="@{/img/login/body/image.jpg}" alt="">
+            <input type="file" id="fileInput" accept="image/*">
+            <script>
+                const fileInput = document.getElementById('fileInput');
+                const imagePreview = document.getElementById('imagePreview');
+
+                fileInput.addEventListener('change', function(event) {
+                    const file = event.target.files[0]; // Получаем выбранный файл
+                    if (file) {
+                        const reader = new FileReader(); // Создаем FileReader для чтения файла
+                        reader.onload = function(e) {
+                            imagePreview.src = e.target.result; // Устанавливаем src изображения
+                            imagePreview.style.display = 'block'; // Показываем изображение
+                        }
+                        reader.readAsDataURL(file); // Читаем файл как URL
+                    }
+                });
+            </script>
             <div class="two__buttons">
-                <button class="button__blue">Удалить</button>
-                <button class="button__blue">Редактировать</button>
+                <button class="button__blue">Cохранить</button>
+                <form action="#" th:action="@{/delete_announcement/{id}(id=${announcement_id})}" method="post">
+                    <button type="submit" class="button__blue">Удалить</button>
+                </form>
             </div>
         </div>
         <div class="form__container">
@@ -49,55 +74,66 @@
             <div class="characteristic">
                 <h2>Характеристики</h2>
                 <label>Пробег:
-                    <input type="text" th:value="${run}" name="run" readonly></label>
+                    <input type="number" th:value="${run}" name="run"></label>
                 <label>Год выпуска:
-                    <input type="number" th:value="${year}" name="run" readonly></label>
+                    <input type="number" th:value="${year}" name="year"></label>
                 <label>Марка:
-                    <input type="text" th:value="${mark}" name="run" readonly></label>
+                    <input type="text" th:value="${mark}" name="mark"></label>
                 <label>Модель:
-                    <input type="text" th:value="${model}" name="run" readonly></label>
+                    <input type="text" th:value="${model}" name="model"></label>
                 <label>Мощность:
-                    <input type="text" th:value="${engine_powers}" name="run" readonly></label>
+                    <input type="text" th:value="${engine_powers}" name="engine_powers"></label>
                 <label>Объем двигателя:
-                    <input type="text" th:value="${engine_volume}" name="run" readonly></label>
+                    <input type="text" th:value="${engine_volume}" name="engine_volume"></label>
                 <label>Цвет:
-                    <input type="text" th:value="${color}" name="run" readonly></label>
+                    <input type="text" th:value="${color}" name="color"></label>
                 <label>Коробка передач:
-                    <input type="text" th:value="${gearbox}" name="run" readonly></label>
+                    <input type="text" th:value="${gearbox}" name="gearbox"></label>
                 <label>Привод:
-                    <input type="text" th:value="${type}" name="run" readonly></label>
+                    <input type="text" th:value="${type}" name="type"></label>
                 <label>Тип кузова:
-                    <input type="text" th:value="${type_body}" name="run" readonly></label>
+                    <input type="text" th:value="${type_body}" name="type_body"></label>
             </div>
-            <button class="button__blue">Добавить в избранное</button>
         </div>
     </div>
     <div class="form__container">
         <h1>Описание</h1>
-        <p th:text="${description}"></p>
+        <textarea id="myTextarea"
+                  onload="autoResize(this)"
+                  oninput="autoResize(this)"
+                  placeholder="Введите Описание..."
+                  name="description"
+                  th:text="${description}"
+        ></textarea>
+        <script>
+            function autoResize(textarea) {
+                textarea.style.height = 'auto';
+                textarea.style.height = textarea.scrollHeight + 'px';
+            }
+        </script>
     </div>
 
 </div>
 
 
 <footer class="center">
-        <div class="group1">
-            <h4>Связь с нами </h4>
-            <div class="phone">
-                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
-                <h5>+7(927)-081-52-66</h5>
-            </div>
+    <div class="group1">
+        <h4>Связь с нами </h4>
+        <div class="phone">
+            <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
+            <h5>+7(927)-081-52-66</h5>
         </div>
-        <div class="group2">
-            <a th:href="'https://www.youtube.com/'">
-                <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
-            <a th:href="'https://www.instagram.com/'">
-                <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
-            <a th:href="'https://www.facebook.com/'">
-                <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
-            <a th:href="'https://www.twitter.com/'">
-                <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
-            </div>
-    </footer>
+    </div>
+    <div class="group2">
+        <a th:href="'https://www.youtube.com/'">
+            <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
+        <a th:href="'https://www.instagram.com/'">
+            <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
+        <a th:href="'https://www.facebook.com/'">
+            <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
+        <a th:href="'https://www.twitter.com/'">
+            <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
+    </div>
+</footer>
 </body>
 </html>

@@ -38,35 +38,43 @@
             <h3 th:text="${price}">Цена: 19 000 000 руб.</h3>
             <img class="image" th:src="@{/img/login/body/image.jpg}" alt="">
         </div>
-        <div class="form__container">
-            <div class="phone">
-                <h2 th:text="${name}">Александр</h2>
-                <h4 th:text="${phoneNumber}">+7(927)-081-52-66</h4>
+        <div class="content">
+
+            <div class="form__container">
+                <div class="phone">
+                    <a th:href="@{/user/{id}(id=${user_id})}">
+                        <h2 th:text="${name}">Александр</h2>
+                        <h4 th:text="${phoneNumber}">+7(927)-081-52-66</h4>
+                    </a>
+                </div>
+                <div class="characteristic">
+                    <h2>Характеристики</h2>
+                    <label>Пробег:
+                        <input type="text" th:value="${run}" name="run" readonly></label>
+                    <label>Год выпуска:
+                        <input type="number" th:value="${year}" name="run" readonly></label>
+                    <label>Марка:
+                        <input type="text" th:value="${mark}" name="run" readonly></label>
+                    <label>Модель:
+                        <input type="text" th:value="${model}" name="run" readonly></label>
+                    <label>Мощность:
+                        <input type="text" th:value="${engine_powers}" name="run" readonly></label>
+                    <label>Объем двигателя:
+                        <input type="text" th:value="${engine_volume}" name="run" readonly></label>
+                    <label>Цвет:
+                        <input type="text" th:value="${color}" name="run" readonly></label>
+                    <label>Коробка передач:
+                        <input type="text" th:value="${gearbox}" name="run" readonly></label>
+                    <label>Привод:
+                        <input type="text" th:value="${type}" name="run" readonly></label>
+                    <label>Тип кузова:
+                        <input type="text" th:value="${type_body}" name="run" readonly></label>
+                </div>
             </div>
-            <div class="characteristic">
-                <h2>Характеристики</h2>
-                <label>Пробег:
-                    <input type="text" th:value="${run}" name="run" readonly></label>
-                <label>Год выпуска:
-                    <input type="number" th:value="${year}" name="run" readonly></label>
-                <label>Марка:
-                    <input type="text" th:value="${mark}" name="run" readonly></label>
-                <label>Модель:
-                    <input type="text" th:value="${model}" name="run" readonly></label>
-                <label>Мощность:
-                    <input type="text" th:value="${engine_powers}" name="run" readonly></label>
-                <label>Объем двигателя:
-                    <input type="text" th:value="${engine_volume}" name="run" readonly></label>
-                <label>Цвет:
-                    <input type="text" th:value="${color}" name="run" readonly></label>
-                <label>Коробка передач:
-                    <input type="text" th:value="${gearbox}" name="run" readonly></label>
-                <label>Привод:
-                    <input type="text" th:value="${type}" name="run" readonly></label>
-                <label>Тип кузова:
-                    <input type="text" th:value="${type_body}" name="run" readonly></label>
-            </div>
-            <button class="button__blue">Добавить в избранное</button>
+            <form th:action="@{/add_to_favorite/{announcement_id}(announcement_id=${announcement_id})}"
+            method="post">
+                <button type="submit" class="button__blue">Добавить в избранное</button></form>
+
         </div>
     </div>
     <div class="form__container">
@@ -95,5 +103,6 @@
             <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
     </div>
 </footer>
+
 </body>
 </html>

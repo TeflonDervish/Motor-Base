@@ -21,7 +21,7 @@ import java.util.List;
 @Controller
 @AllArgsConstructor
 @RequestMapping("/admin")
-public class AdminPageController {
+public class AdminController {
 
     private UsersService usersService;
     private CarService carService;
