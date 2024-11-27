@@ -2,8 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
     <link rel="stylesheet" th:href="@{/style/style.css}">
 </head>
 <body>
-    
+
 <header class="header">
     <div class="group1">
         <a th:href="@{/main}">
@@ -30,53 +31,53 @@
     </div>
 </header>
 
-    <div class = "body__page center">
-            <form class="form__container" action="#" th:action="@{/register}" th:object="${user}" method="post">
-                <img height="80px" th:src="@{/img/login/header/logo.png}" alt="">
-                <label class="form__element">Номер телефона:<br>
-                    <input type="text" name="number_phone" th:field="*{phoneNumber}" required>
-                </label>
-                <label class="form__element">Почта:<br>
-                    <input type="email" name="mail" th:field="*{email}" required>
-                </label>
-                <label class="form__element">Пароль:<br>
-                    <input type="password" name="password" th:field="*{password}" required>
-                </label >
-                <label class="form__element">Имя:<br>
-                    <input type="text" name="name" th:field="*{name}" required>
-                </label >
-                <label class="form__element">Фамилия:<br>
-                    <input type="text" name="surname" th:field="*{surname}" required>
-                </label>
-                <label class="form__element">Дата рождения:<br>
-                    <input type="date" name="birthday" th:field="*{birthday}" required>
-                </label>
-                <label class="form__element">Город:<br>
-                    <input type="text" name="city" th:field="*{city}" required>
-                </label>
-                <button class="button__blue" type="submit">Зарегистрироваться</button>
-            </form>
-    </div>
+<div class="body__page center">
+    <form class="form__container" action="#" th:action="@{/register}" th:object="${user}" method="post">
+        <img height="80px" th:src="@{/img/login/header/logo_black.png}" alt="">
+        <label class="form__element">Номер телефона:<br>
+            <input type="text" name="number_phone" th:field="*{phoneNumber}" required>
+        </label>
+        <label class="form__element">Почта:<br>
+            <input type="email" name="mail" th:field="*{email}" required>
+        </label>
+        <label class="form__element">Пароль:<br>
+            <input type="password" name="password" th:field="*{password}" required>
+        </label>
+        <label class="form__element">Имя:<br>
+            <input type="text" name="name" th:field="*{name}" required>
+        </label>
+        <label class="form__element">Фамилия:<br>
+            <input type="text" name="surname" th:field="*{surname}" required>
+        </label>
+        <label class="form__element">Дата рождения:<br>
+            <input type="date" name="birthday" th:field="*{birthday}" required>
+        </label>
+        <label class="form__element">Город:<br>
+            <input type="text" name="city" th:field="*{city}" required>
+        </label>
+        <button class="button__blue" type="submit">Зарегистрироваться</button>
+    </form>
+</div>
 
-    <footer class="center">
-        <div class="group1">
-            <h4>Связь с нами </h4>
-            <div class="phone">
-                <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
-                <h5>+7(927)-081-52-66</h5>
-            </div>
+<footer class="center">
+    <div class="group1">
+        <h4>Связь с нами </h4>
+        <div class="phone">
+            <img th:src="@{/img/login/footer/whatsapp.svg}" alt="asd">
+            <h5>+7(927)-081-52-66</h5>
         </div>
-        <div class="group2">
-            <a class="link__icon" th:href="'https://www.youtube.com/'">
-                <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
-            <a class="link__icon" th:href="'https://www.instagram.com/'">
-                <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
-            <a class="link__icon" th:href="'https://www.facebook.com/'">
-                <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
-            <a class="link__icon" th:href="'https://www.twitter.com/'">
-                <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
-            </div>
-    </footer>
+    </div>
+    <div class="group2">
+        <a class="link__icon" th:href="'https://www.youtube.com/'">
+            <img th:src="@{/img/login/footer/youtube.svg}" alt=""></a>
+        <a class="link__icon" th:href="'https://www.instagram.com/'">
+            <img th:src="@{/img/login/footer/instagram.svg}" alt=""></a>
+        <a class="link__icon" th:href="'https://www.facebook.com/'">
+            <img th:src="@{/img/login/footer/facebook.svg}" alt=""></a>
+        <a class="link__icon" th:href="'https://www.twitter.com/'">
+            <img th:src="@{/img/login/footer/twitter.svg}" alt=""></a>
+    </div>
+</footer>
 
 </body>
 </html>
