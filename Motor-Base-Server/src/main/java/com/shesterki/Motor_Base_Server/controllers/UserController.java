@@ -111,8 +111,9 @@ public class UserController {
     }
 
     @PostMapping("/user/delete/{id}")
-    public String deleteUserById(@PathVariable Long id) {
-        usersService.deleteById(id);
+    public String deleteUserById(@PathVariable Long id,
+                                 @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+        if (id != userDetailsAdapter.getUser().getId()) usersService.deleteById(id);
         return "redirect:/admin/users";
     }
 

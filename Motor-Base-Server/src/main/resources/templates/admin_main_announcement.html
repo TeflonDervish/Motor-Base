@@ -22,8 +22,12 @@
         <a th:href="@{/admin/main}" class="link__page">Рекомендации</a>
     </div>
     <div class="group2">
-        <input type="text" name="" id="" class="search__global">
-        <img th:src="@{/img/login/header/search.svg}" alt="">
+        <form th:action="@{/admin/main/search}" method="get" style="display: flex;">
+            <input type="text" name="query" id="searchInput" class="search__global" th:value="${searchInput}">
+            <button style="background-color: rgba(1,1,1,0)" type="submit" th:src="@{/img/login/header/search.svg}">
+                    <img th:src="@{/img/login/header/search.svg}" alt="">
+            </button>
+        </form>
         <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
             объявление
         </button>
@@ -148,6 +152,8 @@
         <div class="container__two__columns">
             <div class="card" th:each="announcements : ${announcements}">
                 <a th:href="@{/car/{id}(id=${announcements.id})}">
+                    <h2 th:text="${announcements.description}"></h2>
+                    <h5 th:text="${announcements.price}"></h5>
                     <img th:src="@{/img/login/body/image.jpg}" alt="">
                     <p th:text="${announcements.car.mark}">FORD FOCUS 2009</p>
                     <p th:text="${announcements.car.model}">9.000.000 руб.</p>

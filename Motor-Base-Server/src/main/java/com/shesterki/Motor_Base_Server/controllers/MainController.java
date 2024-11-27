@@ -28,6 +28,22 @@ public class MainController {
 
         List<Announcement> announcements = announcementService.getAll();
 
+        if (userDetailsAdapter != null &&
+                userDetailsAdapter.getUser().getUserRole() == Roles.ADMIN) return "redirect:/admin/main";
+
+        model.addAttribute("isAuthenticated", userDetailsAdapter==null);
+        model.addAttribute("announcements", announcements);
+
+        return "main";
+    }
+
+    @GetMapping("/main/search")
+    public String search(@RequestParam("query") String query,
+                         Model model,
+                         @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter){
+
+        List<Announcement> announcements = announcementService.getBySearch(query);
+
         if (userDetailsAdapter.getUser().getUserRole() == Roles.ADMIN) return "redirect:/admin/main";
 
         model.addAttribute("isAuthenticated", userDetailsAdapter==null);
@@ -35,6 +51,8 @@ public class MainController {
 
         return "main";
     }
+
+
 
 
 

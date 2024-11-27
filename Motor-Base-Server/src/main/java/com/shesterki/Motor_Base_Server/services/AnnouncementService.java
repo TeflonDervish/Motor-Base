@@ -40,4 +40,8 @@ public class AnnouncementService {
     public List<Announcement> getByUserId(Long userId) {
         return announcementRepository.findByUserId(userId);
     }
+
+    public List<Announcement> getBySearch(String text) {
+        return announcementRepository.findByDescriptionContaining(text);
+    }
 }

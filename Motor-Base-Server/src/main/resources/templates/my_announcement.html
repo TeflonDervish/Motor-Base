@@ -22,8 +22,12 @@
         <a th:href="@{/main}" class="link__page">Рекомендации</a>
     </div>
     <div class="group2">
-        <input type="text" name="" id="" class="search__global">
-        <img th:src="@{/img/login/header/search.svg}" alt="">
+        <form th:action="@{/main/search}" method="get" style="display: flex;">
+            <input type="text" name="query" id="searchInput" class="search__global" th:value="${searchInput}">
+            <button style="background-color: rgba(1,1,1,0)" type="submit" th:src="@{/img/login/header/search.svg}">
+                    <img th:src="@{/img/login/header/search.svg}" alt="">
+            </button>
+        </form>
         <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
             объявление
         </button>
