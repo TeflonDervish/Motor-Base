@@ -22,8 +22,10 @@
         <a th:href="@{/main}" class="link__page">Рекомендации</a>
     </div>
     <div class="group2">
-        <input type="text" name="" id="" class="search__global">
-        <img th:src="@{/img/login/header/search.svg}" alt="">
+        <input type="text" name="search" id="" class="search__global">
+        <a th:href="@{/main/search}">
+            <img th:src="@{/img/login/header/search.svg}" alt="">
+        </a>
         <button class="button__blue" th:onclick="|window.location.href='@{/login}'|">Войти</button>
         <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
             объявление
@@ -43,8 +45,12 @@
         <button class="button__blue" type="submit">Войти</button>
         <a th:href="@{/register}" class="default__link">Зарегистрироваться</a>
     <div th:if="${param.error}">
-        <div class="alert alert-danger" role="alert">
-            Неверное имя пользователя или пароль.
+        <div class="alert alert-danger" role="alert"
+            style="display: flex;
+                   flex-direction: column;
+                   align-items: center;">
+            <p>Неверное имя пользователя</p>
+            <p>или пароль.</p>
         </div>
     </div>
     </form>
