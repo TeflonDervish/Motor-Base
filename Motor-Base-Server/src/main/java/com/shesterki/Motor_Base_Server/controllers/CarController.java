@@ -42,15 +42,15 @@ public class CarController {
         model.addAttribute("announcement_id", announcement.getId());
 
         model.addAttribute("run", car.getRun());
-        model.addAttribute("year", car.getYearMake());
+        model.addAttribute("yearMake", car.getYearMake());
         model.addAttribute("mark", car.getMark());
         model.addAttribute("model", car.getModel());
-        model.addAttribute("engine_powers", car.getEnginePowers());
-        model.addAttribute("engine_volume", car.getEngineVolume());
+        model.addAttribute("enginePowers", car.getEnginePowers());
+        model.addAttribute("engineVolume", car.getEngineVolume());
         model.addAttribute("color", car.getColor());
         model.addAttribute("gearbox", car.getGearbox());
         model.addAttribute("type", car.getType());
-        model.addAttribute("type_body", car.getTypeBody());
+        model.addAttribute("typeBody", car.getTypeBody());
 
         model.addAttribute("info_car", car.getModel() + " " +
                 car.getMark() + " " +

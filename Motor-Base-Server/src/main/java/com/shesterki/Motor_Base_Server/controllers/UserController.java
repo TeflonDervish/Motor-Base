@@ -10,6 +10,7 @@ import com.shesterki.Motor_Base_Server.model.dto.LoginForm;
 import com.shesterki.Motor_Base_Server.services.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.Banner;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -122,7 +123,17 @@ public class UserController {
                              @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
 
         model.addAttribute("isAuthenticated", userDetailsAdapter==null);
+        Users user = usersService.getById(id).orElseThrow();
+        model.addAttribute("user", user);
 
         return "admin_edit_users";
+    }
+
+    @PostMapping("/user/change/{id}")
+    public String changeUser(@PathVariable Long id,
+                            @ModelAttribute Users user) {
+        System.out.println(user);
+        usersService.saveUser(user);
+        return "redirect:/admin/main";
     }
 }

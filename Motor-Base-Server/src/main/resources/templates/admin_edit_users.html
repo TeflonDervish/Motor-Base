@@ -45,31 +45,35 @@
         <img class="image" th:src="@{/img/login/body/user.jpg}" alt="">
     </div>
 
-        <form class="form__container">
-            <label>Имя:
-                <input type="text" name="name" th:value="${name}" readonly>
-            </label>
-            <label>Фамилия:
-                <input type="text" name="surname" th:value="${surname}" readonly>
-            </label>
-            <label>Контактный номер:
-                <input type="text" name="number" th:value="${number}" readonly>
-            </label>
-            <label>Почта:
-                <input type="text" name="email" th:value="${email}" readonly>
-            </label>
-            <label>Пароль:
-                <input type="text" name="password" th:value="${password}" readonly>
-            </label>
-            <label>Роль:
-                <select id="role" name="role" th:value="${userRole}">
-                    <option value="USER">USER</option>
-                    <option value="ADMIN">ADMIN</option>
-                </select>
-            </label>
-            <button class="button__blue">Сохранить</button>
-        </form>
-    </div>
+    <form class="form__container" th:action="@{/user/change/{id}(id=${user.id})}" th:object="${user}" method="post">
+        <input type="hidden" th:value="*{id}">
+        <input type="hidden" th:value="*{about}">
+        <input type="hidden" th:value="*{city}">
+        <input type="hidden" th:value="*{drivingExperience}">
+        <label>Имя:
+            <input type="text" name="name" th:value="*{name}">
+        </label>
+        <label>Фамилия:
+            <input type="text" name="surname" th:value="*{surname}">
+        </label>
+        <label>Контактный номер:
+            <input type="text" name="number" th:value="*{phoneNumber}">
+        </label>
+        <label>Почта:
+            <input type="text" name="email" th:value="*{email}">
+        </label>
+        <label>Пароль:
+            <input type="text" name="password" th:value="*{password}">
+        </label>
+        <label>Роль:
+            <select id="role" name="role" th:field="*{userRole}">
+                <option value="USER">USER</option>
+                <option value="ADMIN">ADMIN</option>
+            </select>
+        </label>
+        <button class="button__blue">Сохранить</button>
+    </form>
+</div>
 </div>
 
 

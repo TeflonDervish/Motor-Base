@@ -44,7 +44,7 @@
 </div>
 
 <div class="body__page center">
-    <div class="content">
+    <div class="content filter">
         <h1>Фильтры</h1>
         <form class="form__container">
             <label for="type_car">Тип автомобиля:
@@ -153,8 +153,6 @@
                     <p th:text="${announcements.car.model}">9.000.000 руб.</p>
                 </a>
                 <div class="two__buttons" style="gap: 10px; margin-top: 10px">
-                    <form>
-                        <button class="button__blue">Изменить</button></form>
                     <form th:action="@{/car/delete/{id}(id=${announcements.id})}" method="post">
                         <button class="button__blue">Удалить</button></form>
                 </div>

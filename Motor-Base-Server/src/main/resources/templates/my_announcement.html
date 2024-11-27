@@ -39,6 +39,7 @@
 </header>
 
 <div class="content center">
+
     <div class="body__page">
         <div class="content">
             <label>Название:
@@ -67,7 +68,9 @@
                 });
             </script>
             <div class="two__buttons">
-                <button class="button__blue">Cохранить</button>
+                <form>
+                    <button class="button__blue">Cохранить</button>
+                </form>
                 <form action="#" th:action="@{/delete_announcement/{id}(id=${announcement_id})}" method="post">
                     <button type="submit" class="button__blue">Удалить</button>
                 </form>
@@ -80,26 +83,81 @@
             </div>
             <div class="characteristic">
                 <h2>Характеристики</h2>
-                <label>Пробег:
-                    <input type="number" th:value="${run}" name="run"></label>
-                <label>Год выпуска:
-                    <input type="number" th:value="${year}" name="year"></label>
-                <label>Марка:
-                    <input type="text" th:value="${mark}" name="mark"></label>
-                <label>Модель:
-                    <input type="text" th:value="${model}" name="model"></label>
-                <label>Мощность:
-                    <input type="text" th:value="${engine_powers}" name="engine_powers"></label>
-                <label>Объем двигателя:
-                    <input type="text" th:value="${engine_volume}" name="engine_volume"></label>
-                <label>Цвет:
-                    <input type="text" th:value="${color}" name="color"></label>
-                <label>Коробка передач:
-                    <input type="text" th:value="${gearbox}" name="gearbox"></label>
-                <label>Привод:
-                    <input type="text" th:value="${type}" name="type"></label>
-                <label>Тип кузова:
-                    <input type="text" th:value="${type_body}" name="type_body"></label>
+                <div class="two-column">
+                    <label for="run">Пробег:</label>
+                    <input type="number" step="1" id="run" placeholder="Введите пробег" th:field="${run}">
+                </div>
+
+                <div class="two-column">
+                    <label for="year">Год выпуска:</label>
+                    <input type="number" step="1" id="year" placeholder="Введите год выпуска"
+                           th:field="${yearMake}">
+                </div>
+
+                <div class="two-column">
+                    <label for="mark_car">Марка:</label>
+                    <select id="mark_car" name="mark_car" th:field="${mark}">
+                        <option value="null">Не выбрана...</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Lada">Lada</option>
+                    </select>
+                </div>
+
+                <div class="two-column">
+                    <label for="model_car">Модель:</label>
+                    <input type="text" id="model_car" name="model_car" th:field="${model}">
+                </div>
+
+                <div class="two-column">
+                    <label for="body">Тип кузова:</label>
+                    <select id="body" name="body" th:field="${typeBody}">
+                        <option value="null">Не выбран...</option>
+                        <option value="sedan">Седан</option>
+                        <option value="liftback">Лифтбэк</option>
+                        <option value="hatchback">Хэтчбэк</option>
+                        <option value="universal">Универсал</option>
+                        <option value="kabriolet">Кабриолет</option>
+                        <option value="pickup">Пикап</option>
+                        <option value="kupe">Купе</option>
+                    </select>
+                </div>
+
+                <div class="two-column">
+                    <label for="volume">Объем двигателя:</label>
+                    <input type="number" id="volume" placeholder="Введите объем" th:field="${engineVolume}">
+                </div>
+
+                <div class="two-column">
+                    <label for="power">Мощность:</label>
+                    <input type="number" id="power" placeholder="Введите мощность" th:field="${enginePowers}">
+                </div>
+
+                <div class="two-column">
+                    <label for="color">Цвет:</label>
+                    <input type="text" id="color" placeholder="Введите цвет" th:field="${color}">
+                </div>
+
+                <div class="two-column">
+                    <label for="transmission">Коробка передач:</label>
+                    <select id="transmission" name="transmission" th:field="${gearbox}">
+                        <option value="null">Не выбрана...</option>
+                        <option value="robot">Робот</option>
+                        <option value="variator">Вариатор</option>
+                        <option value="automat">Автоматическая</option>
+                        <option value="mechanic">Механическая</option>
+                    </select>
+                </div>
+
+                <div class="two-column">
+                    <label for="drive_type">Привод:</label>
+                    <select id="drive_type" name="drive_type" th:field="${type}">
+                        <option value="null">Не выбран...</option>
+                        <option value="all">Полный</option>
+                        <option value="front">Передний</option>
+                        <option value="back">Задний</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>

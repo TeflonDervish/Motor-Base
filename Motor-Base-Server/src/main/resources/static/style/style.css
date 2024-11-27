@@ -329,3 +329,7 @@ footer .group2 {
 .two__buttons > button{
     width: 250px;
 }
+
+.filter {
+    max-width: 350px;
+}
