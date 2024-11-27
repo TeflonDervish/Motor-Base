@@ -265,7 +265,7 @@ footer .group2 {
     transition: transform 0.3s;
 }
 .card a:hover {
-    transform: scale(1.03);
+    transform: scale(1.03) translate(0%, -3%);
 }
 
 .filter__button {
@@ -326,6 +326,6 @@ footer .group2 {
     justify-content: center;
     gap: 20px;
 }
-.two__buttons button{
+.two__buttons > button{
     width: 250px;
 }

@@ -8,18 +8,18 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главна админ</title>
+    <title>Главная админ</title>
     <link rel="stylesheet" th:href="@{/style/style.css}">
 </head>
 <body>
 
 <header class="header">
     <div class="group1">
-        <a th:href="@{/main}">
+        <a th:href="@{/admin/main}">
             <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
         <a th:href="@{/user}" class="link__page">Избранное</a>
         <a th:href="@{/user}" class="link__page">Мои объявления</a>
-        <a th:href="@{/main}" class="link__page">Рекомендации</a>
+        <a th:href="@{/admin/main}" class="link__page">Рекомендации</a>
     </div>
     <div class="group2">
         <input type="text" name="" id="" class="search__global">
@@ -152,6 +152,12 @@
                     <p th:text="${announcements.car.mark}">FORD FOCUS 2009</p>
                     <p th:text="${announcements.car.model}">9.000.000 руб.</p>
                 </a>
+                <div class="two__buttons" style="gap: 10px; margin-top: 10px">
+                    <form>
+                        <button class="button__blue">Изменить</button></form>
+                    <form th:action="@{/car/delete/{id}(id=${announcements.id})}" method="post">
+                        <button class="button__blue">Удалить</button></form>
+                </div>
             </div>
         </div>
     </div>

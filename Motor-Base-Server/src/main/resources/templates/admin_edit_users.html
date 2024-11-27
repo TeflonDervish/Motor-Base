@@ -15,11 +15,11 @@
 
 <header class="header">
     <div class="group1">
-        <a th:href="@{/main}">
+        <a th:href="@{/admin/main}">
             <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
         <a th:href="@{/user}" class="link__page">Избранное</a>
         <a th:href="@{/user}" class="link__page">Мои объявления</a>
-        <a th:href="@{/main}" class="link__page">Рекомендации</a>
+        <a th:href="@{/admin/main}" class="link__page">Рекомендации</a>
     </div>
     <div class="group2">
         <input type="text" name="" id="" class="search__global">
@@ -62,7 +62,7 @@
                 <input type="text" name="password" th:value="${password}" readonly>
             </label>
             <label>Роль:
-                <select id="role" name="role">
+                <select id="role" name="role" th:value="${userRole}">
                     <option value="USER">USER</option>
                     <option value="ADMIN">ADMIN</option>
                 </select>

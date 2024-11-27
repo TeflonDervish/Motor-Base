@@ -3,6 +3,7 @@ package com.shesterki.Motor_Base_Server.controllers;
 
 import com.google.cloud.storage.Blob;
 import com.google.firebase.cloud.StorageClient;
+import com.shesterki.Motor_Base_Server.enums.Roles;
 import com.shesterki.Motor_Base_Server.model.*;
 import com.shesterki.Motor_Base_Server.services.*;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,8 @@ public class MainController {
                        @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
 
         List<Announcement> announcements = announcementService.getAll();
+
+        if (userDetailsAdapter.getUser().getUserRole() == Roles.ADMIN) return "redirect:/admin/main";
 
         model.addAttribute("isAuthenticated", userDetailsAdapter==null);
         model.addAttribute("announcements", announcements);

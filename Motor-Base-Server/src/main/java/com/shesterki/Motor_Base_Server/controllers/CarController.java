@@ -10,6 +10,7 @@ import com.shesterki.Motor_Base_Server.services.UsersService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -119,6 +120,13 @@ public class CarController {
         model.addAttribute("isAuthenticated", userDetailsAdapter == null);
         usersService.AddFavoriteAnnouncement(userDetailsAdapter.getUser().getId(), announcement_id);
         return "redirect:/car/" + announcement_id;
+    }
+
+    @PostMapping("/car/delete/{id}")
+    public String deleteAnnouncementById(@PathVariable Long id){
+        Announcement announcement = announcementService.getById(id).orElseThrow();
+        carService.deleteById(announcement.getCar().getId());
+        return "redirect:/main";
     }
 
 }

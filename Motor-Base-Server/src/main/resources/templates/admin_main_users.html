@@ -15,11 +15,11 @@
 
 <header class="header">
     <div class="group1">
-        <a th:href="@{/main}">
+        <a th:href="@{/admin/main}">
             <img height="21px" th:src="@{/img/login/header/logo.png}" alt=""></a>
         <a th:href="@{/user}" class="link__page">Избранное</a>
         <a th:href="@{/user}" class="link__page">Мои объявления</a>
-        <a th:href="@{/main}" class="link__page">Рекомендации</a>
+        <a th:href="@{/admin/main}" class="link__page">Рекомендации</a>
     </div>
     <div class="group2">
         <input type="text" name="" id="" class="search__global">
@@ -83,6 +83,14 @@
                     <p th:text="${users.phoneNumber}">Номер телефона: +7 800 555 35 35</p>
                     <p th:text="${users.birthday}">Дата рождения: 30.09.2003</p>
                 </a>
+                <div class="two__buttons" style="gap: 10px; margin-top: 10px">
+                    <form th:action="@{/user/change/{id}(id=${users.id})}">
+                        <button class="button__blue">Изменить</button>
+                    </form>
+                    <form th:action="@{/user/delete/{id}(id=${users.id})}" method="post">
+                        <button class="button__blue">Удалить</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
