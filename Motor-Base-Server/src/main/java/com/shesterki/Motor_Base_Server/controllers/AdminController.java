@@ -58,14 +58,5 @@ public class AdminController {
         return "admin_main_users";
     }
 
-    @GetMapping("/user/change/{id}")
-    public String changeUser(@PathVariable Long id,
-                             Model model,
-                             @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
-
-        model.addAttribute("isAuthenticated", userDetailsAdapter==null);
-
-        return "admin_edit_users";
-    }
 
 }
