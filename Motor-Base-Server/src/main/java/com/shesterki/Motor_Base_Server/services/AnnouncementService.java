@@ -42,6 +42,6 @@ public class AnnouncementService {
     }
 
     public List<Announcement> getBySearch(String text) {
-        return announcementRepository.findByDescriptionContaining(text);
+        return announcementRepository.findByNameContaining(text);
     }
 }

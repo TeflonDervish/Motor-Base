@@ -90,6 +90,7 @@ public class CarController {
         Car newCar = carService.saveCar(car);
         Announcement announcement = new Announcement();
         announcement.setCar(newCar);
+        announcement.setName(name);
         announcement.setPrice(price);
         announcement.setDate(LocalDate.now());
         announcement.setDescription(description);

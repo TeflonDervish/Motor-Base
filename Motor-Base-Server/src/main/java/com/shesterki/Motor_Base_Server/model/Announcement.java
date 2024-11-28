@@ -31,6 +31,7 @@ public class Announcement {
 
     private Double price;
     private LocalDate date;
+    private String name;
     private String description;
 
 }
