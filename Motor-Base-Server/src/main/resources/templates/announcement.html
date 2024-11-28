@@ -54,7 +54,7 @@
 
                 <div class="form__container">
                     <div class="phone">
-                        <a th:href="@{/user/{id}(id=${user_id})}">
+                        <a th:href="@{/user/{id}(id=*{user.id})}">
                             <h2 th:text="*{user.name}">Александр</h2>
                             <h4 th:text="*{user.phoneNumber}">+7(927)-081-52-66</h4>
                         </a>

@@ -267,6 +267,9 @@ footer .group2 {
 .card a:hover {
     transform: scale(1.03) translate(0%, -3%);
 }
+.card img {
+    width: 300px;
+}
 
 .filter__button {
     display: flex;

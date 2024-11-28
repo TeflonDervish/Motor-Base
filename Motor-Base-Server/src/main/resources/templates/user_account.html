@@ -25,7 +25,7 @@
         <form th:action="@{/main/search}" method="get" style="display: flex;">
             <input type="text" name="query" id="searchInput" class="search__global" th:value="${searchInput}">
             <button style="background-color: rgba(1,1,1,0)" type="submit" th:src="@{/img/login/header/search.svg}">
-                    <img th:src="@{/img/login/header/search.svg}" alt="">
+                <img th:src="@{/img/login/header/search.svg}" alt="">
             </button>
         </form>
         <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
@@ -43,13 +43,13 @@
 </header>
 <div class="content center">
 
-    <div class="body__page">
-        <div class="content">
-            <h1>Мой личный профиль</h1>
-            <img class="image" th:src="@{/img/login/body/user.jpg}" alt="">
-        </div>
-        <div class="form__container">
-            <form th:object="${user}">
+    <form th:object="${user}">
+        <div class="body__page">
+            <div class="content">
+                <h1>Профиль</h1>
+                <img class="image" th:src="@{/img/login/body/photo-camera.png}" alt="">
+            </div>
+            <div class="form__container">
                 <input type="hidden" th:field="*{id}" readonly/>
                 <input type="hidden" th:field="*{userRole}" readonly/>
                 <label>Имя:
@@ -73,9 +73,9 @@
                 <label>Пароль:
                     <input type="text" name="password" th:value="*{password}" readonly>
                 </label>
-            </form>
+            </div>
         </div>
-    </div>
+    </form>
     <div class="content">
         <h1>Объявления</h1>
         <div class="container__four__columns">

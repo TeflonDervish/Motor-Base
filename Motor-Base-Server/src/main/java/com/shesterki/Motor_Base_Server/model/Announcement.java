@@ -19,7 +19,6 @@ public class Announcement {
     @Column(name="ID")
     private Long Id;
 
-    @ManyToOne
     @JoinColumn(name = "car_Id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Car car;

@@ -81,7 +81,7 @@
         <div class="container__two__columns">
             <div class="card" th:each="users : ${users}">
                 <a th:href="@{/user/{id}(id=${users.id})}">
-                    <img th:src="@{/img/login/body/user.jpg}" alt="">
+                    <img th:src="@{/img/login/body/photo-camera.png}" alt="">
                     <p th:text="${users.name}">Имя: Муремеджон</p>
                     <p th:text="${users.surname}">Фамилия: Айджн</p>
                     <p th:text="${users.phoneNumber}">Номер телефона: +7 800 555 35 35</p>

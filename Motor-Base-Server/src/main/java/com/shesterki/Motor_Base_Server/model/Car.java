@@ -31,4 +31,6 @@ public class Car {
     @Column(name="all_driver")
     private String allDriver;
     private String imageUrl;
+
+
 }

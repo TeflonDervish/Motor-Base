@@ -48,6 +48,7 @@ public class MainController {
 
         model.addAttribute("isAuthenticated", userDetailsAdapter==null);
         model.addAttribute("announcements", announcements);
+        model.addAttribute("searchInput", query);
 
         return "main";
     }

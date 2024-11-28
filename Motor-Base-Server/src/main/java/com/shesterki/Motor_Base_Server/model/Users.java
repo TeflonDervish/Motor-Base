@@ -26,8 +26,6 @@ public class Users {
     private String email;
     private String name;
     private String surname;
-    @Column(name="user_photo")
-    private String userPhoto;
     private LocalDate birthday;
     private String city;
     @Column(name="driving_experience")
@@ -41,5 +39,9 @@ public class Users {
       joinColumns = @JoinColumn(name = "user_id"),
       inverseJoinColumns = @JoinColumn(name = "announcement_id"))
     private Set<Announcement> favoriteAnnouncement;
+
+    @OneToOne
+    @JoinColumn(name = "image_id")
+    private ImageEntity image;
 
 }

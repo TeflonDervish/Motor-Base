@@ -2,23 +2,23 @@ package com.shesterki.Motor_Base_Server.controllers;
 
 
 import com.shesterki.Motor_Base_Server.enums.Roles;
-import com.shesterki.Motor_Base_Server.model.Announcement;
-import com.shesterki.Motor_Base_Server.model.UserDetailsAdapter;
-import com.shesterki.Motor_Base_Server.model.UserFeedback;
-import com.shesterki.Motor_Base_Server.model.Users;
+import com.shesterki.Motor_Base_Server.model.*;
 import com.shesterki.Motor_Base_Server.model.dto.LoginForm;
 import com.shesterki.Motor_Base_Server.services.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.Banner;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.task.DelegatingSecurityContextAsyncTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
@@ -103,9 +103,12 @@ public class UserController {
     @PostMapping("/change_user")
     public String changeUser(@ModelAttribute Users user,
                              Model model,
-                             @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+                             @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter,
+                             MultipartFile file) throws IOException {
         model.addAttribute("isAuthenticated", userDetailsAdapter == null);
-        log.info(String.valueOf(user));
+        ImageEntity imageEntity = new ImageEntity();
+        imageEntity.setImageData(file.getBytes());
+        user.setImage(imageEntity);
         usersService.updateUser(user);
         return "redirect:/user/" + user.getId();
     }
@@ -123,7 +126,7 @@ public class UserController {
                              Model model,
                              @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
 
-        model.addAttribute("isAuthenticated", userDetailsAdapter==null);
+        model.addAttribute("isAuthenticated", userDetailsAdapter == null);
         Users user = usersService.getById(id).orElseThrow();
         model.addAttribute("user", user);
 
@@ -132,7 +135,7 @@ public class UserController {
 
     @PostMapping("/user/change/{id}")
     public String changeUser(@PathVariable Long id,
-                            @ModelAttribute Users user) {
+                             @ModelAttribute Users user) {
         System.out.println(user);
         usersService.updateUser(user);
         return "redirect:/admin/main";

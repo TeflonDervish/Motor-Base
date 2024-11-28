@@ -69,8 +69,9 @@ public class AdminController {
 
         model.addAttribute("isAuthenticated", userDetailsAdapter==null);
         model.addAttribute("announcements", announcements);
+        model.addAttribute("searchInput", query);
 
-        return "main";
+        return "admin_main_announcement";
     }
 
 
