@@ -25,7 +25,7 @@
         <form th:action="@{/main/search}" method="get" style="display: flex;">
             <input type="text" name="query" id="searchInput" class="search__global" th:value="${searchInput}">
             <button style="background-color: rgba(1,1,1,0)" type="submit" th:src="@{/img/login/header/search.svg}">
-                    <img th:src="@{/img/login/header/search.svg}" alt="">
+                <img th:src="@{/img/login/header/search.svg}" alt="">
             </button>
         </form>
         <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
@@ -43,56 +43,58 @@
 </header>
 
 <div class="content center">
-    <div class="body__page">
-        <div class="content">
-            <h1 th:text="${info_car}">CHERY Tiggo 8 Pro Max, 2024</h1>
-            <h3 th:text="${price}">Цена: 19 000 000 руб.</h3>
-            <img class="image" th:src="@{/img/login/body/image.jpg}" alt="">
-        </div>
-        <div class="content">
-
-            <div class="form__container">
-                <div class="phone">
-                    <a th:href="@{/user/{id}(id=${user_id})}">
-                        <h2 th:text="${name}">Александр</h2>
-                        <h4 th:text="${phoneNumber}">+7(927)-081-52-66</h4>
-                    </a>
-                </div>
-                <div class="characteristic">
-                    <h2>Характеристики</h2>
-                    <label>Пробег:
-                        <input type="text" th:value="${run}" name="run" readonly></label>
-                    <label>Год выпуска:
-                        <input type="number" th:value="${year}" name="run" readonly></label>
-                    <label>Марка:
-                        <input type="text" th:value="${mark}" name="run" readonly></label>
-                    <label>Модель:
-                        <input type="text" th:value="${model}" name="run" readonly></label>
-                    <label>Мощность:
-                        <input type="text" th:value="${engine_powers}" name="run" readonly></label>
-                    <label>Объем двигателя:
-                        <input type="text" th:value="${engine_volume}" name="run" readonly></label>
-                    <label>Цвет:
-                        <input type="text" th:value="${color}" name="run" readonly></label>
-                    <label>Коробка передач:
-                        <input type="text" th:value="${gearbox}" name="run" readonly></label>
-                    <label>Привод:
-                        <input type="text" th:value="${type}" name="run" readonly></label>
-                    <label>Тип кузова:
-                        <input type="text" th:value="${type_body}" name="run" readonly></label>
-                </div>
+    <form th:object="${announcement}">
+        <div class="body__page">
+            <div class="content">
+                <h1 th:text="*{name}">CHERY Tiggo 8 Pro Max, 2024</h1>
+                <h3 th:text="*{price}">Цена: 19 000 000 руб.</h3>
+                <img class="image" th:src="@{/img/login/body/image.jpg}" alt="">
             </div>
-            <form th:action="@{/add_to_favorite/{announcement_id}(announcement_id=${announcement_id})}"
-            method="post">
-                <button type="submit" class="button__blue">Добавить в избранное</button></form>
+            <div class="content">
 
+                <div class="form__container">
+                    <div class="phone">
+                        <a th:href="@{/user/{id}(id=${user_id})}">
+                            <h2 th:text="*{user.name}">Александр</h2>
+                            <h4 th:text="*{user.phoneNumber}">+7(927)-081-52-66</h4>
+                        </a>
+                    </div>
+                    <div class="characteristic">
+                        <h2>Характеристики</h2>
+                        <label>Пробег:
+                            <input type="text" th:field="*{car.run}" name="run" readonly></label>
+                        <label>Год выпуска:
+                            <input type="number" th:field="*{car.yearMake}" name="year" readonly></label>
+                        <label>Марка:
+                            <input type="text" th:field="*{car.mark}" name="mark" readonly></label>
+                        <label>Модель:
+                            <input type="text" th:field="*{car.model}" name="model" readonly></label>
+                        <label>Мощность:
+                            <input type="text" th:field="*{car.enginePowers}" name="engine_powers" readonly></label>
+                        <label>Объем двигателя:
+                            <input type="text" th:field="*{car.engineVolume}" name="engine_volume" readonly></label>
+                        <label>Цвет:
+                            <input type="text" th:field="*{car.color}" name="color" readonly></label>
+                        <label>Коробка передач:
+                            <input type="text" th:field="*{car.gearbox}" name="gearbox" readonly></label>
+                        <label>Привод:
+                            <input type="text" th:field="*{car.type}" name="type" readonly></label>
+                        <label>Тип кузова:
+                            <input type="text" th:field="*{car.typeBody}" name="typeBody" readonly></label>
+                    </div>
+                </div>
+                <form th:action="@{/add_to_favorite/{announcement_id}(announcement_id=${announcement_id})}"
+                      method="post">
+                    <button type="submit" class="button__blue">Добавить в избранное</button>
+                </form>
+
+            </div>
         </div>
-    </div>
-    <div class="form__container">
-        <h1>Описание</h1>
-        <p th:text="${description}"></p>
-    </div>
-
+        <div class="form__container">
+            <h1>Описание</h1>
+            <p th:text="*{description}"></p>
+        </div>
+    </form>
 </div>
 
 <footer class="center">

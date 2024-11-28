@@ -50,10 +50,6 @@
     </div>
 
     <form class="form__container" th:action="@{/user/change/{id}(id=${user.id})}" th:object="${user}" method="post">
-        <input type="hidden" th:value="*{id}">
-        <input type="hidden" th:value="*{about}">
-        <input type="hidden" th:value="*{city}">
-        <input type="hidden" th:value="*{drivingExperience}">
         <label>Имя:
             <input type="text" name="name" th:value="*{name}">
         </label>
@@ -61,7 +57,7 @@
             <input type="text" name="surname" th:value="*{surname}">
         </label>
         <label>Контактный номер:
-            <input type="text" name="number" th:value="*{phoneNumber}">
+            <input type="text" name="phoneNumber" th:value="*{phoneNumber}">
         </label>
         <label>Почта:
             <input type="text" name="email" th:value="*{email}">
@@ -70,7 +66,7 @@
             <input type="text" name="password" th:value="*{password}">
         </label>
         <label>Роль:
-            <select id="role" name="role" th:field="*{userRole}">
+            <select id="role" name="userRole" th:field="*{userRole}">
                 <option value="USER">USER</option>
                 <option value="ADMIN">ADMIN</option>
             </select>

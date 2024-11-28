@@ -25,7 +25,7 @@
         <form th:action="@{/main/search}" method="get" style="display: flex;">
             <input type="text" name="query" id="searchInput" class="search__global" th:value="${searchInput}">
             <button style="background-color: rgba(1,1,1,0)" type="submit" th:src="@{/img/login/header/search.svg}">
-                    <img th:src="@{/img/login/header/search.svg}" alt="">
+                <img th:src="@{/img/login/header/search.svg}" alt="">
             </button>
         </form>
         <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
@@ -44,143 +44,147 @@
 
 <div class="content center">
 
-    <div class="body__page">
-        <div class="content">
-            <label>Название:
-                <input type="text" th:value="${info_car}" name="name" placeholder="Введите название" required>
-            </label>
-            <label>Цена:
-                <input type="number" th:value="${price}" name="price" placeholder="Введите цену" required>
-            </label>
-            <img class="image" id="imagePreview" width="450px" height="450px"
-                 th:src="@{/img/login/body/image.jpg}" alt="">
-            <input type="file" id="fileInput" accept="image/*">
-            <script>
-                const fileInput = document.getElementById('fileInput');
-                const imagePreview = document.getElementById('imagePreview');
+    <form th:object="${announcement}" th:action="@{/car/change/{id}(id=${announcement.id})}" method="post">
+        <div class="body__page">
+            <div class="content">
+                <label>Название:
+                    <input type="text" th:field="*{name}" name="name" placeholder="Введите название" required>
+                </label>
+                <label>Цена:
+                    <input type="number" th:field="*{price}" name="price" placeholder="Введите цену" required>
+                </label>
+                <img class="image" id="imagePreview" width="450px" height="450px"
+                     th:src="@{/img/login/body/image.jpg}" alt="">
+                <input type="file" id="fileInput" accept="image/*">
+                <script>
+                    const fileInput = document.getElementById('fileInput');
+                    const imagePreview = document.getElementById('imagePreview');
 
-                fileInput.addEventListener('change', function(event) {
-                    const file = event.target.files[0]; // Получаем выбранный файл
-                    if (file) {
-                        const reader = new FileReader(); // Создаем FileReader для чтения файла
-                        reader.onload = function(e) {
-                            imagePreview.src = e.target.result; // Устанавливаем src изображения
-                            imagePreview.style.display = 'block'; // Показываем изображение
+                    fileInput.addEventListener('change', function(event) {
+                        const file = event.target.files[0]; // Получаем выбранный файл
+                        if (file) {
+                            const reader = new FileReader(); // Создаем FileReader для чтения файла
+                            reader.onload = function(e) {
+                                imagePreview.src = e.target.result; // Устанавливаем src изображения
+                                imagePreview.style.display = 'block'; // Показываем изображение
+                            }
+                            reader.readAsDataURL(file); // Читаем файл как URL
                         }
-                        reader.readAsDataURL(file); // Читаем файл как URL
-                    }
-                });
-            </script>
-            <div class="two__buttons">
-                <form>
-                    <button class="button__blue">Cохранить</button>
-                </form>
-                <form action="#" th:action="@{/delete_announcement/{id}(id=${announcement_id})}" method="post">
-                    <button type="submit" class="button__blue">Удалить</button>
-                </form>
+                    });
+                </script>
+                <div class="two__buttons">
+                    <button type="submit" class="button__blue">Cохранить</button>
+                    <form action="#" th:action="@{/delete_announcement/{id}(id=${announcement.id})}" method="post">
+                        <button type="submit" class="button__blue">Удалить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="form__container">
+                <div class="phone">
+                    <h2 th:field="*{user.name}">Александр</h2>
+                    <h4 th:field="*{user.phoneNumber}">+7(927)-081-52-66</h4>
+                </div>
+                <div>
+                    <h2>Характеристики</h2>
+                    <input type="hidden" th:field="*{car.id}">
+                    <div class="two-column">
+                        <label for="run">Пробег:
+                            <input type="number" step="1" id="run" placeholder="Введите пробег"
+                                   th:field="*{car.run}"></label>
+                    </div>
+
+                    <div class="two-column">
+                        <label for="yearMake">Год выпуска:
+                            <input type="number" step="1" id="yearMake" placeholder="Введите год выпуска"
+                                   th:field="*{car.yearMake}"></label>
+                    </div>
+
+                    <div class="two-column">
+                        <label for="mark">Марка:
+                            <select id="mark" name="mark" th:field="*{car.mark}">
+                                <option value="null">Не выбрана...</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Lada">Lada</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="two-column">
+                        <label for="model_car">Модель:</label>
+                        <input type="text" id="model_car" name="model_car" th:field="*{car.model}">
+                    </div>
+
+                    <div class="two-column">
+                        <label for="typeBody">Тип кузова:</label>
+                        <select id="typeBody" name="typeBody" th:field="*{car.typeBody}">
+                            <option value="null">Не выбран...</option>
+                            <option value="Седан">Седан</option>
+                            <option value="Лифтбэк">Лифтбэк</option>
+                            <option value="Хэтчбэк">Хэтчбэк</option>
+                            <option value="Универсал">Универсал</option>
+                            <option value="Кабриолет">Кабриолет</option>
+                            <option value="Пикап">Пикап</option>
+                            <option value="Купе">Купе</option>
+                        </select>
+                    </div>
+
+                    <div class="two-column">
+                        <label for="volume">Объем двигателя:</label>
+                        <input type="number" id="volume" placeholder="Введите объем" th:field="*{car.engineVolume}">
+                    </div>
+
+                    <div class="two-column">
+                        <label for="power">Мощность:</label>
+                        <input type="number" id="power" placeholder="Введите мощность" th:field="*{car.enginePowers}">
+                    </div>
+
+                    <div class="two-column">
+                        <label for="color">Цвет:</label>
+                        <input type="text" id="color" placeholder="Введите цвет" th:field="*{car.color}">
+                    </div>
+
+                    <div class="two-column">
+                        <label for="transmission">Коробка передач:</label>
+                        <select id="transmission" name="transmission" th:field="*{car.gearbox}">
+                            <option value="null">Не выбрана...</option>
+                            <option value="Робот">Робот</option>
+                            <option value="Вариатор">Вариатор</option>
+                            <option value="Автоматическая">Автоматическая</option>
+                            <option value="Механическая">Механическая</option>
+                        </select>
+                    </div>
+
+                    <div class="two-column">
+                        <label for="drive_type">Привод:</label>
+                        <select id="drive_type" name="drive_type" th:field="*{car.type}">
+                            <option value="null">Не выбран...</option>
+                            <option value="Полный">Полный</option>
+                            <option value="Передний">Передний</option>
+                            <option value="Задний">Задний</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form__container">
-            <div class="phone">
-                <h2 th:text="${name}">Александр</h2>
-                <h4 th:text="${phoneNumber}">+7(927)-081-52-66</h4>
-            </div>
-            <div class="characteristic">
-                <h2>Характеристики</h2>
-                <div class="two-column">
-                    <label for="run">Пробег:</label>
-                    <input type="number" step="1" id="run" placeholder="Введите пробег" th:field="${run}">
-                </div>
-
-                <div class="two-column">
-                    <label for="year">Год выпуска:</label>
-                    <input type="number" step="1" id="year" placeholder="Введите год выпуска"
-                           th:field="${yearMake}">
-                </div>
-
-                <div class="two-column">
-                    <label for="mark_car">Марка:</label>
-                    <select id="mark_car" name="mark_car" th:field="${mark}">
-                        <option value="null">Не выбрана...</option>
-                        <option value="Nissan">Nissan</option>
-                        <option value="Ford">Ford</option>
-                        <option value="Lada">Lada</option>
-                    </select>
-                </div>
-
-                <div class="two-column">
-                    <label for="model_car">Модель:</label>
-                    <input type="text" id="model_car" name="model_car" th:field="${model}">
-                </div>
-
-                <div class="two-column">
-                    <label for="body">Тип кузова:</label>
-                    <select id="body" name="body" th:field="${typeBody}">
-                        <option value="null">Не выбран...</option>
-                        <option value="sedan">Седан</option>
-                        <option value="liftback">Лифтбэк</option>
-                        <option value="hatchback">Хэтчбэк</option>
-                        <option value="universal">Универсал</option>
-                        <option value="kabriolet">Кабриолет</option>
-                        <option value="pickup">Пикап</option>
-                        <option value="kupe">Купе</option>
-                    </select>
-                </div>
-
-                <div class="two-column">
-                    <label for="volume">Объем двигателя:</label>
-                    <input type="number" id="volume" placeholder="Введите объем" th:field="${engineVolume}">
-                </div>
-
-                <div class="two-column">
-                    <label for="power">Мощность:</label>
-                    <input type="number" id="power" placeholder="Введите мощность" th:field="${enginePowers}">
-                </div>
-
-                <div class="two-column">
-                    <label for="color">Цвет:</label>
-                    <input type="text" id="color" placeholder="Введите цвет" th:field="${color}">
-                </div>
-
-                <div class="two-column">
-                    <label for="transmission">Коробка передач:</label>
-                    <select id="transmission" name="transmission" th:field="${gearbox}">
-                        <option value="null">Не выбрана...</option>
-                        <option value="robot">Робот</option>
-                        <option value="variator">Вариатор</option>
-                        <option value="automat">Автоматическая</option>
-                        <option value="mechanic">Механическая</option>
-                    </select>
-                </div>
-
-                <div class="two-column">
-                    <label for="drive_type">Привод:</label>
-                    <select id="drive_type" name="drive_type" th:field="${type}">
-                        <option value="null">Не выбран...</option>
-                        <option value="all">Полный</option>
-                        <option value="front">Передний</option>
-                        <option value="back">Задний</option>
-                    </select>
-                </div>
-            </div>
+            <h1>Описание</h1>
+            <textarea id="description"
+                      th:field="*{description}"
+                      onload="autoResize(this)"
+                      oninput="autoResize(this)"
+                      placeholder="Введите Описание..."
+                      name="description"
+            ></textarea>
+            <script>
+                function autoResize(textarea) {
+                    textarea.style.height = 'auto';
+                    textarea.style.height = textarea.scrollHeight + 'px';
+                }
+            </script>
         </div>
-    </div>
-    <div class="form__container">
-        <h1>Описание</h1>
-        <textarea id="myTextarea"
-                  onload="autoResize(this)"
-                  oninput="autoResize(this)"
-                  placeholder="Введите Описание..."
-                  name="description"
-                  th:text="${description}"
-        ></textarea>
-        <script>
-            function autoResize(textarea) {
-                textarea.style.height = 'auto';
-                textarea.style.height = textarea.scrollHeight + 'px';
-            }
-        </script>
-    </div>
+    </form>
+</div>
 
 </div>
 

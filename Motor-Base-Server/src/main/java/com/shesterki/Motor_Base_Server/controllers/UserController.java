@@ -134,7 +134,7 @@ public class UserController {
     public String changeUser(@PathVariable Long id,
                             @ModelAttribute Users user) {
         System.out.println(user);
-        usersService.saveUser(user);
+        usersService.updateUser(user);
         return "redirect:/admin/main";
     }
 }

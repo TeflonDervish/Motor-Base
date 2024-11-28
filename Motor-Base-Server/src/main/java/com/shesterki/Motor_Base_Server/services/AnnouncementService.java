@@ -33,7 +33,12 @@ public class AnnouncementService {
         announcementRepository.deleteById(id);
     }
 
-    public Announcement updateAnnouncement(Announcement announcement) {
+    public Announcement updateAnnouncement(Announcement newAnnouncement) {
+        Announcement announcement = announcementRepository.findById(newAnnouncement.getId()).orElseThrow();
+        announcement.setName(newAnnouncement.getName());
+        announcement.setPrice(newAnnouncement.getPrice());
+        announcement.setDescription(newAnnouncement.getDescription());
+
         return announcementRepository.save(announcement);
     }
 

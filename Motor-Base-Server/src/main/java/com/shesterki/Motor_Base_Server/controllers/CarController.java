@@ -37,28 +37,9 @@ public class CarController {
         Car car = announcement.getCar();
         Users users = announcement.getUser();
 
-        model.addAttribute("user_id", users.getId());
+        log.info(String.valueOf(car));
 
-        model.addAttribute("announcement_id", announcement.getId());
-
-        model.addAttribute("run", car.getRun());
-        model.addAttribute("yearMake", car.getYearMake());
-        model.addAttribute("mark", car.getMark());
-        model.addAttribute("model", car.getModel());
-        model.addAttribute("enginePowers", car.getEnginePowers());
-        model.addAttribute("engineVolume", car.getEngineVolume());
-        model.addAttribute("color", car.getColor());
-        model.addAttribute("gearbox", car.getGearbox());
-        model.addAttribute("type", car.getType());
-        model.addAttribute("typeBody", car.getTypeBody());
-
-        model.addAttribute("info_car", car.getModel() + " " +
-                car.getMark() + " " +
-                car.getYearMake());
-        model.addAttribute("price", announcement.getPrice());
-        model.addAttribute("phoneNumber", users.getPhoneNumber());
-        model.addAttribute("name", users.getName());
-        model.addAttribute("description", announcement.getDescription());
+        model.addAttribute("announcement", announcement);
 
         if (userDetailsAdapter.getUser().getId() == users.getId()) {
             return "my_announcement";
@@ -67,6 +48,17 @@ public class CarController {
 
         }
 
+    }
+
+    @PostMapping("/car/change/{id}")
+    public String changeCar(
+            @ModelAttribute Announcement announcement
+    ){
+        announcementService.updateAnnouncement(announcement);
+        carService.updateCar(announcement.getCar());
+        log.info(String.valueOf(announcement));
+
+        return "redirect:/car/" + announcement.getId();
     }
 
     @GetMapping("/create_announcement")

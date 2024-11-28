@@ -40,7 +40,14 @@ public class UsersService {
         userRepository.deleteById(id);
     }
 
-    public Users updateUser(Users user) {
+    public Users updateUser(Users newUser) {
+        Users user = userRepository.findById(newUser.getId()).orElseThrow();
+        user.setName(newUser.getName());
+        user.setSurname(newUser.getSurname());
+        user.setPhoneNumber(newUser.getPhoneNumber());
+        user.setEmail(newUser.getEmail());
+        user.setPassword(newUser.getPassword());
+        user.setUserRole(newUser.getUserRole());
         return userRepository.save(user);
     }
 
