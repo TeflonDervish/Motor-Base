@@ -35,27 +35,29 @@
     </div>
 </header>
 
-<div class="body__page center">
-    <form class="form__container" th:action="@{/login}" method="post">
-        <img height="80px" th:src="@{img/login/header/logo_black.png}" alt="">
-        <label class="form__element">Email:
-            <input type="text" id="username" name="username" required>
-        </label>
-        <label class="form__element">Password:
-            <input type="password" id="password" name="password" required>
-        </label>
-        <button class="button__blue" type="submit">Войти</button>
-        <a th:href="@{/register}" class="default__link">Зарегистрироваться</a>
-    <div th:if="${param.error}">
-        <div class="alert alert-danger" role="alert"
-            style="display: flex;
-                   flex-direction: column;
-                   align-items: center;">
-            <p>Неверное имя пользователя</p>
-            <p>или пароль.</p>
+<div class = "footer_padding">
+    <div class="body__page center">
+        <form class="form__container" th:action="@{/login}" method="post">
+            <img height="80px" th:src="@{img/login/header/logo_black.png}" alt="">
+            <label class="form__element">Email:
+                <input type="text" id="username" name="username" required>
+            </label>
+            <label class="form__element">Password:
+                <input type="password" id="password" name="password" required>
+            </label>
+            <button class="button__blue" type="submit">Войти</button>
+            <a th:href="@{/register}" class="default__link">Зарегистрироваться</a>
+        <div th:if="${param.error}">
+            <div class="alert alert-danger" role="alert"
+                style="display: flex;
+                       flex-direction: column;
+                       align-items: center;">
+                <p>Неверное имя пользователя</p>
+                <p>или пароль.</p>
+            </div>
         </div>
+        </form>
     </div>
-    </form>
 </div>
 
 <footer class="center">

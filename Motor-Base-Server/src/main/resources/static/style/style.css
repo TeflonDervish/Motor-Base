@@ -333,3 +333,8 @@ footer .group2 {
 .filter {
     max-width: 350px;
 }
+
+.footer_padding{
+   padding-bottom: 114px;
+   padding-top: 115px;
+}
