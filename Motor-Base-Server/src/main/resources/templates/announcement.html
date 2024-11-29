@@ -83,7 +83,7 @@
                             <input type="text" th:field="*{car.typeBody}" name="typeBody" readonly></label>
                     </div>
                 </div>
-                <form th:action="@{/add_to_favorite/{announcement_id}(announcement_id=${announcement_id})}"
+                <form th:action="@{/add_to_favorite/{announcement_id}(announcement_id=*{id})}"
                       method="post">
                     <button type="submit" class="button__blue">Добавить в избранное</button>
                 </form>

@@ -110,6 +110,7 @@ public class CarController {
     public String addToFavorite(@PathVariable Long announcement_id,
                                 Model model,
                                 @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
+        log.info(String.valueOf(announcement_id));
         model.addAttribute("isAuthenticated", userDetailsAdapter == null);
         usersService.AddFavoriteAnnouncement(userDetailsAdapter.getUser().getId(), announcement_id);
         return "redirect:/car/" + announcement_id;
