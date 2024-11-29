@@ -19,11 +19,9 @@ public class Car {
     private String type;
     private String mark;
     private String model;
-    @Column(name="year_make")
     private Integer yearMake;
     private Integer run;
     private String color;
-    @Column(name="type_body")
     private String typeBody;
     private String gearbox;
     private Integer enginePowers;

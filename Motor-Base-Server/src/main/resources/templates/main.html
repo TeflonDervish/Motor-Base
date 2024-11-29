@@ -25,7 +25,7 @@
         <form th:action="@{/main/search}" method="get" style="display: flex;">
             <input type="text" name="query" id="searchInput" class="search__global" th:value="${searchInput}">
             <button style="background-color: rgba(1,1,1,0)" type="submit" th:src="@{/img/login/header/search.svg}">
-                    <img th:src="@{/img/login/header/search.svg}" alt="">
+                <img th:src="@{/img/login/header/search.svg}" alt="">
             </button>
         </form>
         <button class="button__blue" th:onclick="|window.location.href='@{/create_announcement}'|">Разместить
@@ -49,47 +49,34 @@
 
         </form>
         <h1>Фильтры</h1>
-        <form class="form__container">
-            <label for="type_car">Тип автомобиля:
-                <select id="type_car" name="type_car">
-                    <option value="rand">Не выбран</option>
-                    <option value="gruz">Грузовые</option>
-                    <option value="legk">Легковые</option>
-                    <option value="moto">Мотоциклы, мопеды, байки</option>
-                </select>
-            </label>
+        <form class="form__container" th:action="@{/main/searchByFilters}">
             <label>Марка:
-                <select id="mark_car" name="mark_car">
-                    <option value="rand">Не выбрана</option>
+                <select id="mark_car" name="mark">
+                    <option value="null">Не выбрана</option>
                     <option value="Nissan">Nissan</option>
                     <option value="Ford">Ford</option>
                     <option value="Lada">Lada</option>
                 </select>
             </label>
             <label>Модель:
-                <select id="model_car" name="model_car">
-                    <option value="rand">Не выбрана</option>
-                    <option value="Granta">Granta</option>
-                    <option value="Priora">Priora</option>
-                    <option value="Kalina">Kalina</option>
-                </select>
+                <input type="text" name="model">
             </label>
             <label>Год выпуска:
-                <input type="text" name="year">
+                <input type="number" name="yearMake">
             </label>
             <label>Цена:
-                <input type="text" name="price_min" placeholder="От">
-                <input type="text" name="price_max" placeholder="До">
+                <input type="number" name="priceMin" placeholder="От">
+                <input type="number" name="priceMax" placeholder="До">
             </label>
             <label>Пробег:
-                <input type="text" name="mileage_min" placeholder="От">
-                <input type="text" name="mileage_max" placeholder="До">
+                <input type="number" name="runMin" placeholder="От">
+                <input type="number" name="runMax" placeholder="До">
             </label>
             <label>Объем двигателя:
-                <input type="text" name="engine_volume">
+                <input type="number" name="engineVolume">
             </label>
             <label>Мощность:
-                <input type="text" name="power">
+                <input type="number" name="enginePowers">
             </label>
             <label>Тип кузова:
                 <div class="type__kuzov">
@@ -131,17 +118,26 @@
                 </div>
             </label>
 
-            <label>Коробка передач:
-                <input type="text" name="transmission">
-            </label>
-            <label>Привод:
-                <input type="text" name="drive_type">
-            </label>
+            <label for="transmission">Коробка передач:
+                <select id="transmission" name="gearbox">
+                    <option value="null">Не выбрана...</option>
+                    <option value="Робот">Робот</option>
+                    <option value="Вариатор">Вариатор</option>
+                    <option value="Автоматическая">Автоматическая</option>
+                    <option value="Механическая">Механическая</option>
+                </select></label>
+            <label for="drive_type">Привод:
+                <select id="drive_type" name="type">
+                    <option value="null">Не выбран...</option>
+                    <option value="Полный">Полный</option>
+                    <option value="Передний">Передний</option>
+                    <option value="Задний">Задний</option>
+                </select></label>
             <label>Цвет:
                 <input type="text" name="color">
             </label>
             <div class="filter__button">
-                <button class="button__blue" type="submit">Добавить фильтры</button>
+                <button class="button__blue" type="submit">Применить фильтры</button>
                 <button class="button__white" type="reset">Сбросить фильтры</button>
             </div>
         </form>
