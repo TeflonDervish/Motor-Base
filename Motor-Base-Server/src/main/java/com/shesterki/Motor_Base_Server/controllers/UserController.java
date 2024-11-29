@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.awt.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
@@ -28,6 +29,7 @@ public class UserController {
     private UsersService usersService;
     private UserFeedbackService feedbackService;
     private AnnouncementService announcementService;
+    private ImageService imageService;
 
     @GetMapping("/user")
     public String user(@AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter) {
@@ -104,9 +106,9 @@ public class UserController {
                              @AuthenticationPrincipal UserDetailsAdapter userDetailsAdapter,
                              MultipartFile file) throws IOException {
         model.addAttribute("isAuthenticated", userDetailsAdapter == null);
-        ImageEntity imageEntity = new ImageEntity();
-        imageEntity.setImageData(file.getBytes());
-        user.setImage(imageEntity);
+        ImageEntity image = new ImageEntity();
+        image.setImageData(file.getBytes());
+//        user.setImage(imageService.saveImage(image));
         usersService.updateUser(user);
         return "redirect:/user/" + user.getId();
     }

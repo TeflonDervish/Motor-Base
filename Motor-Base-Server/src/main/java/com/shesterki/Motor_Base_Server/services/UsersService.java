@@ -11,7 +11,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -49,6 +51,7 @@ public class UsersService {
         user.setEmail(newUser.getEmail());
         user.setPassword(newUser.getPassword());
         user.setUserRole(newUser.getUserRole());
+        user.setImage(newUser.getImage());
         return userRepository.save(user);
     }
 
