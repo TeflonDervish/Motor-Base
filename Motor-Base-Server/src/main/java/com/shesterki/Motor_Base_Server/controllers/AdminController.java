@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Set;
 
 @Slf4j
 @Controller
@@ -70,6 +71,41 @@ public class AdminController {
         model.addAttribute("isAuthenticated", userDetailsAdapter==null);
         model.addAttribute("announcements", announcements);
         model.addAttribute("searchInput", query);
+
+        return "admin_main_announcement";
+    }
+
+     @GetMapping("/main/searchByFilters")
+    public String searchByParam(
+            Model modelPage,
+            @RequestParam(value = "mark", required = false) String mark,
+            @RequestParam(value = "model" ,required = false) String model,
+            @RequestParam(value = "yearMake",required = false) Integer yearMake,
+            @RequestParam(value = "priceMin",required = false) Integer priceMin, @RequestParam(value = "priceMax", required = false) Integer priceMax,
+            @RequestParam(value = "runMin", required = false) Integer runMin, @RequestParam(value = "runMax", required = false) Integer runMax,
+            @RequestParam(value = "engineVolume", required = false) Double engineVolume,
+            @RequestParam(value = "enginePowers", required = false) Double enginePowers,
+            @RequestParam(value = "gearbox", required = false) String gearbox,
+            @RequestParam(value = "type", required = false) String type,
+            @RequestParam(value = "color",required = false) String color
+    ) {
+
+        log.info(model);
+        Set<Announcement> announcements = announcementService.getByFilter(
+                mark,
+                model,
+                yearMake,
+                priceMin, priceMin,
+                runMin, runMax,
+                engineVolume,
+                enginePowers,
+                null,
+                gearbox,
+                type,
+                color
+        );
+
+        modelPage.addAttribute("announcements", announcements);
 
         return "admin_main_announcement";
     }

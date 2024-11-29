@@ -9,12 +9,13 @@ import com.shesterki.Motor_Base_Server.repository.CarRepository;
 import com.shesterki.Motor_Base_Server.repository.UsersRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.time.LocalDate;
+import java.util.*;
 
+@Slf4j
 @Service
 @Data
 @AllArgsConstructor
@@ -62,4 +63,40 @@ public class UsersService {
         Users user = userRepository.findById(id).orElseThrow();
         return user.getFavoriteAnnouncement();
     }
+
+    public Set<Users> getByFilter(
+            String name,
+            String surname,
+            String phone,
+            String email,
+            String city,
+            LocalDate birthday
+    ){
+        Set<Users> users = new HashSet<>(userRepository.findAll());
+
+        System.out.println(
+                name + " " +
+                surname + " " +
+                phone + " " +
+                        email + " " +
+                        city  + " " +
+                        birthday
+        );
+        if (!name.isEmpty()) users.retainAll(userRepository.findByName(name));
+        log.info(String.valueOf(users.size()));
+
+        if (!surname.isEmpty()) users.retainAll(userRepository.findBySurname(surname));
+
+        if (!phone.isEmpty()) users.retainAll(userRepository.findByPhoneNumber(phone));
+
+        if (!email.isEmpty()) users.retainAll(new HashSet<>(Collections.singleton(userRepository.findByEmail(email))));
+
+        if (!city.isEmpty()) users.retainAll(userRepository.findByCity(city));
+
+        if (birthday != null) users.retainAll(userRepository.findByBirthday(birthday));
+        log.info(String.valueOf(users.size()));
+
+        return users;
+    }
+
 }

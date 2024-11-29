@@ -12,13 +12,11 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.task.DelegatingSecurityContextAsyncTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -139,5 +137,29 @@ public class UserController {
         System.out.println(user);
         usersService.updateUser(user);
         return "redirect:/admin/main";
+    }
+
+    @GetMapping("/admin/user/search")
+    public String searchUser(
+        Model model,
+        @RequestParam(value = "name", required = false) String name,
+        @RequestParam(value = "surname", required = false) String surname,
+        @RequestParam(value = "phone", required = false) String phone,
+        @RequestParam(value = "email", required = false) String email,
+        @RequestParam(value = "city", required = false) String city,
+        @RequestParam(value = "birthday", required = false) LocalDate birthday
+    ){
+
+        Set<Users> users = usersService.getByFilter(
+                name,
+                surname,
+                phone,
+                email,
+                city,
+                birthday
+        );
+        model.addAttribute("users", users);
+
+        return "admin_main_users";
     }
 }

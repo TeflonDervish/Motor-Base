@@ -51,7 +51,7 @@
 <div class="body__page center">
     <div class="content filter">
         <h1>Фильтры</h1>
-        <form class="form__container">
+        <form class="form__container" th:action="@{/admin/user/search}">
             <label>Имя:
                 <input type="text" name="name">
             </label>
@@ -62,13 +62,13 @@
                 <input type="text" name="phone">
             </label>
             <label>Почта:
-                <input type="text" name="email">
+                <input type="email" name="email">
             </label>
             <label>Город:
                 <input type="text" name="city">
             </label>
             <label>Дата рождения:
-                <input type="text" name="birthday">
+                <input type="date" name="birthday">
             </label>
             <div class="filter__button">
                 <button class="button__blue" type="submit">Добавить фильтры</button>
