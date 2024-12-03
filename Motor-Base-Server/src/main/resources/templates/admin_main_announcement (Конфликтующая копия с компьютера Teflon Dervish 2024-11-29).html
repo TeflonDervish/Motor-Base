@@ -150,7 +150,7 @@
                     <p th:text="${announcements.car.model}">9.000.000 руб.</p>
                 </a>
                 <div class="two__buttons" style="gap: 10px; margin-top: 10px">
-                    <form th:action="@{/car/delete/{id}(id=${announcement.id})}" method="post">
+                    <form th:action="@{/car/delete/{id}(id=${announcements.id})}" method="post">
                         <button class="button__blue">Удалить</button></form>
                 </div>
             </div>

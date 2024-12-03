@@ -41,6 +41,8 @@ public class CarController {
 
         model.addAttribute("announcement", announcement);
 
+        model.addAttribute("");
+
         if (userDetailsAdapter.getUser().getId() == users.getId()) {
             return "my_announcement";
         } else {

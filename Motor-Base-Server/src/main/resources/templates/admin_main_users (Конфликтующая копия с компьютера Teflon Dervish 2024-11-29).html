@@ -47,90 +47,28 @@
     <button class="button__blue" th:onclick="|window.location.href='@{/admin/users}'|">Пользователи</button>
 </div>
 
+
 <div class="body__page center">
     <div class="content filter">
         <h1>Фильтры</h1>
-            <label>Марка:
-                <select id="mark_car" name="mark_car">
-                    <option value="rand">Не выбрана</option>
-                    <option value="Nissan">Nissan</option>
-                    <option value="Ford">Ford</option>
-                    <option value="Lada">Lada</option>
-                </select>
+        <form class="form__container" th:action="@{/admin/user/search}">
+            <label>Имя:
+                <input type="text" name="name">
             </label>
-            <label>Модель:
-                <select id="model_car" name="model_car">
-                    <option value="rand">Не выбрана</option>
-                    <option value="Granta">Granta</option>
-                    <option value="Priora">Priora</option>
-                    <option value="Kalina">Kalina</option>
-                </select>
+            <label>Фамилия:
+                <input type="text" name="surname">
             </label>
-            <label>Год выпуска:
-                <input type="text" name="year">
+            <label>Контактный номер:
+                <input type="text" name="phone">
             </label>
-            <label>Цена:
-                <input type="text" name="price_min" placeholder="От">
-                <input type="text" name="price_max" placeholder="До">
+            <label>Почта:
+                <input type="email" name="email">
             </label>
-            <label>Пробег:
-                <input type="text" name="mileage_min" placeholder="От">
-                <input type="text" name="mileage_max" placeholder="До">
+            <label>Город:
+                <input type="text" name="city">
             </label>
-            <label>Объем двигателя:
-                <input type="text" name="engine_volume">
-            </label>
-            <label>Мощность:
-                <input type="text" name="power">
-            </label>
-            <label>Тип кузова:
-                <div class="type__kuzov">
-
-                    <label for="sedan">
-                        <input type="checkbox" id="sedan" name="kuzov_type" value="sedan">
-                        Седан
-                    </label>
-
-                    <label for="liftback">
-                        <input type="checkbox" id="liftback" name="kuzov_type" value="liftback">
-                        Лифтбэк
-                    </label>
-
-
-                    <label for="hatchback">
-                        <input type="checkbox" id="hatchback" name="kuzov_type" value="hatchback">
-                        Хэтчбэк
-                    </label>
-
-                    <label for="universal">
-                        <input type="checkbox" id="universal" name="kuzov_type" value="universal">
-                        Универсал
-                    </label>
-
-                    <label for="kabriolet">
-                        <input type="checkbox" id="kabriolet" name="kuzov_type" value="kabriolet">
-                        Кабриолет
-                    </label>
-
-                    <label for="pickup">
-                        <input type="checkbox" id="pickup" name="kuzov_type" value="pickup">
-                        Пикап
-                    </label>
-                    <label for="kupe">
-                        <input type="checkbox" id="kupe" name="kuzov_type" value="kupe">
-                        Купе
-                    </label>
-                </div>
-            </label>
-
-            <label>Коробка передач:
-                <input type="text" name="transmission">
-            </label>
-            <label>Привод:
-                <input type="text" name="drive_type">
-            </label>
-            <label>Цвет:
-                <input type="text" name="color">
+            <label>Дата рождения:
+                <input type="date" name="birthday">
             </label>
             <div class="filter__button">
                 <button class="button__blue" type="submit">Добавить фильтры</button>
@@ -139,19 +77,23 @@
         </form>
     </div>
     <div class="content">
-        <h1>Объявления</h1>
+        <h1>Пользователи</h1>
         <div class="container__two__columns">
-            <div class="card" th:each="announcements : ${announcements}">
-                <a th:href="@{/car/{id}(id=${announcements.id})}">
-                    <h2 th:text="${announcements.name}"></h2>
-                    <h5 th:text="${announcements.price}"></h5>
-                    <img th:src="@{/img/login/body/image.jpg}" alt="">
-                    <p th:text="${announcements.car.mark}">FORD FOCUS 2009</p>
-                    <p th:text="${announcements.car.model}">9.000.000 руб.</p>
+            <div class="card" th:each="users : ${users}">
+                <a th:href="@{/user/{id}(id=${users.id})}">
+                    <img th:src="@{/img/login/body/photo-camera.png}" alt="">
+                    <p th:text="${users.name}">Имя: Муремеджон</p>
+                    <p th:text="${users.surname}">Фамилия: Айджн</p>
+                    <p th:text="${users.phoneNumber}">Номер телефона: +7 800 555 35 35</p>
+                    <p th:text="${users.birthday}">Дата рождения: 30.09.2003</p>
                 </a>
                 <div class="two__buttons" style="gap: 10px; margin-top: 10px">
-                    <form th:action="@{/car/delete/{id}(id=${announcement.id})}" method="post">
-                        <button class="button__blue">Удалить</button></form>
+                    <form th:action="@{/user/change/{id}(id=${users.id})}">
+                        <button class="button__blue">Изменить</button>
+                    </form>
+                    <form th:action="@{/user/delete/{id}(id=${users.id})}" method="post">
+                        <button class="button__blue">Удалить</button>
+                    </form>
                 </div>
             </div>
         </div>
