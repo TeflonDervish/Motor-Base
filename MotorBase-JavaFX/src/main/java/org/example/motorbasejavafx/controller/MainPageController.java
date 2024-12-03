@@ -16,6 +16,7 @@ import org.example.motorbasejavafx.HelloApplication;
 import org.example.motorbasejavafx.model.Car;
 import org.example.motorbasejavafx.service.CarService;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
@@ -127,10 +128,17 @@ public class MainPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         carService = new CarService();
 
-        ObservableList<String> observableList = FXCollections.observableList(
-                carService.getAllCars().stream().map(Car::toString).collect(Collectors.toList())
+        ObservableList<String> observableList = null;
+        try {
+            observableList = FXCollections.observableList(
+                    carService.getAll().stream().map(Car::toString).collect(Collectors.toList())
 
-        );
+            );
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         checkTop.setItems(observableList);
 
         typeCar.setItems(FXCollections.observableArrayList("Легковой","Грузовой"));
