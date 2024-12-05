@@ -9,11 +9,12 @@ spring:
         password: server_admin
         driver-class-name: com.mysql.cj.jdbc.Driver
         initialization-mode: always
+        data: classpath:sql/data.sql
 
     jpa:
 #        show-sql: true
         hibernate:
-            ddl-auto: update
+            ddl-auto: create
         properties:
             hibernate:
 #                format_sql: true

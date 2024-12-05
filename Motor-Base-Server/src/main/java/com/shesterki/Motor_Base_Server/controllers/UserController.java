@@ -55,6 +55,7 @@ public class UserController {
         model.addAttribute("announcements", announcements);
 
         Set<Announcement> favorite_announcement = usersService.getFavoriteAnnouncement(userDetailsAdapter.getUser().getId());
+
         model.addAttribute("favorite_announcement", favorite_announcement);
 
         model.addAttribute("user", users);
